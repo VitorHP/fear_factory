@@ -1,0 +1,25 @@
+@mixin cursor-grab() {
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+@mixin site-width-with-padding($padding) {
+  width: $site-width - (2*$padding);
+  padding: $padding;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin opacity($opacity) {
+  -moz-opacity: $opacity;
+  -webkit-opacity: $opacity;
+  -ms-opacity: $opacity;
+  -o-opacity: $opacity;
+  opacity: $opacity;
+}

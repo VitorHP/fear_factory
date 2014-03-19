@@ -1,0 +1,34 @@
+
+= simple_form_for @character do |f|
+  .row
+    = f.input :name, label: false, placeholder: t("activerecord.attributes.character.name")
+    = f.input :description, label: false, placeholder: t("activerecord.attributes.character.description")
+    = f.input :refresh, label: false, placeholder: t("activerecord.attributes.character.refresh")
+  .row
+    #aspects-panel
+      - f.object.aspects.each_with_index do |aspect, index|
+        = f.fields_for aspect do |a|
+          - # Boa noite, Vitor do futuro. Essa foi a linha mais desnecessariamente complexa que você escreveu até o dia 19 de Março de 2014.
+          - # Se você encontrou um problema com ela, eu deixo aqui minhas sinceras desculpas.
+          = a.input :name, label: false, placeholder: "#{ Array.new(f.object.aspects.size) { |index| if index == 0; t("activerecord.attributes.character.high_concept"); elsif index == 1; t("activerecord.attributes.character.trouble"); else "" end }[index] }"
+
+    #skill-panel
+      #skills
+        - ["Great", "Good", "Fair", "Average"].each_with_index do |level, index|
+          %div{ class: level }
+            .skill-row
+              %span.rating= "#{level} (+#{4 - index})"
+              - (index + 1).times do
+                .slot
+                  = f.fields_for f.object.ratings.build do |r|
+                    = r.input :skill_id, as: :hidden
+                    = r.input :level, as: :hidden, input_html: { value: (4 - index) }
+
+      #skill-drawer
+        #skill-list.collapse
+          - @skills.each_with_index do |skill, index|
+            .skill= skill if skill.present?
+        #link
+          %button{ type: "button", class: "btn", 'data-toggle' => "collapse", 'data-target' => "#skill-list" }= "Skill List"
+  .row
+    = f.button :submit

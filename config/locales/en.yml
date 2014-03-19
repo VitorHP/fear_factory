@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      character:
+        name: Name
+        description: Description
+        refresh: Refresh
+        high_concept: High Concept
+        trouble: Trouble
