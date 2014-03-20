@@ -1,0 +1,5 @@
+= link_to "Novo Personagem", new_character_path
+
+%ul
+  - @characters.each do |character|
+    %li= link_to character.name, edit_character_path(character)
