@@ -2,12 +2,16 @@
 @import "mixins";
 @import "bootstrap";
 
+#character-fields {
+  @extend .col-md-12;
+}
+
 #aspects-panel {
-  @extend .col-md-4
+  @extend .col-md-4;
 }
 
 #skill-panel {
-  @extend .col-md-8
+  @extend .col-md-8;
 }
 
 #skills div.slot, div.skill {

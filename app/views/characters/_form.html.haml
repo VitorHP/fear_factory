@@ -1,9 +1,10 @@
 
 = simple_form_for @character do |f|
   .row
-    = f.input :name, label: false, placeholder: t("activerecord.attributes.character.name")
-    = f.input :description, label: false, placeholder: t("activerecord.attributes.character.description")
-    = f.input :refresh, label: false, placeholder: t("activerecord.attributes.character.refresh")
+    %fieldset#character-fields
+      = f.input :name, label: false, placeholder: t("activerecord.attributes.character.name")
+      = f.input :description, label: false, placeholder: t("activerecord.attributes.character.description")
+      = f.input :refresh, label: false, placeholder: t("activerecord.attributes.character.refresh")
   .row
     #aspects-panel
       = f.fields_for :aspects do |a|
