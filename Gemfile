@@ -15,6 +15,8 @@ gem 'pg'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'jquery-ui-rails'
+gem 'rails_12factor'
+
 group :development do
   gem 'pry'
   gem 'better_errors'
