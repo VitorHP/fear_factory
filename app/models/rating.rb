@@ -6,4 +6,6 @@ class Rating < ActiveRecord::Base
   scope :good, ->{ where(level: 3) }
   scope :fair, ->{ where(level: 2) }
   scope :average, ->{ where(level: 1) }
+
+  default_scope ->{ order(:id) }
 end
