@@ -24,6 +24,7 @@ class CharactersController < ApplicationController
     if @character.save
       redirect_to characters_path
     else
+      @skills    = Skill.where.not(id: @character.skill_ids)
       render :new
     end
   end

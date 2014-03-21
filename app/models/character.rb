@@ -9,4 +9,6 @@ class Character < ActiveRecord::Base
   accepts_nested_attributes_for :ratings
   accepts_nested_attributes_for :stunts
   accepts_nested_attributes_for :extras
+
+  validates :name, presence: true
 end
