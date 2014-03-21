@@ -3,5 +3,5 @@ Fate::Application.routes.draw do
   resources :home, only: [:index]
   resources :characters
 
-  root to: 'home#index'
+  root to: 'characters#index'
 end
