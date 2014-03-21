@@ -15,10 +15,10 @@
 
     #skill-panel
       #skills
-        - {"Great" => 4, "Good" => 3, "Fair" => 2, "Average" => 1}.each_pair do |name, level|
+        - Ladder.new.to_h(from: :great, to: :average).each_pair do |name, level|
           %div{ class: name }
             .skill-row
-              %span.rating= "#{name} (+#{level})"
+              %span.rating= "#{name.to_s.humanize} (+#{level})"
               = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
                 .slot
                   %span.name= "#{r.object.skill.name if r.object.skill.present? }"
