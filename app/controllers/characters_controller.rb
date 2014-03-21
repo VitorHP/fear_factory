@@ -6,13 +6,13 @@ class CharactersController < ApplicationController
   def new
     @skills = Skill.all
 
-    @character = Character.first_or_initialize do |character|
+    @character = Character.new do |character|
       5.times { character.aspects.build }
+      3.times { character.stunts.build }
+      3.times { character.extras.build }
 
-      [4, 3, 2 ,1].each do |level|
-        (5 - level).times do |quant|
-          character.ratings.build level: level
-        end
+      [4, 3, 3, 2, 2, 2, 1, 1, 1, 1].each do |level|
+        character.ratings.build level: level
       end
 
     end
@@ -46,6 +46,6 @@ class CharactersController < ApplicationController
   private
 
   def permitted_params
-    params.require(:character).permit([:name, :description, :refresh, ratings_attributes: [:id, :skill_id, :level], aspects_attributes: [:id, :name, :aspectable_id, :aspectable_type]])
+    params.require(:character).permit([:name, :description, :refresh, ratings_attributes: [:id, :skill_id, :level], aspects_attributes: [:id, :name, :aspectable_id, :aspectable_type], stunts_attributes: [:id, :name, :description], extras_attributes: [:id, :name, :description]])
   end
 end

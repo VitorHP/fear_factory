@@ -2,61 +2,131 @@
 @import "mixins";
 @import "bootstrap";
 
-#character-fields {
-  @extend .col-md-12;
-}
+form.character {
 
-#aspects-panel {
-  @extend .col-md-4;
-}
+  #character-fields {
+    @extend .col-md-8;
+  }
 
-#skill-panel {
-  @extend .col-md-8;
-}
+  #fate-logo {
+    @extend .col-md-4;
+  }
 
-#skills div.slot, div.skill {
-  display: inline-block;
-  width: 100px;
-  height: 40px;
-  @include border-radius(4px);
-  border: 1px solid #ccc;
-  line-height: 40px;
-  text-align: center;
-  vertical-align: top;
-  margin: 2px;
-  background-color: #fff;
-}
+  #aspects-panel {
+    @extend .col-md-4;
+  }
 
-#skills span.rating {
-  display: inline-block;
-  width: 120px;
-}
+  #skill-panel {
+    @extend .col-md-8;
+  }
 
-div.with-skill {
-  position: relative; //So the hover appears extactly above the skill
+  #stunts-panel, #extras-panel {
+    @extend .col-md-6;
+  }
 
-  &:hover {
+  .form-group {
+    margin-bottom: 5px;
+  }
+
+  input {
+    height: 30px;
+  }
+
+  h2 {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    position: relative;
+
     &:before {
-      content: "Remove";
-      cursor: pointer;
-      display: inline-block;
-      position: absolute;
-      background-color: #555;
-      color: #fff;
-      width: 100px;
-      left: 0px;
-      @include border-radius(4px);
+        content: '';
+        position: absolute;
+        bottom: 0; right: 0;
+        border-top: 10px solid transparent;
+        border-right: 10px solid #fff;
+        width: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #fff;
+        width: 0;
     }
   }
-}
 
-#link {
-  text-align: center;
-}
+  #skills span.rating {
+    text-align: right;
+    font-size: 16px;
+    padding-top: 5px;
+  }
 
-#stunts {
-  height: 60px;
-  border: 1px solid #ccc;
-  width: 435px;
-}
+  #skills div.slot, div.skill {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    @include border-radius(4px);
+    border: 1px solid #ccc;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: top;
+    margin: 2px;
+    background-color: #fff;
+  }
 
+  #skills span.rating {
+    display: inline-block;
+    width: 120px;
+  }
+
+  div.with-skill {
+    position: relative; //So the hover appears extactly above the skill
+
+    &:hover {
+      &:before {
+        content: "Remove";
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        background-color: #555;
+        color: #fff;
+        width: 100px;
+        left: 0px;
+        @include border-radius(4px);
+      }
+    }
+  }
+
+  #skill-drawer {
+    margin-top: 10px;
+    margin-left: 124px;
+  }
+
+  #link {
+    text-align: center;
+  }
+
+  #stunts-panel, #extras-panel {
+    .form-group {
+      margin-bottom: 0px;
+    }
+
+    input {
+      @include border-radius(0px);
+      border-bottom: 0px;
+    }
+
+    textarea {
+      @include border-radius(0px);
+      border-top: 0px;
+      margin-bottom: 10px;
+    }
+  }
+
+}

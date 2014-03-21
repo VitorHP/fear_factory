@@ -21,8 +21,26 @@
 
 en:
   hello: "Hello world"
+  controllers:
+    characters:
+      index:
+        id: Id
+        aspects: Aspects
+        skills: Skills
+        extras: Extras
+        stunts: Stunts
   activerecord:
+    models:
+      stunt:
+        one: Stunt
+        other: Stunts
     attributes:
+      extra:
+        name: Name
+        description: Description
+      stunt:
+        name: Name
+        description: Description
       character:
         name: Name
         description: Description
