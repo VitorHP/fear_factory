@@ -45,7 +45,6 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new permitted_params
 
-    binding.pry
     if @character.save
       redirect_to characters_path
     else

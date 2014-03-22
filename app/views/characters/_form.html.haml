@@ -56,6 +56,7 @@
         %h2= "#{s.object.name.humanize} #{t("controllers.characters.stress_tracks")} (#{s.object.skill_name})"
         = s.input :id, as: :hidden
         = s.input :name, as: :hidden
+        = s.input :skill_id, as: :hidden
         = s.fields_for :stress_levels do |l|
           = l.input :id, as: :hidden
           = l.input :level, as: :hidden
