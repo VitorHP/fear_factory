@@ -4,11 +4,15 @@ class Character < ActiveRecord::Base
   has_many :stunts,  as: :stuntable,  dependent: :destroy
   has_many :skills,  through: :ratings
   has_many :extras,  dependent: :destroy
+  has_many :stress_tracks, as: :stressable
+  has_many :consequences
 
   accepts_nested_attributes_for :aspects
   accepts_nested_attributes_for :ratings
   accepts_nested_attributes_for :stunts
   accepts_nested_attributes_for :extras
+  accepts_nested_attributes_for :stress_tracks
+  accepts_nested_attributes_for :consequences
 
   validates :name, presence: true
 end

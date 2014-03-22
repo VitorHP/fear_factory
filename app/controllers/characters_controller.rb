@@ -15,12 +15,37 @@ class CharactersController < ApplicationController
         character.ratings.build level: level
       end
 
+      stress_tracks = [
+        {name: 'mental', skill_id: 18},
+        { name: 'physical', skill_id: 12}
+      ]
+
+      stress_tracks.reverse.each do |skill|
+        character.stress_tracks.build(name: skill[:name], skill_id: skill[:skill_id]) do |stress_track|
+          [1, 2, 3, 4].each do |level|
+            stress_track.stress_levels.build level: level
+          end
+        end
+      end
+
+      consequences = [
+        {name: 'mild', level: 2},
+        {name: 'moderate', level: 4},
+        {name: 'severe', level: 6},
+        {name: 'mild', level: 2, skill_id: 12, skill_level_to_unlock: 5},
+      ]
+
+      consequences.each do |consequence|
+        character.consequences.build consequence
+      end
+
     end
   end
 
   def create
     @character = Character.new permitted_params
 
+    binding.pry
     if @character.save
       redirect_to characters_path
     else
@@ -47,6 +72,16 @@ class CharactersController < ApplicationController
   private
 
   def permitted_params
-    params.require(:character).permit([:name, :description, :refresh, ratings_attributes: [:id, :skill_id, :level], aspects_attributes: [:id, :name, :aspectable_id, :aspectable_type], stunts_attributes: [:id, :name, :description], extras_attributes: [:id, :name, :description]])
+    params.require(:character).permit([
+      :name, :description, :refresh,
+      ratings_attributes: [:id, :skill_id, :level],
+      aspects_attributes: [:id, :name, :aspectable_id, :aspectable_type],
+      stunts_attributes: [:id, :name, :description],
+      extras_attributes: [:id, :name, :description],
+      stress_tracks_attributes: [:id, :name, :skill_id,
+        stress_levels_attributes: [:id, :level, :checked]
+      ],
+      consequences_attributes: [:id, :level, :name, :description, :skill_id, :skill_level_to_unlock]
+    ])
   end
 end

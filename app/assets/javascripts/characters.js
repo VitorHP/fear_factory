@@ -38,6 +38,15 @@ var SkillManager = {
   }
 }
 
+var StressManager = {
+  init: function() {
+    $('input[type="checkbox"]', '#stress-tracks-panel').on('change', function(e){
+      $(e.target).closest('label').toggleClass('checked');
+    });
+  }
+}
+
 $(document).ready(function(){
   SkillManager.init();
+  StressManager.init();
 });

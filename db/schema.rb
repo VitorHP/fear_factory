@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322050544) do
+ActiveRecord::Schema.define(version: 20140322144405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20140322050544) do
     t.datetime "updated_at"
     t.text     "description"
     t.integer  "refresh"
+  end
+
+  create_table "consequences", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "level"
+    t.integer  "character_id"
+    t.integer  "skill_id"
+    t.integer  "skill_level_to_unlock"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "extras", force: true do |t|
@@ -51,6 +62,23 @@ ActiveRecord::Schema.define(version: 20140322050544) do
 
   create_table "skills", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stress_levels", force: true do |t|
+    t.integer  "stress_track_id"
+    t.integer  "level"
+    t.boolean  "checked"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stress_tracks", force: true do |t|
+    t.integer  "stressable_id"
+    t.string   "stressable_type"
+    t.string   "name"
+    t.string   "skill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
