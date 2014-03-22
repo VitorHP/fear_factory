@@ -3,4 +3,4 @@
 = s.input :name, as: :hidden
 = s.input :skill_id, as: :hidden
 = s.input :skill_level_to_unlock, as: :hidden
-= s.input :description, label: s.object.level, placeholder: s.object.name
+= s.input :description, label: s.object.level, placeholder: s.object.name.humanize
