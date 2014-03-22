@@ -79,6 +79,22 @@ form.character {
     padding-top: 5px;
   }
 
+  @media (max-width: $screen-sm) {
+    #skills span.rating {
+      text-align: left;
+      font-size: 16px;
+      padding-top: 5px;
+    }
+  }
+
+  #skills .rating-level {
+    @extend .col-md-2;
+  }
+
+  #skills .slots {
+    @extend .col-md-10;
+  }
+
   #skills div.slot, div.skill {
     display: inline-block;
     width: 100px;
@@ -118,6 +134,12 @@ form.character {
   #skill-drawer {
     margin-top: 10px;
     margin-left: 124px;
+  }
+
+  @media (max-width: $screen-sm) {
+    #skill-drawer {
+      margin-left: 0px;
+    }
   }
 
   #link {

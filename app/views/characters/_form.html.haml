@@ -22,14 +22,16 @@
       %fieldset#skills
         - Ladder.new.to_h(from: :great, to: :average).each_pair do |name, level|
           %div{ class: name }
-            .skill-row
-              %span.rating= "#{name.to_s.humanize} (+#{level})"
-              = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
-                .slot{ class: r.object.skill_id.present? ? "with-skill" : nil }
-                  %span.name= "#{r.object.skill.name if r.object.skill.present? }"
-                  = r.input :id, as: :hidden
-                  = r.input :skill_id, as: :hidden
-                  = r.input :level, as: :hidden, input_html: { value: level }
+            .skill-row.row
+              .rating-level
+                %span.rating= "#{name.to_s.humanize} (+#{level})"
+              .slots
+                = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
+                  .slot{ class: r.object.skill_id.present? ? "with-skill" : nil }
+                    %span.name= "#{r.object.skill.name if r.object.skill.present? }"
+                    = r.input :id, as: :hidden
+                    = r.input :skill_id, as: :hidden
+                    = r.input :level, as: :hidden, input_html: { value: level }
 
       #skill-drawer
         #skill-list.collapse
