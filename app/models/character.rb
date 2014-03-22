@@ -3,7 +3,7 @@ class Character < ActiveRecord::Base
   has_many :ratings, dependent: :destroy
   has_many :skills, through: :ratings
   has_many :stunts, as: :stuntable, dependent: :destroy
-  has_many :extras
+  has_many :extras, dependent: :destroy
 
   accepts_nested_attributes_for :aspects
   accepts_nested_attributes_for :ratings

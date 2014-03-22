@@ -18,7 +18,6 @@ gem 'jquery-ui-rails'
 gem 'rails_12factor'
 
 group :development do
-  gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'html2haml'
@@ -26,9 +25,11 @@ group :development do
   gem 'rails_layout'
 end
 group :development, :test do
+  gem 'pry'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'thin'
+  gem 'shoulda-matchers'
 end
 group :production do
   gem 'unicorn'
@@ -37,4 +38,5 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
+  gem 'simplecov', require: false
 end
