@@ -53,7 +53,7 @@
         = s.input :name, label: false, placeholder: t("activerecord.attributes.extra.name")
         = s.input :description, label: false, placeholder: t("activerecord.attributes.extra.description")
   .row
-    %fieldset#stress-tracks-panel.form-inline
+    %fieldset#stress-tracks-panel
       = f.fields_for :stress_tracks do |s|
         %h2= "#{s.object.name.humanize} #{t("controllers.characters.stress_tracks")} (#{s.object.skill_name})"
         = s.input :id, as: :hidden
