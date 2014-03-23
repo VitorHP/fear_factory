@@ -44,7 +44,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.new permitted_params
+    @character = Character.new character_params
 
     if @character.save
       redirect_to characters_path
@@ -62,7 +62,7 @@ class CharactersController < ApplicationController
   def update
     @character = Character.find params[:id]
 
-    if @character.update_attributes permitted_params
+    if @character.update_attributes character_params
       redirect_to characters_path
     else
       render :edit
@@ -71,7 +71,7 @@ class CharactersController < ApplicationController
 
   private
 
-  def permitted_params
+  def character_params
     params.require(:character).permit([
       :name, :description, :refresh,
       ratings_attributes: [:id, :skill_id, :level],

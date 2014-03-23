@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 describe CharactersController, type: :controller do
-  let(:character){ create(:character) }
+  login_user
+
+  let!(:character){ create(:character, user_id: User.first.id) }
 
   describe '#index' do
+
     it 'assigns @characters' do
       get :index
 
