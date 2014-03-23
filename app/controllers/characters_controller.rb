@@ -44,7 +44,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.new character_params
+    @character = current_user.characters.build character_params
 
     if @character.save
       redirect_to characters_path
