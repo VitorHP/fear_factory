@@ -5,7 +5,8 @@ class Character < ActiveRecord::Base
   has_many :skills,  through: :ratings
   has_many :extras,  dependent: :destroy
   has_many :stress_tracks, as: :stressable
-  has_many :consequences
+  has_many :consequences, as: :consequential
+  belongs_to :campaign
 
   accepts_nested_attributes_for :aspects
   accepts_nested_attributes_for :ratings

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325024951) do
+ActiveRecord::Schema.define(version: 20140323054535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20140325024951) do
     t.datetime "updated_at"
   end
 
+  create_table "campaigns", force: true do |t|
+    t.integer  "number_of_aspects"
+    t.integer  "number_of_phases"
+    t.integer  "skill_type_id"
+    t.integer  "refresh_rate"
+    t.integer  "number_of_initial_stunts"
+    t.integer  "number_of_stress_boxes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "characters", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -31,17 +42,19 @@ ActiveRecord::Schema.define(version: 20140325024951) do
     t.text     "description"
     t.integer  "refresh"
     t.integer  "user_id"
+    t.integer  "campaign_id"
   end
 
   create_table "consequences", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.integer  "level"
-    t.integer  "character_id"
     t.integer  "skill_id"
     t.integer  "skill_level_to_unlock"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "consequential_id"
+    t.string   "consequential_type"
   end
 
   create_table "extras", force: true do |t|
@@ -59,6 +72,16 @@ ActiveRecord::Schema.define(version: 20140325024951) do
     t.datetime "updated_at"
     t.integer  "rateable_id"
     t.string   "rateable_type"
+  end
+
+  create_table "skill_types", force: true do |t|
+    t.string   "name"
+    t.text     "pyramid"
+    t.integer  "number_of_columns"
+    t.integer  "number_of_points"
+    t.integer  "skill_cap"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "skills", force: true do |t|

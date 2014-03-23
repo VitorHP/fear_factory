@@ -1,0 +1,19 @@
+
+= simple_form_for @campaign do |f|
+  = f.input :number_of_aspects
+  = f.input :number_of_phases
+  = f.input :skill_type_id
+  = f.input :refresh_rate
+  = f.input :number_of_initial_stunts
+  = f.input :number_of_stress_boxes
+  = f.association :skill_type
+
+  = f.fields_for :stress_tracks do |s|
+    = s.input :id, as: :hidden
+    = s.input :name
+    = s.association :skill
+    = s.fields_for :stress_levels do |l|
+      = l.input :id, as: :hidden
+      = l.input :level
+
+  = f.button :submit
