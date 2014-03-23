@@ -4,6 +4,14 @@ class Ability
   def initialize(user)
 
     can :manage, Character, user_id: user.id
+    can :manage, Skill
+    can :manage, Aspect
+    can :manage, Consequence
+    can :manage, Rating
+    can :manage, StressTrack
+    can :manage, StressLevel
+    can :manage, Extra
+    can :manage, Stunt
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
