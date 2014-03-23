@@ -33,7 +33,7 @@
                     = r.input :skill_id, as: :hidden
                     = r.input :level, as: :hidden, input_html: { value: level }
 
-      #skill-drawer
+      #skill-drawer.hidden-print
         #skill-list.collapse
           - @skills.each do |skill|
             .skill{ data: { id: skill.id } }= skill.name if skill.present?
@@ -74,4 +74,4 @@
           = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.present? } do |s|
             = render 'consequence_fields', s: s
   .row
-    = f.button :submit
+    = f.button :submit, class: 'hidden-print'
