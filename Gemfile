@@ -16,6 +16,9 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'jquery-ui-rails'
 gem 'rails_12factor'
+gem 'cancancan'
+gem 'omniauth-facebook'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'better_errors'

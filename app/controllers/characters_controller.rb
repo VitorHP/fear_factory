@@ -1,12 +1,13 @@
 class CharactersController < ApplicationController
+  load_and_authorize_resource
+
   def index
-    @characters = Character.all
   end
 
   def new
     @skills = Skill.all
 
-    @character = Character.new do |character|
+    @character = current_user.characters.build do |character|
       5.times { character.aspects.build }
       3.times { character.stunts.build }
       3.times { character.extras.build }
