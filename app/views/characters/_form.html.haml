@@ -3,9 +3,12 @@
   .row
     %fieldset#character-fields
       %h2= t("controllers.characters.id")
-      = f.input :name, label: false, placeholder: t("activerecord.attributes.character.name")
-      = f.input :description, label: false, placeholder: t("activerecord.attributes.character.description")
-      = f.input :refresh, label: false, placeholder: t("activerecord.attributes.character.refresh")
+      .row
+        .character-name
+          = f.input :name, label: false, placeholder: t("activerecord.attributes.character.name")
+          = f.input :description, label: false, placeholder: t("activerecord.attributes.character.description")
+        .character-refresh
+          = f.input :refresh, label: false, placeholder: t("activerecord.attributes.character.refresh")
     #fate-logo
       = image_tag image_url('fate-logo.png')
   .row

@@ -8,6 +8,19 @@ form.character {
     @extend .col-md-8;
   }
 
+  .character-name {
+    @extend .col-md-9;
+  }
+
+  .character-refresh {
+    @extend .col-md-3;
+  }
+
+  #character_refresh {
+    height: 90px;
+    text-align: center;
+  }
+
   #fate-logo {
     @extend .col-md-4;
   }
