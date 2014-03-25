@@ -41,7 +41,7 @@
           - @skills.each do |skill|
             .skill{ data: { id: skill.id } }= "#{t("activerecord.attributes.skill.#{skill.name.parameterize.underscore}") if skill.present? }"
         #link
-          %button{ type: "button", class: "btn btn-sm", 'data-toggle' => "collapse", 'data-target' => "#skill-list" }= "Skill List"
+          %button{ type: "button", class: "btn btn-sm", 'data-toggle' => "collapse", 'data-target' => "#skill-list" }= t("controllers.characters.form.skill_list")
   .row
     %fieldset#stunts-panel
       %h2= t("controllers.characters.form.stunts")

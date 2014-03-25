@@ -58,6 +58,13 @@ en:
     poor: Poor
     terrible: Terrible
   controllers:
+    application:
+      navbar:
+        home: Home
+        login: Login
+        logout: Logout
+        edit_account: Edit Account
+        sign_up: Sign Up
     characters:
       index:
         new_character: New Character
@@ -69,3 +76,4 @@ en:
         stunts: Stunts
         stress_tracks: Stress
         consequences: Consequences
+        skill_list: Skill List

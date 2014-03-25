@@ -227,8 +227,8 @@ pt-BR:
         name: Nome
         description: Descrição
         refresh: Recarga
-        high_concept: Aspecto Principal
-        trouble: Dificuldade
+        high_concept: Conceito
+        trouble: Problema
       skill:
         athletics: Atletismo
         burglary: Roubo
@@ -267,6 +267,13 @@ pt-BR:
     poor: Fraco
     terrible: Péssimo
   controllers:
+    application:
+      navbar:
+        home: Home
+        login: Entrar
+        logout: Sair
+        edit_account: Editar Conta
+        sign_up: Cadastro
     characters:
       index:
         new_character: Novo Personagem
@@ -278,3 +285,4 @@ pt-BR:
         stunts: Façanhas
         stress_tracks: Estresse
         consequences: Consequências
+        skill_list: Lista de Perícias

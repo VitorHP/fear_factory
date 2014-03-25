@@ -136,8 +136,10 @@ form.character {
     position: relative; //So the hover appears extactly above the skill
 
     &:hover {
+      cursor: pointer;
+
       &:before {
-        content: "Remove";
+        content: "X";
         cursor: pointer;
         display: inline-block;
         position: absolute;
