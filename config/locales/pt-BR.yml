@@ -258,12 +258,13 @@ pt-BR:
   ladder:
     legendary: Lendário
     epic: Épico
-    fantastic: Excepcional
-    suberb: Espetacular
-    great: Ótimo
-    good: Bom
-    fair: Razoável
-    average: Mediano
+    fantastic: Fantástico
+    suberb: Excepcional
+    great: Espetacular
+    good: Ótimo
+    fair: Bom
+    average: Razoável
+    medriocre: Mediano
     poor: Fraco
     terrible: Péssimo
   controllers:
