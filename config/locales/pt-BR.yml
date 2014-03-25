@@ -1,48 +1,4 @@
 pt-BR:
-  activerecord:
-    models:
-      stunt:
-        one: Façanha
-        other: Façanhas
-    attributes:
-      extra:
-        name: Nome
-        description: Descrição
-      stunt:
-        name: Nome
-        description: Descrição
-      character:
-        name: Nome
-        description: Descrição
-        refresh: Recarga
-        high_concept: Aspecto Principal
-        trouble: Dificuldade
-      consequence:
-        mild: Suave
-        moderate: Moderada
-        severe: Severa
-  ladder:
-    legendary: Lendário
-    epic: Épico
-    fantastic: Excepcional
-    suberb: Espetacular
-    great: Ótimo
-    good: Bom
-    fair: Razoável
-    average: Mediano
-    poor: Fraco
-    terrible: Péssimo
-  controllers:
-    characters:
-      index:
-        new_character: Novo Personagem
-      form:
-        id: Id
-        aspects: Aspectos
-        skills: Perícias
-        extras: Extras
-        stunts: Façanhas
-        stress_tracks: Estresse
   date:
     abbr_day_names:
     - Dom
@@ -253,3 +209,72 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+    models:
+      stunt:
+        one: Façanha
+        other: Façanhas
+      character:
+        one: Personagem
+        other: Personagens
+    attributes:
+      extra:
+        name: Nome
+        description: Descrição
+      stunt:
+        name: Nome
+        description: Descrição
+      character:
+        name: Nome
+        description: Descrição
+        refresh: Recarga
+        high_concept: Aspecto Principal
+        trouble: Dificuldade
+      skill:
+        athletics: Atletismo
+        burglary: Roubo
+        contacts: Contatos
+        crafts: Ofícios
+        deceive: Enganar
+        drive: Dirigir
+        empathy: Empatia
+        fight: Luta
+        investigate: Investigar
+        lore: Saber
+        notice: Notar
+        physique: Físico
+        provoke: Provocar
+        rapport: Comunicação
+        resources: Recursos
+        shoot: Atirar
+        stealth: Furtividade
+        will: Vontade
+      stress_track:
+        mental_stress: Estresse Físico
+        physical_stress: Estresse Mental
+      consequence:
+        mild: Suave
+        moderate: Moderada
+        severe: Severa
+  ladder:
+    legendary: Lendário
+    epic: Épico
+    fantastic: Excepcional
+    suberb: Espetacular
+    great: Ótimo
+    good: Bom
+    fair: Razoável
+    average: Mediano
+    poor: Fraco
+    terrible: Péssimo
+  controllers:
+    characters:
+      index:
+        new_character: Novo Personagem
+      form:
+        id: Id
+        aspects: Aspectos
+        skills: Perícias
+        extras: Extras
+        stunts: Façanhas
+        stress_tracks: Estresse
+        consequences: Consequências

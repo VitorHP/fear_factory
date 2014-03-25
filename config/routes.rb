@@ -1,8 +1,10 @@
 Fate::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  resources :home, only: [:index]
-  resources :characters
+  scope "/(:locale)", locale: /en|pt-BR/ do
+    resources :characters
+  end
 
+  get '/:locale' => 'characters#index'
   root to: 'characters#index'
 end

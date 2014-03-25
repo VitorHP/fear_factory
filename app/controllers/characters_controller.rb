@@ -17,8 +17,8 @@ class CharactersController < ApplicationController
       end
 
       stress_tracks = [
-        {name: 'mental', skill_id: 18},
-        { name: 'physical', skill_id: 12}
+        {name: 'mental stress', skill_id: 18},
+        { name: 'physical stress', skill_id: 12}
       ]
 
       stress_tracks.reverse.each do |skill|

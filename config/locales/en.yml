@@ -4,6 +4,9 @@ en:
       stunt:
         one: Stunt
         other: Stunts
+      character:
+        one: Character
+        other: Charaters
     attributes:
       extra:
         name: Name
@@ -17,6 +20,28 @@ en:
         refresh: Refresh
         high_concept: High Concept
         trouble: Trouble
+      skill:
+        athletics: Athletics
+        burglary: Burglary
+        contacts: Contacts
+        crafts: Crafts
+        deceive: Deceive
+        drive: Drive
+        empathy: Empathy
+        fight: Fight
+        investigate: Investigate
+        lore: Lore
+        notice: Notice
+        physique: Physique
+        provoke: Provoke
+        rapport: Rapport
+        resources: Resources
+        shoot: Shoot
+        stealth: Stealth
+        will: Will
+      stress_track:
+        mental_stress: Mental Stress
+        physical_stress: Physical Stress
       consequence:
         mild: Mild
         moderate: Moderate
@@ -43,3 +68,4 @@ en:
         extras: Extras
         stunts: Stunts
         stress_tracks: Stress
+        consequences: Consequences
