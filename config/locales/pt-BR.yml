@@ -267,23 +267,22 @@ pt-BR:
     medriocre: Mediano
     poor: Fraco
     terrible: Péssimo
-  controllers:
-    application:
-      navbar:
-        home: Home
-        login: Entrar
-        logout: Sair
-        edit_account: Editar Conta
-        sign_up: Cadastro
-    characters:
-      index:
-        new_character: Novo Personagem
-      form:
-        id: Id
-        aspects: Aspectos
-        skills: Perícias
-        extras: Extras
-        stunts: Façanhas
-        stress_tracks: Estresse
-        consequences: Consequências
-        skill_list: Lista de Perícias
+  application:
+    navbar:
+      home: Home
+      login: Entrar
+      logout: Sair
+      edit_account: Editar Conta
+      sign_up: Cadastro
+  characters:
+    index:
+      new_character: Novo Personagem
+    form:
+      id: Id
+      aspects: Aspectos
+      skills: Perícias
+      extras: Extras
+      stunts: Façanhas
+      stress_tracks: Estresse
+      consequences: Consequências
+      skill_list: Lista de Perícias

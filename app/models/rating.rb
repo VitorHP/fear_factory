@@ -1,5 +1,5 @@
 class Rating < ActiveRecord::Base
-  belongs_to :character, polymorphic: true
+  belongs_to :rateable, polymorphic: true
   belongs_to :skill
 
   scope :great, ->{ where(level: 4) }

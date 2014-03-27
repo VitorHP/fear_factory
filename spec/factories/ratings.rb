@@ -2,8 +2,6 @@
 
 FactoryGirl.define do
   factory :rating do
-    skill_id 1
-    character_id 1
-    rating 1
+    level 1
   end
 end

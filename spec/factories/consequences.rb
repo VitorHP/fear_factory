@@ -4,6 +4,5 @@ FactoryGirl.define do
   factory :consequence do
     name "MyString"
     level 1
-    extra false
   end
 end
