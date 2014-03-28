@@ -6,6 +6,7 @@ class AddPolymorphicFieldsToConsequences < ActiveRecord::Migration
     Consequence.find_each do |r|
       r.consequential_id = r.character_id
       r.consequential_type = 'Character'
+      r.save
     end
 
     remove_column :consequences, :character_id
