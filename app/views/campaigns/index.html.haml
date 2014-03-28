@@ -1,2 +1,4 @@
-%h1 Campaigns#index
-%p Find me in app/views/campaigns/index.html.haml
+
+%ul
+  - @campaigns.each do |campaign|
+    %li= link_to campaign.name, campaign_path(campaign)

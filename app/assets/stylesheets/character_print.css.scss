@@ -42,50 +42,52 @@
     width: 8.333333333333332%;
   }
 
-  h2 {
-    font-size: 13px;
-  }
+  form.character {
+    h2 {
+      font-size: 13px;
+    }
 
-  input {
-    height: 25px;
-    font-size: 10px;
-  }
+    input {
+      height: 25px;
+      font-size: 10px;
+    }
 
-  textarea {
-    font-size: 10px;
-  }
+    textarea {
+      font-size: 10px;
+    }
 
-  #fate-logo {
-    padding-top: 50px;
-    display: inline-block;
-  }
+    #fate-logo {
+      padding-top: 50px;
+      display: inline-block;
+    }
 
-  #skills div.slot, div.skill {
-    width: 70px;
-    height: 25px;
-    line-height: 25px;
-    font-size: 12px;
-  }
+    #skills div.slot, div.skill {
+      width: 70px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 12px;
+    }
 
-  #skills span.rating {
-    font-size: 12px;
-  }
+    #skills span.rating {
+      font-size: 12px;
+    }
 
-  #stress-tracks-panel {
-    label {
-      font-size: 16px;
-      margin-right: 25px;
+    #stress-tracks-panel {
+      label {
+        font-size: 16px;
+        margin-right: 25px;
 
-      &:after {
-        height: 15px;
-        width: 15px;
-        top: 11px;
-        left: 8px;
-      }
+        &:after {
+          height: 15px;
+          width: 15px;
+          top: 11px;
+          left: 8px;
+        }
 
-      &.checked:before {
-        left: 11px;
-        top: 7px;
+        &.checked:before {
+          left: 11px;
+          top: 7px;
+        }
       }
     }
   }
