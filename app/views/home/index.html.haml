@@ -1,0 +1,4 @@
+
+%ul
+  - @campaigns.each do |campaign|
+    %li= link_to campaign.name, campaign_characters_path(campaign_id: campaign)

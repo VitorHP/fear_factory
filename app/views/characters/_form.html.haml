@@ -1,5 +1,5 @@
 
-= simple_form_for @character, html: { class: 'character' } do |f|
+= simple_form_for [@campaign, @character], html: { class: 'character' } do |f|
   .row
     %fieldset#character-fields
       %h2= t(".id")

@@ -7,10 +7,10 @@ Fate::Application.routes.draw do
       resources :characters
     end
 
-    root to: 'characters#index'
+    root to: 'home#index'
   end
 
   devise_for :users, only: :omniauth_callbacks, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  get '/:locale' => 'characters#index'
+  get '/:locale' => 'home#index'
 end

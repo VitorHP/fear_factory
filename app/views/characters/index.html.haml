@@ -1,5 +1,5 @@
-= link_to t(".new_character"), new_character_path
+= link_to t(".new_character"), new_campaign_character_path(campaign_id: params[:campaign_id])
 
 %ul
   - @characters.each do |character|
-    %li= link_to character.name, edit_character_path(character)
+    %li= link_to character.name, edit_campaign_character_path(character, campaign_id: params[:campaign_id])
