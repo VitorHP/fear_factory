@@ -7,6 +7,7 @@ class Character < ActiveRecord::Base
   has_many :stress_tracks, as: :stressable
   has_many :consequences, as: :consequential
   belongs_to :campaign
+  belongs_to :user
 
   accepts_nested_attributes_for :aspects
   accepts_nested_attributes_for :ratings
