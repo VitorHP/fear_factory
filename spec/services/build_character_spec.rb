@@ -9,6 +9,8 @@ describe BuildCharacter do
 
     it 'builds the character with the campaign params' do
       expect( subject.aspects.size ).to eq 5
+      expect( subject.stunts.size ).to eq 3
+      expect( subject.stunts.size ).to eq 3
     end
   end
 end

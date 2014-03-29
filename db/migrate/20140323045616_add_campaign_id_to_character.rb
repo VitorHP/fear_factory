@@ -2,12 +2,12 @@ class AddCampaignIdToCharacter < ActiveRecord::Migration
   def change
     add_column :characters, :campaign_id, :integer
 
-    Character.find_each do |c|
-      user = c.user
+    User.find_each do |u|
       campaign = Campaign.vanilla_fate_core
-      campaign.user = user
       campaign.characters = user.characters
       campaign.save
+      user.campaigns << campaign
+      user.save
     end
   end
 end

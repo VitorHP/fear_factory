@@ -8,6 +8,7 @@ class CharactersController < ApplicationController
 
   def new
     @skills = Skill.all
+    @character = BuildCharacter.new.build(campaign: @campaign, user: current_user)
   end
 
   def create

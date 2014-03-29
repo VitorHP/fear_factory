@@ -77,3 +77,6 @@ en:
         stress_tracks: Stress
         consequences: Consequences
         skill_list: Skill List
+    home:
+      index:
+        campaigns: Campaigns
