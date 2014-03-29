@@ -17,4 +17,6 @@ class Character < ActiveRecord::Base
   accepts_nested_attributes_for :consequences
 
   validates :name, presence: true
+
+  scope :from_campaign, ->(campaign){ where(campaign_id: campaign.id) }
 end

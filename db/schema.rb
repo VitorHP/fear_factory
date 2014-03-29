@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140325024951) do
   end
 
   create_table "campaigns", force: true do |t|
+    t.integer  "user_id"
     t.integer  "number_of_aspects"
     t.integer  "number_of_phases"
     t.integer  "skill_type_id"

@@ -10,6 +10,11 @@ class Campaign < ActiveRecord::Base
 
   def self.vanilla_fate_core
     campaign = self.new
+    campaign.number_of_aspects = 5
+    campaign.number_of_phases = 3
+    campaign.refresh_rate = 3
+    campaign.number_of_initial_stunts = 3
+    campaign.number_of_stress_boxes = 3
 
     stress_tracks = [
       {name: 'mental', skill_id: 18},
