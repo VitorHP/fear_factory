@@ -8,6 +8,6 @@ class AddNameToCampaigns < ActiveRecord::Migration
   end
 
   def down
-    remove_column :campaigns, :name, :string
+    remove_column :campaigns, :name
   end
 end
