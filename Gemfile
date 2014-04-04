@@ -19,6 +19,7 @@ gem 'rails_12factor'
 gem 'cancancan'
 gem 'omniauth-facebook'
 gem 'font-awesome-rails'
+gem 'nested_form'
 
 group :development do
   gem 'better_errors'

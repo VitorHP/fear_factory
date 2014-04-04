@@ -1,3 +1,3 @@
 class SkillType < ActiveRecord::Base
-  has_many :skill_types
+  has_many :skills
 end
