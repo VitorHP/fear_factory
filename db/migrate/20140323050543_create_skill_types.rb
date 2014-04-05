@@ -5,7 +5,6 @@ class CreateSkillTypes < ActiveRecord::Migration
       t.text :pyramid
       t.integer :number_of_columns
       t.integer :number_of_points
-      t.integer :skill_cap
 
       t.timestamps
     end

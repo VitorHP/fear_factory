@@ -3,7 +3,7 @@ class StressTrack < ActiveRecord::Base
   belongs_to :stressable, polymorphic: true
   belongs_to :skill
 
-  accepts_nested_attributes_for :stress_levels
+  accepts_nested_attributes_for :stress_levels, allow_destroy: true, reject_if: :all_blank
 
   def skill_name
     skill.present? ? skill.name : ''

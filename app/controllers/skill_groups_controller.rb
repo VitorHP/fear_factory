@@ -5,12 +5,10 @@ class SkillGroupsController < ApplicationController
   end
 
   def new
-    @campaign = Campaign.find params[:campaign_id]
     @skill_group = SkillGroup.new
   end
 
   def create
-    @campaign = Campaign.find params[:campaign_id]
     @skill_group = SkillGroup.new skill_group_params
 
     if @skill_group.save

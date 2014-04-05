@@ -1,6 +1,5 @@
 class CharactersController < ApplicationController
   load_and_authorize_resource
-  before_filter :load_campaign
 
   def index
     @characters.from_campaign(@campaign)
@@ -53,7 +52,4 @@ class CharactersController < ApplicationController
     ])
   end
 
-  def load_campaign
-    @campaign = Campaign.find params[:campaign_id]
-  end
 end

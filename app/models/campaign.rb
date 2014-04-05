@@ -3,10 +3,11 @@ class Campaign < ActiveRecord::Base
   has_many :stress_tracks, as: :stressable, dependent: :destroy
   has_many :consequences, as: :consequential, dependent: :destroy
   belongs_to :skill_type
+  belongs_to :skill_group
   belongs_to :user
 
-  accepts_nested_attributes_for :stress_tracks
-  accepts_nested_attributes_for :consequences
+  accepts_nested_attributes_for :stress_tracks, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :consequences, allow_destroy: true, reject_if: :all_blank
 
   def self.vanilla_fate_core
     campaign = self.new

@@ -3,7 +3,7 @@ Fate::Application.routes.draw do
   scope "/(:locale)", locale: /en|pt-BR/ do
     devise_for :users, skip: :omniauth_callbacks
 
-    resources :campaigns, only: [:index, :new] do
+    resources :campaigns do
       resources :characters
       resources :skill_groups
     end

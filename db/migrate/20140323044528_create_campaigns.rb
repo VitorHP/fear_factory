@@ -8,6 +8,7 @@ class CreateCampaigns < ActiveRecord::Migration
       t.integer :refresh_rate
       t.integer :number_of_initial_stunts
       t.integer :number_of_stress_boxes
+      t.integer :skill_cap
 
       t.timestamps
     end

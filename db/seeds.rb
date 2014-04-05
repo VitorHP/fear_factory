@@ -10,24 +10,24 @@
 #
 
 skills = [
-  {id:1  , name: "Athletics"    }  ,
-  {id:2  , name: "Burglary"    }  ,
-  {id:3  , name: "Contacts"    }  ,
-  {id:4  , name: "Crafts"      }  ,
-  {id:5  , name: "Deceive"     }  ,
-  {id:6  , name: "Drive"       }  ,
-  {id:7  , name: "Empathy"     }  ,
-  {id:8  , name: "Fight"       }  ,
-  {id:9  , name: "Investigate" }  ,
-  {id:10 , name: "Lore"        }  ,
-  {id:11 , name: "Notice"      }  ,
-  {id:12 , name: "Physique"    }  ,
-  {id:13 , name: "Provoke"     }  ,
-  {id:14 , name: "Rapport"     }  ,
-  {id:15 , name: "Resources"   }  ,
-  {id:16 , name: "Shoot"       }  ,
-  {id:17 , name: "Stealth"     }  ,
-  {id:18 , name: "Will"        }
+  { name: "Athletics"   }  ,
+  { name: "Burglary"    }  ,
+  { name: "Contacts"    }  ,
+  { name: "Crafts"      }  ,
+  { name: "Deceive"     }  ,
+  { name: "Drive"       }  ,
+  { name: "Empathy"     }  ,
+  { name: "Fight"       }  ,
+  { name: "Investigate" }  ,
+  { name: "Lore"        }  ,
+  { name: "Notice"      }  ,
+  { name: "Physique"    }  ,
+  { name: "Provoke"     }  ,
+  { name: "Rapport"     }  ,
+  { name: "Resources"   }  ,
+  { name: "Shoot"       }  ,
+  { name: "Stealth"     }  ,
+  { name: "Will"        }
 ]
 
 skills.each do |skill|

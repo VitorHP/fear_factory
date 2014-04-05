@@ -29,6 +29,7 @@ group :development do
   gem 'rails_layout'
 end
 group :development, :test do
+  gem 'pry'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'thin'

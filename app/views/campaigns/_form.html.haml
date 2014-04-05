@@ -1,19 +1,41 @@
 
-= simple_form_for @campaign do |f|
+= simple_nested_form_for @campaign, html: { class: 'campaign' } do |f|
   = f.input :number_of_aspects
   = f.input :number_of_phases
-  = f.input :skill_type_id
+  = f.association :skill_type
+  = f.association :skill_group
   = f.input :refresh_rate
   = f.input :number_of_initial_stunts
   = f.input :number_of_stress_boxes
-  = f.association :skill_type
 
-  = f.fields_for :stress_tracks do |s|
-    = s.input :id, as: :hidden
-    = s.input :name
-    = s.association :skill
-    = s.fields_for :stress_levels do |l|
-      = l.input :id, as: :hidden
-      = l.input :level
+  %h3= t(".activerecord.models.stress_track.other")
+
+  .stress_tracks
+    = f.fields_for :stress_tracks do |s|
+      .stress-track
+        = s.input :id, as: :hidden
+        = s.input :name
+        = s.association :skill
+        %br
+        = s.label :stress_boxes
+        %br
+        = s.fields_for :stress_levels do |l|
+          = l.input :id, as: :hidden
+          = l.input :level, as: :hidden
+          = l.label :level, l.object.level.to_s
+          = l.link_to_remove t(".remove_stress_level")
+        = s.link_to_add t(".add_stress_level"), :stress_levels
+        = s.link_to_remove t(".remove_stress_track")
+    = f.link_to_add t(".add_stress_track"), :stress_tracks
+
+  %h3= t(".activerecord.models.consequence.other")
+
+  .consequences
+    = f.fields_for :consequences do |c|
+      .consequence
+        = c.input :name
+        = c.input :level
+        = c.link_to_remove t(".remove_consequence")
+    = f.link_to_add t(".add_consequence"), :consequences
 
   = f.button :submit

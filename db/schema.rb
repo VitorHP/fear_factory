@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402023701) do
+ActiveRecord::Schema.define(version: 20140404024532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +32,11 @@ ActiveRecord::Schema.define(version: 20140402023701) do
     t.integer  "refresh_rate"
     t.integer  "number_of_initial_stunts"
     t.integer  "number_of_stress_boxes"
+    t.integer  "skill_cap"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.integer  "skill_group_id"
   end
 
   create_table "characters", force: true do |t|
@@ -43,14 +45,15 @@ ActiveRecord::Schema.define(version: 20140402023701) do
     t.datetime "updated_at"
     t.text     "description"
     t.integer  "refresh"
-    t.integer  "user_id"
     t.integer  "campaign_id"
+    t.integer  "user_id"
   end
 
   create_table "consequences", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.integer  "level"
+    t.integer  "character_id"
     t.integer  "skill_id"
     t.integer  "skill_level_to_unlock"
     t.datetime "created_at"
@@ -87,7 +90,6 @@ ActiveRecord::Schema.define(version: 20140402023701) do
     t.text     "pyramid"
     t.integer  "number_of_columns"
     t.integer  "number_of_points"
-    t.integer  "skill_cap"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 20140402023701) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "skill_group_id"
   end
 
   create_table "stress_levels", force: true do |t|
