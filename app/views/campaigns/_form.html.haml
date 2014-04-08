@@ -1,41 +1,43 @@
 
-= simple_nested_form_for @campaign, html: { class: 'campaign form-horizontal' } do |f|
-  = f.input :number_of_aspects
-  = f.input :number_of_phases
-  = f.association :skill_type
-  = f.association :skill_group
-  = f.input :refresh_rate
-  = f.input :number_of_initial_stunts
-  = f.input :number_of_stress_boxes
+.row
+  = simple_nested_form_for @campaign, html: { class: 'campaign form-horizontal' } do |f|
+    = f.error :base
+    = f.input :name
+    = f.input :number_of_aspects
+    = f.input :number_of_initial_stunts
+    = f.input :refresh_rate
+    = f.input :number_of_phases, as: :hidden
+    = f.input :skill_cap, collection: Ladder.new.to_h(to: :average), label_method: ->((k, v)){ "#{k} (+#{v})" }, value_method: ->((k, v)){ v }
+    = f.association :skill_type, as: :hidden
+    = f.association :skill_group
 
-  %h3= t(".activerecord.models.stress_track.other")
+    -# %h3= t("activerecord.models.stress_track.other")
 
-  .stress_tracks
-    = f.fields_for :stress_tracks do |s|
-      .stress-track
-        = s.input :id, as: :hidden
-        = s.input :name
-        = s.association :skill
-        %br
-        = s.label :stress_boxes
-        %br
-        = s.fields_for :stress_levels do |l|
-          = l.input :id, as: :hidden
-          = l.input :level, as: :hidden
-          = l.label :level, l.object.level.to_s
-          = l.link_to_remove t(".remove_stress_level")
-        = s.link_to_add t(".add_stress_level"), :stress_levels
-        = s.link_to_remove t(".remove_stress_track")
-    = f.link_to_add t(".add_stress_track"), :stress_tracks
+    .stress_tracks
+      = f.fields_for :stress_tracks do |s|
+        .stress-track
+          = s.input :id, as: :hidden
+          = s.input :name, as: :hidden
+          = s.association :skill, as: :hidden
+          = s.fields_for :stress_levels do |l|
+            = l.input :id, as: :hidden
+            = l.input :level, as: :hidden
+            = l.label :level, as: :hidden
 
-  %h3= t(".activerecord.models.consequence.other")
+    -# %h3= t("activerecord.models.consequence.other")
 
-  .consequences
-    = f.fields_for :consequences do |c|
-      .consequence
-        = c.input :name
-        = c.input :level
-        = c.link_to_remove t(".remove_consequence")
-    = f.link_to_add t(".add_consequence"), :consequences
+    .consequences
+      = f.fields_for :consequences do |c|
+        .consequence
+          = c.input :name, as: :hidden
+          = c.input :level, as: :hidden
 
-  = f.button :submit
+    = f.button :submit
+
+  .campaign-skill-list
+    - if @campaign.skills.any?
+      %h2.header= t(".campaign-skill-list")
+      %ul.skills
+        - @campaign.skills.each do |s|
+          %li
+            .skill= s.name

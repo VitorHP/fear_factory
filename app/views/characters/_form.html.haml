@@ -23,23 +23,23 @@
     #skill-panel
       %h2.header= t(".skills")
       %fieldset#skills
-        - Ladder.new.to_h(from: :great, to: :average).each_pair do |name, level|
+        - Ladder.new.to_h(from: @campaign.skill_cap, to: :average).each_pair do |name, level|
           %div{ class: name }
-            .skill-row.row
+            .skill-row.skills
               .rating-level
                 %span.rating= "#{t("ladder.#{name.to_s}")} (+#{level})"
               .slots
                 = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
                   .slot{ class: r.object.skill_id.present? ? "with-skill" : nil }
-                    %span.name= "#{t("activerecord.attributes.skill.#{r.object.skill.name.parameterize.underscore}") if r.object.skill.present? }"
+                    %span.name= "#{t("activerecord.attributes.skill.#{r.object.skill.name.parameterize.underscore}", default: t.object.skill.name) if r.object.skill.present? }"
                     = r.input :id, as: :hidden
                     = r.input :skill_id, as: :hidden
                     = r.input :level, as: :hidden, input_html: { value: level }
 
       #skill-drawer.hidden-print
-        #skill-list.collapse
-          - @skills.each do |skill|
-            .skill{ data: { id: skill.id } }= "#{t("activerecord.attributes.skill.#{skill.name.parameterize.underscore}") if skill.present? }"
+        #skill-list.collapse.skills
+          - @campaign.skills.each do |skill|
+            .skill{ data: { id: skill.id } }= "#{t("activerecord.attributes.skill.#{skill.name.parameterize.underscore}", default: skill.name) if skill.present? }"
         #link
           %button{ type: "button", class: "btn btn-sm", 'data-toggle' => "collapse", 'data-target' => "#skill-list" }= t(".skill_list")
   .row

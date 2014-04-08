@@ -14,7 +14,7 @@ class CampaignsController < ApplicationController
   def create
     @campaign = current_user.campaigns.build campaign_params
 
-    if @campaign.update
+    if @campaign.save
       redirect_to campaigns_path
     else
       render :new
@@ -35,13 +35,16 @@ class CampaignsController < ApplicationController
 
   def campaign_params
     params.require(:campaign).permit([
+      :name,
       :number_of_aspects,
       :number_of_phases,
       :skill_type_id,
       :refresh_rate,
       :number_of_initial_stunts,
       :number_of_stress_boxes,
+      :skill_cap,
       :skill_type_id,
+      :skill_group_id,
       stress_tracks_attributes: [
         :id,
         :name,
@@ -53,6 +56,7 @@ class CampaignsController < ApplicationController
       ],
       consequences_attributes: [
         :id,
+        :name,
         :level
       ]
     ])

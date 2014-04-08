@@ -1,7 +1,7 @@
 class CustomSkillGroupsController < ApplicationController
 
   def index
-    @skill_groups = SkillGroup.all
+    @skill_groups = SkillGroup.core
     @custom_skill_groups = current_user.custom_skill_groups
   end
 

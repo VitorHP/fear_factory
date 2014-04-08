@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = current_user.characters.build character_params
+    @character = current_user.characters.build character_params.merge(campaign_id: @campaign.id)
 
     if @character.save
       redirect_to campaign_characters_path(campaign_id: @campaign)

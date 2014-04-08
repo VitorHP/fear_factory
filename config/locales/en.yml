@@ -7,6 +7,12 @@ en:
       character:
         one: Character
         other: Charaters
+      stress_track:
+        one: Stress Track
+        other: Stress Tracks
+      consequence:
+        one: Consequence
+        other: Consequences
     attributes:
       extra:
         name: Name
@@ -87,3 +93,7 @@ en:
         destroy_skill_group_link: Remove
       form:
         skill_name: Skill name
+  errors: &errors
+    messages:
+      must_be_between: Must be between %{min} and %{max}
+      has_characters_associated: Can't modify a campaign that already has characters

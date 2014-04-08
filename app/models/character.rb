@@ -16,7 +16,7 @@ class Character < ActiveRecord::Base
   accepts_nested_attributes_for :stress_tracks
   accepts_nested_attributes_for :consequences
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 255 }
 
   scope :from_campaign, ->(campaign){ where(campaign_id: campaign.id) }
 end

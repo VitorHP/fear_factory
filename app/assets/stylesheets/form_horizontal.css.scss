@@ -1,12 +1,14 @@
 @import "bootstrap";
 
 form.form-horizontal {
+  @extend .col-md-8;
+
   .form-group {
     @extend .row;
   }
 
   input {
-    @extend .col-md-6;
+    @extend .col-md-3;
   }
 
   select {
@@ -14,7 +16,11 @@ form.form-horizontal {
   }
 
   label {
-    @extend .col-md-2;
+    @extend .col-md-3;
   }
 
+}
+
+.campaign-skill-list {
+  @extend .col-md-4
 }
