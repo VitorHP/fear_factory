@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
   def index
-    @campaigns = Campaign.all
+    @campaigns = current_user.campaigns
   end
 
   def new
@@ -11,9 +11,29 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find params[:id]
   end
 
+  def create
+    @campaign = current_user.campaigns.build campaign_params
+
+    if @campaign.update
+      redirect_to campaigns_path
+    else
+      render :new
+    end
+  end
+
+  def update
+    @campaign = current_user.campaigns.find params[:id]
+
+    if @campaign.update_attributes campaign_params
+      redirect_to campaigns_path
+    else
+      render :edit
+    end
+  end
+
   private
 
-  def permitted_params
+  def campaign_params
     params.require(:campaign).permit([
       :number_of_aspects,
       :number_of_phases,

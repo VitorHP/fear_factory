@@ -2,6 +2,18 @@
 @import "bootstrap";
 @import "mixins";
 
+ul.skill-groups {
+  list-style: none;
+}
+
+ul.skills {
+  list-style: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
 form.skill-group {
   .skill-group {
     @extend .col-md-8;
@@ -16,4 +28,5 @@ form.skill-group {
   .remove-skill-link {
     @extend .col-md-2;
   }
+
 }

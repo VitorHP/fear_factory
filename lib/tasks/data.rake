@@ -15,6 +15,7 @@ namespace :data do
       campaign = Campaign.vanilla_fate_core
       campaign.characters = user.characters
       campaign.save
+
       user.campaigns << campaign
       user.save
     end

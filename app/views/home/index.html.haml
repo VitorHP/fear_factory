@@ -2,9 +2,9 @@
 %h2= t(".skill_groups")
 %ul
   - @skill_groups.each do |skill_group|
-    %li= link_to skill_group.name, skill_group_path(skill_group)
+    %li= link_to skill_group.name, custom_skill_group_path(skill_group)
 
-= link_to t(".new_skill_group"), new_skill_group_path
+= link_to t(".new_skill_group"), new_custom_skill_group_path
 
 %h2= t(".campaigns")
 %ul

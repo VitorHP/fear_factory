@@ -8,33 +8,33 @@ class BuildCharacter
       build_stunts character
       build_extras character
 
-      # [4, 3, 3, 2, 2, 2, 1, 1, 1, 1].each do |level|
-      #   character.ratings.build level: level
-      # end
+      [4, 3, 3, 2, 2, 2, 1, 1, 1, 1].each do |level|
+        character.ratings.build level: level
+      end
 
-      # stress_tracks = [
-      #   {name: 'mental stress', skill_id: 18},
-      #   { name: 'physical stress', skill_id: 12}
-      # ]
+      stress_tracks = [
+        {name: 'mental stress', skill_id: 18},
+        { name: 'physical stress', skill_id: 12}
+      ]
 
-      # stress_tracks.reverse.each do |skill|
-      #   character.stress_tracks.build(name: skill[:name], skill_id: skill[:skill_id]) do |stress_track|
-      #     [1, 2, 3, 4].each do |level|
-      #       stress_track.stress_levels.build level: level
-      #     end
-      #   end
-      # end
+      stress_tracks.reverse.each do |skill|
+        character.stress_tracks.build(name: skill[:name], skill_id: skill[:skill_id]) do |stress_track|
+          [1, 2, 3, 4].each do |level|
+            stress_track.stress_levels.build level: level
+          end
+        end
+      end
 
-      # consequences = [
-      #   {name: 'mild', level: 2},
-      #   {name: 'moderate', level: 4},
-      #   {name: 'severe', level: 6},
-      #   {name: 'mild', level: 2, skill_id: 12, skill_level_to_unlock: 5},
-      # ]
+      consequences = [
+        {name: 'mild', level: 2},
+        {name: 'moderate', level: 4},
+        {name: 'severe', level: 6},
+        {name: 'mild', level: 2, skill_id: 12, skill_level_to_unlock: 5},
+      ]
 
-      # consequences.each do |consequence|
-      #   character.consequences.build consequence
-      # end
+      consequences.each do |consequence|
+        character.consequences.build consequence
+      end
 
     end
   end

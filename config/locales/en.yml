@@ -83,6 +83,7 @@ en:
     skill_groups:
       index:
         new_skill_group: New Skill Group
-        destroy_skill_group_link: (remove)
+        edit_skill_group_link: Edit
+        destroy_skill_group_link: Remove
       form:
         skill_name: Skill name

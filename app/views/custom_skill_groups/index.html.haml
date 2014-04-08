@@ -3,23 +3,25 @@
 
 %h1= t(".core_skill_groups")
 
-%ul
+%ul.skill-groups
   - @skill_groups.each do |sg|
     %li
-      .header= sg.name
-      %ol
+      %h2.header= sg.name
+      %ul.skills
         - sg.skills.each do |s|
-          %li= s.name
+          %li
+            .skill= s.name
 
 - if current_user.custom_skill_groups.any?
   %h1= t(".custom_skill_groups")
 
-  %ul
+  %ul.skill-groups
     - @custom_skill_groups.each do |sg|
       %li
-        .header
-          = link_to sg.name, edit_custom_skill_group_path(sg)
-          = link_to t("controllers.skill_groups.index.destroy_skill_group_link"), custom_skill_group_path(sg), method: :delete
-        %ol
+        %h2.header= sg.name
+        %ul.skills
           - sg.skills.each do |s|
-            %li= s.name
+            %li
+              .skill= s.name
+        = link_to t("controllers.skill_groups.index.edit_skill_group"), edit_custom_skill_group_path(sg), class: 'btn btn-default'
+        = link_to t("controllers.skill_groups.index.destroy_skill_group_link"), custom_skill_group_path(sg), method: :delete, class: 'btn btn-danger'
