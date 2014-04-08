@@ -1,0 +1,20 @@
+@import "bootstrap";
+
+form.form-horizontal {
+  .form-group {
+    @extend .row;
+  }
+
+  input {
+    @extend .col-md-6;
+  }
+
+  select {
+    @extend .col-md-6;
+  }
+
+  label {
+    @extend .col-md-2;
+  }
+
+}
