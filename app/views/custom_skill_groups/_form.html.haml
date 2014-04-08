@@ -1,0 +1,17 @@
+
+= simple_nested_form_for @skill_group, html: { class: 'skill-group' } do |f|
+  .row
+    .skill-group
+      = f.input :name
+
+  = f.fields_for :skills do |s|
+    .row
+      .skill
+        = s.input :id, as: :hidden
+        = s.input :name, label: false, placeholder: t("controllers.skill_groups.form.skill_name")
+      .remove-skill-link
+        = s.link_to_remove t(".remove_skill")
+  = f.link_to_add t(".add_skill"), :skills
+  %br
+
+  = f.button :submit

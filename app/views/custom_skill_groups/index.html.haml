@@ -1,0 +1,25 @@
+
+= link_to t('.new_skill_group'), new_custom_skill_group_path
+
+%h1= t(".core_skill_groups")
+
+%ul
+  - @skill_groups.each do |sg|
+    %li
+      .header= sg.name
+      %ol
+        - sg.skills.each do |s|
+          %li= s.name
+
+- if current_user.custom_skill_groups.any?
+  %h1= t(".custom_skill_groups")
+
+  %ul
+    - @custom_skill_groups.each do |sg|
+      %li
+        .header
+          = link_to sg.name, edit_custom_skill_group_path(sg)
+          = link_to t("controllers.skill_groups.index.destroy_skill_group_link"), custom_skill_group_path(sg), method: :delete
+        %ol
+          - sg.skills.each do |s|
+            %li= s.name

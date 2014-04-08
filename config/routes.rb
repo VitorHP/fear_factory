@@ -5,8 +5,9 @@ Fate::Application.routes.draw do
 
     resources :campaigns do
       resources :characters
-      resources :skill_groups
     end
+
+    resources :custom_skill_groups
 
     root to: 'home#index'
   end

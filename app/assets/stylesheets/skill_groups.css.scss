@@ -1,3 +1,19 @@
-// Place all the styles related to the skill_groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+@import "mixins";
+
+form.skill-group {
+  .skill-group {
+    @extend .col-md-8;
+    @extend .col-md-offset-2;
+  }
+
+  .skill {
+    @extend .col-md-4;
+    @extend .col-md-offset-2;
+  }
+
+  .remove-skill-link {
+    @extend .col-md-2;
+  }
+}
