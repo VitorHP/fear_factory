@@ -52,6 +52,15 @@ en:
         mild: Mild
         moderate: Moderate
         severe: Severe
+      campaign:
+        number_of_aspects: Nº of Aspects
+        number_of_phases: Nº of Phases
+        skill_type_id: Skill Type
+        refresh_rate: Refresh Rate
+        number_of_initial_stunts: Nº of Initial Stunts
+        skill_cap: Skill Cap
+        name: Name
+        skill_group: Skill Group
   ladder:
     legendary: Legendary
     epic: Epic

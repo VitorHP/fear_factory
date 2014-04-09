@@ -1,11 +1,4 @@
 
-%h2.header= t(".skill_groups")
-%ul
-  - @skill_groups.each do |skill_group|
-    %li= link_to skill_group.name, custom_skill_group_path(skill_group)
-
-= link_to t(".new_skill_group"), new_custom_skill_group_path
-
 %h2.header= t(".campaigns")
 %ul
   - @campaigns.each do |campaign|

@@ -10,7 +10,7 @@ class Campaign < ActiveRecord::Base
   accepts_nested_attributes_for :stress_tracks, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :consequences, allow_destroy: true, reject_if: :all_blank
 
-  validates :number_of_aspects, :number_of_initial_stunts, :number_of_stress_boxes, :number_of_phases, :refresh_rate, inclusion: { in: 1..15, message: :must_be_between, min: 1, max: 15 }
+  validates :number_of_aspects, :number_of_initial_stunts, :refresh_rate, inclusion: { in: 1..15, message: :must_be_between, min: 1, max: 15 }
   validates :skill_cap, inclusion: { in: 1..8, message: :must_be_between, min: 1, max: 8 }
   validates :skill_group, presence: true
   validates :name, presence: true, length: { maximum: 255 }

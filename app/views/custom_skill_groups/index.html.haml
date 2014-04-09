@@ -23,5 +23,6 @@
           - sg.skills.each do |s|
             %li
               .skill= s.name
+        %br
         = link_to t("controllers.skill_groups.index.edit_skill_group"), edit_custom_skill_group_path(sg), class: 'btn btn-default'
         = link_to t("controllers.skill_groups.index.destroy_skill_group_link"), custom_skill_group_path(sg), method: :delete, class: 'btn btn-danger'

@@ -14,7 +14,7 @@ class CharactersController < ApplicationController
     @character = current_user.characters.build character_params.merge(campaign_id: @campaign.id)
 
     if @character.save
-      redirect_to campaign_characters_path(campaign_id: @campaign)
+      redirect_to campaign_path(@campaign)
     else
       @skills    = Skill.where.not(id: @character.skill_ids)
       render :new
@@ -30,7 +30,7 @@ class CharactersController < ApplicationController
     @character = Character.find params[:id]
 
     if @character.update_attributes character_params
-      redirect_to campaign_characters_path(campaign_id: @campaign)
+      redirect_to campaign_path(@campaign)
     else
       render :edit
     end

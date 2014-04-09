@@ -26,5 +26,13 @@ namespace :data do
       campaign.update_attributes name: 'Fate Core'
     end
     SkillGroup.create name: 'Fate Core', skill_ids: Skill.pluck(:id)
+    SkillGroup.create name: 'Fate Core', skills: [
+      Skill.create(name: 'Careful'),
+      Skill.create(name: 'Clever'),
+      Skill.create(name: 'Flashy'),
+      Skill.create(name: 'Forcefull'),
+      Skill.create(name: 'Quick'),
+      Skill.create(name: 'Sneaky'),
+    ]
   end
 end
