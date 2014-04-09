@@ -5,7 +5,7 @@ describe CharactersController, type: :controller do
 
   let(:user){ User.first }
   let!(:character){ create(:character, user_id: user.id) }
-  let(:campaign){ create(:campaign) }
+  let(:campaign){ create(:fate_core_campaign) }
 
   describe '#index' do
 

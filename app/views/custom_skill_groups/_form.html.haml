@@ -10,8 +10,13 @@
         = s.input :id, as: :hidden
         = s.input :name, label: false, placeholder: t("controllers.skill_groups.form.skill_name")
       .remove-skill-link
-        = s.link_to_remove t(".remove_skill")
-  = f.link_to_add t(".add_skill"), :skills
-  %br
+        = s.link_to_remove t(".remove_skill"), class: 'btn btn-danger'
 
-  = f.button :submit
+  .fields-for-action
+    .add-association
+      = f.link_to_add t(".add_skill"), :skills, class: 'btn btn-default'
+
+  %br
+  .actions
+    .submit-action
+      = f.button :submit
