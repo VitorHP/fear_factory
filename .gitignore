@@ -85,3 +85,6 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+# postgres dumps
+*.dump

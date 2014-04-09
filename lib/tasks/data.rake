@@ -1,5 +1,10 @@
 
 namespace :data do
+ task :fix_skills_index => :environment do
+   conn = ActiveRecord::Base.connection
+   conn.execute 'WITH mx AS ( SELECT MAX(id) as id FROM fate_development.skills) SELECT setval("fate_development.skills_id_seq", mx.id) AS curseq FROM mx;'
+ end
+
  task :load => :environment do
     Consequence.find_each do |r|
       r.consequential_id = r.character_id
@@ -25,8 +30,8 @@ namespace :data do
     Campaign.find_each do |campaign|
       campaign.update_attributes name: 'Fate Core'
     end
-    SkillGroup.create name: 'Fate Core', skill_ids: Skill.pluck(:id)
-    SkillGroup.create name: 'Fate Core', skills: [
+
+    SkillGroup.create name: 'Fate Accelerated', skills: [
       Skill.create(name: 'Careful'),
       Skill.create(name: 'Clever'),
       Skill.create(name: 'Flashy'),
