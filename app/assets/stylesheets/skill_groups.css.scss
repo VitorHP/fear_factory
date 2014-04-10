@@ -1,0 +1,45 @@
+
+@import "bootstrap";
+@import "mixins";
+
+ul.skill-groups {
+  list-style: none;
+}
+
+ul.skills {
+  list-style: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
+form.skill-group {
+  .skill-group {
+    @extend .col-md-6;
+  }
+
+  .skill {
+    @extend .col-md-4;
+  }
+
+  .remove-skill-link {
+    @extend .col-md-2;
+  }
+
+  .fields-for-action {
+    @extend .row;
+  }
+
+  .add-association {
+    @extend .col-md-12;
+  }
+
+  .actions {
+    @extend .row;
+  }
+
+  .submit-action {
+    @extend .col-md-12;
+  }
+}

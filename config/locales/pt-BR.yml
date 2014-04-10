@@ -286,3 +286,6 @@ pt-BR:
       stress_tracks: Estresse
       consequences: Consequências
       skill_list: Lista de Perícias
+  home:
+    index:
+      campaigns: Campanhas

@@ -1,0 +1,28 @@
+
+= link_to t('.new_skill_group'), new_custom_skill_group_path, class: 'btn btn-primary'
+
+%h1= t(".core_skill_groups")
+
+%ul.skill-groups
+  - @skill_groups.each do |sg|
+    %li
+      %h2.header= sg.name
+      %ul.skills
+        - sg.skills.each do |s|
+          %li
+            .skill= s.name
+
+- if current_user.custom_skill_groups.any?
+  %h1= t(".custom_skill_groups")
+
+  %ul.skill-groups
+    - @custom_skill_groups.each do |sg|
+      %li
+        %h2.header= sg.name
+        %ul.skills
+          - sg.skills.each do |s|
+            %li
+              .skill= s.name
+        %br
+        = link_to t("controllers.skill_groups.index.edit_skill_group"), edit_custom_skill_group_path(sg), class: 'btn btn-default'
+        = link_to t("controllers.skill_groups.index.destroy_skill_group_link"), custom_skill_group_path(sg), method: :delete, class: 'btn btn-danger'

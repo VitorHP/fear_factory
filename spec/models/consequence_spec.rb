@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Consequence do
-  it { should belong_to(:character) }
+  it { should belong_to(:consequential) }
   it { should belong_to(:skill) }
 
   describe "#default_scope" do

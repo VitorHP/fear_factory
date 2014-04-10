@@ -1,0 +1,43 @@
+
+.row
+  = simple_nested_form_for @campaign, html: { class: 'campaign form-horizontal' } do |f|
+    = f.error :base
+    = f.input :name
+    = f.input :number_of_aspects
+    = f.input :number_of_initial_stunts
+    = f.input :refresh_rate
+    = f.input :number_of_phases, as: :hidden
+    = f.input :skill_cap, collection: Ladder.new.to_h(to: :average), label_method: ->((k, v)){ "#{k} (+#{v})" }, value_method: ->((k, v)){ v }
+    = f.association :skill_type, as: :hidden
+    = f.association :skill_group, collection: SkillGroup.where(user_id: [nil, current_user.id])
+
+    -# %h3= t("activerecord.models.stress_track.other")
+
+    .stress_tracks
+      = f.fields_for :stress_tracks do |s|
+        .stress-track
+          = s.input :id, as: :hidden
+          = s.input :name, as: :hidden
+          = s.association :skill, as: :hidden
+          = s.fields_for :stress_levels do |l|
+            = l.input :id, as: :hidden
+            = l.input :level, as: :hidden
+            = l.label :level, as: :hidden
+
+    -# %h3= t("activerecord.models.consequence.other")
+
+    .consequences
+      = f.fields_for :consequences do |c|
+        .consequence
+          = c.input :name, as: :hidden
+          = c.input :level, as: :hidden
+
+    = f.button :submit
+
+  .campaign-skill-list
+    - if @campaign.skills.any?
+      %h2.header= t(".campaign-skill-list")
+      %ul.skills
+        - @campaign.skills.each do |s|
+          %li
+            .skill= s.name

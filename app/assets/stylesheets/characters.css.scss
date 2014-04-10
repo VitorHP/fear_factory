@@ -2,6 +2,48 @@
 @import "mixins";
 @import "bootstrap";
 
+h2.header {
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  position: relative;
+
+  &:before {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid #fff;
+      width: 0;
+  }
+
+  &:after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #fff;
+      width: 0;
+  }
+}
+
+.skills div.slot, .skills div.skill {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  @include border-radius(4px);
+  border: 1px solid #ccc;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: top;
+  margin: 2px;
+  background-color: #fff;
+}
+
 form.character {
 
   #character-fields {
@@ -23,12 +65,6 @@ form.character {
 
   #fate-logo {
     @extend .col-md-4;
-  }
-
-  @media (max-width: $screen-sm) {
-    #fate-logo {
-      display: none;
-    }
   }
 
   #aspects-panel {
@@ -63,33 +99,8 @@ form.character {
     height: 30px;
   }
 
-  h2 {
-    background-color: #000;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 2px 10px;
-    font-size: 18px;
-    font-weight: bold;
-    display: block;
-    position: relative;
-
-    &:before {
-        content: '';
-        position: absolute;
-        bottom: 0; right: 0;
-        border-top: 10px solid transparent;
-        border-right: 10px solid #fff;
-        width: 0;
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid #fff;
-        width: 0;
-    }
+  .skill-row {
+    @extend .row;
   }
 
   #skills span.rating {
@@ -98,33 +109,12 @@ form.character {
     padding-top: 5px;
   }
 
-  @media (max-width: $screen-sm) {
-    #skills span.rating {
-      text-align: left;
-      font-size: 16px;
-      padding-top: 5px;
-    }
-  }
-
   #skills .rating-level {
     @extend .col-md-2;
   }
 
   #skills .slots {
     @extend .col-md-10;
-  }
-
-  #skills div.slot, div.skill {
-    display: inline-block;
-    width: 100px;
-    height: 30px;
-    @include border-radius(4px);
-    border: 1px solid #ccc;
-    line-height: 30px;
-    text-align: center;
-    vertical-align: top;
-    margin: 2px;
-    background-color: #fff;
   }
 
   #skills span.rating {
@@ -155,12 +145,6 @@ form.character {
   #skill-drawer {
     margin-top: 10px;
     margin-left: 124px;
-  }
-
-  @media (max-width: $screen-sm) {
-    #skill-drawer {
-      margin-left: 0px;
-    }
   }
 
   #link {
@@ -240,9 +224,8 @@ form.character {
       font-size: 22px;
       margin-top: -10px;
     }
-
   }
-
-  @import "character_print";
-
 }
+
+@import "character_sm";
+@import "character_print";

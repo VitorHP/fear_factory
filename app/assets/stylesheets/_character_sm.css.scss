@@ -1,0 +1,20 @@
+@import "bootstrap";
+
+@media (max-width: $screen-sm) {
+  form.character {
+    #fate-logo {
+      display: none;
+    }
+
+    #skills span.rating {
+      text-align: left;
+      font-size: 16px;
+      padding-top: 5px;
+    }
+
+    #skill-drawer {
+      margin-left: 0px;
+    }
+  }
+}
+

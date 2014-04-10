@@ -1,14 +1,26 @@
 class Ladder
   def to_h options = {}
-    from = options.fetch(:from){ :legendary }
-    to   = options.fetch(:to){ :terrible }
+    from = extract_ladder_range(options.fetch(:from){ :legendary })
+    to   = extract_ladder_range(options.fetch(:to){ :terrible })
 
     ladder.select do |key, value|
       value <= ladder[from] && value >= ladder[to]
     end
   end
 
+  def all
+    ladder
+  end
+
   private
+
+  def extract_ladder_range option
+    if option.is_a? Fixnum
+      ladder.key option
+    else
+      option
+    end
+  end
 
   def ladder
     {

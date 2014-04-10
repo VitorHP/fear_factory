@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_filter :authenticate_user!
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter  :load_campaign
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -14,6 +15,10 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def load_campaign
+    @campaign = Campaign.find params[:campaign_id] if params[:campaign_id]
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

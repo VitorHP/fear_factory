@@ -7,6 +7,12 @@ en:
       character:
         one: Character
         other: Charaters
+      stress_track:
+        one: Stress Track
+        other: Stress Tracks
+      consequence:
+        one: Consequence
+        other: Consequences
     attributes:
       extra:
         name: Name
@@ -46,6 +52,15 @@ en:
         mild: Mild
         moderate: Moderate
         severe: Severe
+      campaign:
+        number_of_aspects: Nº of Aspects
+        number_of_phases: Nº of Phases
+        skill_type_id: Skill Type
+        refresh_rate: Refresh Rate
+        number_of_initial_stunts: Nº of Initial Stunts
+        skill_cap: Skill Cap
+        name: Name
+        skill_group: Skill Group
   ladder:
     legendary: Legendary
     epic: Epic
@@ -77,3 +92,17 @@ en:
         stress_tracks: Stress
         consequences: Consequences
         skill_list: Skill List
+    home:
+      index:
+        campaigns: Campaigns
+    skill_groups:
+      index:
+        new_skill_group: New Skill Group
+        edit_skill_group_link: Edit
+        destroy_skill_group_link: Remove
+      form:
+        skill_name: Skill name
+  errors: &errors
+    messages:
+      must_be_between: Must be between %{min} and %{max}
+      has_characters_associated: Can't modify a campaign that already has characters

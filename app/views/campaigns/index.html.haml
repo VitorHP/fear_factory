@@ -1,0 +1,5 @@
+= link_to t(".new_campaign"), new_campaign_path
+
+%ul
+  - @campaigns.each do |campaign|
+    %li= link_to campaign.name, edit_campaign_path(campaign)
