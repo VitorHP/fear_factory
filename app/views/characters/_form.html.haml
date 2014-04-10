@@ -31,7 +31,7 @@
               .slots
                 = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
                   .slot{ class: r.object.skill_id.present? ? "with-skill" : nil }
-                    %span.name= "#{t("activerecord.attributes.skill.#{r.object.skill.name.parameterize.underscore}", default: t.object.skill.name) if r.object.skill.present? }"
+                    %span.name= "#{t("activerecord.attributes.skill.#{r.object.skill.name.parameterize.underscore}", default: r.object.skill.name) if r.object.skill.present? }"
                     = r.input :id, as: :hidden
                     = r.input :skill_id, as: :hidden
                     = r.input :level, as: :hidden, input_html: { value: level }

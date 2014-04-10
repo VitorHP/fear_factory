@@ -24,6 +24,8 @@ class Campaign < ActiveRecord::Base
     campaign.refresh_rate = 3
     campaign.number_of_initial_stunts = 3
     campaign.number_of_stress_boxes = 3
+    campaign.skill_cap = 4
+    campaign.skill_group_id = 1
 
     stress_tracks = [
       {name: 'mental', skill_id: 18},
@@ -55,7 +57,7 @@ class Campaign < ActiveRecord::Base
   private
 
   def does_not_have_characters_associated
-    unless characters.empty?
+    if persisted? && characters.any?
       errors[:base] << I18n.t("errors.messages.has_characters_associated")
     end
   end
