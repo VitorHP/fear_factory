@@ -8,6 +8,7 @@ Fate::Application.routes.draw do
     end
 
     resources :custom_skill_groups
+    resources :house_rules
 
     root to: 'home#index'
   end

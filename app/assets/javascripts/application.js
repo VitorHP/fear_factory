@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require jquery.ui.all
 //= require jquery_nested_form
+//= require tinymce-jquery
 //= require_tree .

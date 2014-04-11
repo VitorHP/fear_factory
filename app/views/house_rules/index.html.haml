@@ -1,0 +1,13 @@
+
+%br
+= link_to t('.new_house_rule'), new_house_rule_path, class: 'btn btn-primary'
+%br
+%br
+
+%ul.house-rules.list-unstyled
+  - @house_rules.each do |h|
+    %li.house_rule.panel.panel-default
+      .panel-heading
+        = link_to h.name, house_rule_path(h)
+        = link_to t('button.edit'), edit_house_rule_path(h), class: 'pull-right'
+      .panel-body= h.thirty_second_version.html_safe

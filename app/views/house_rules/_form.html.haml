@@ -1,0 +1,9 @@
+= tinymce
+
+= simple_form_for @house_rule do |f|
+  = f.input :name
+  = f.input :thirty_second_version, input_html: { class: 'tinymce', rows: 15 }
+  = f.input :description, input_html: { class: 'tinymce', rows: 30 }
+
+  = f.button :submit
+

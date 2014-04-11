@@ -20,6 +20,7 @@ gem 'cancancan'
 gem 'omniauth-facebook'
 gem 'font-awesome-rails'
 gem 'nested_form'
+gem 'tinymce-rails'
 
 group :development do
   gem 'better_errors'

@@ -19,4 +19,5 @@
       - current_user.campaigns.select(&:persisted?).each do |c|
         %li= link_to c.name, campaign_path(c)
   %li= link_to t('application.navbar.skill_groups'), custom_skill_groups_path
+  %li= link_to t('application.navbar.house_rules'), house_rules_path
 
