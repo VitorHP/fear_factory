@@ -6,4 +6,5 @@ describe Campaign do
   it { should have_many :consequences }
   it { should belong_to :skill_type }
   it { should belong_to :user }
+
 end

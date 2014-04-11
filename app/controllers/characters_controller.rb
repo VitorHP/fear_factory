@@ -1,12 +1,11 @@
 class CharactersController < ApplicationController
   load_and_authorize_resource
 
-  def index
-    @characters.from_campaign(@campaign)
-  end
+  # def index
+  #   @characters.from_campaign(@campaign)
+  # end
 
   def new
-    @skills = Skill.all
     @character = BuildCharacter.new.build(campaign: @campaign, user: current_user)
   end
 
@@ -16,14 +15,12 @@ class CharactersController < ApplicationController
     if @character.save
       redirect_to campaign_path(@campaign)
     else
-      @skills    = Skill.where.not(id: @character.skill_ids)
       render :new
     end
   end
 
   def edit
     @character = Character.find(params[:id])
-    @skills    = Skill.where.not(id: @character.skill_ids)
   end
 
   def update

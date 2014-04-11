@@ -24,16 +24,19 @@ describe CharactersController, type: :controller do
 
   describe '#new' do
 
-    it 'assings @skills' do
-      get :new, campaign_id: campaign
-
-      expect(assigns[:skills].to_a).to eq campaign.skills.to_a
-    end
-
     it 'assigns @character' do
       get :new, campaign_id: campaign
 
       expect(assigns[:character]).not_to be_nil
+    end
+  end
+
+  describe '#edit' do
+
+    it 'finds the right skill' do
+      get :edit, campaign_id: campaign, id: character.id
+
+      expect(assigns[:character]).to eq character
     end
   end
 
