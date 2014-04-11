@@ -267,25 +267,33 @@ pt-BR:
     medriocre: Mediano
     poor: Fraco
     terrible: Péssimo
-  application:
-    navbar:
-      home: Home
-      login: Entrar
-      logout: Sair
-      edit_account: Editar Conta
-      sign_up: Cadastro
-  characters:
-    index:
-      new_character: Novo Personagem
-    form:
-      id: Id
-      aspects: Aspectos
-      skills: Perícias
-      extras: Extras
-      stunts: Façanhas
-      stress_tracks: Estresse
-      consequences: Consequências
-      skill_list: Lista de Perícias
-  home:
-    index:
-      campaigns: Campanhas
+  controllers:
+    application:
+      navbar:
+        home: Home
+        login: Entrar
+        logout: Sair
+        edit_account: Editar Conta
+        sign_up: Cadastro
+    characters:
+      index:
+        new_character: Novo Personagem
+      form:
+        id: Id
+        aspects: Aspectos
+        skills: Perícias
+        extras: Extras
+        stunts: Façanhas
+        stress_tracks: Estresse
+        consequences: Consequências
+        skill_list: Lista de Perícias
+    home:
+      index:
+        campaigns: Campanhas
+    skill_groups:
+      index:
+        new_skill_group: Novo Grupo de Perícias
+        edit_skill_group_link: Editar
+        destroy_skill_group_link: Remover
+      form:
+        skill_name: Perícia
