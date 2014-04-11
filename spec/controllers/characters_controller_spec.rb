@@ -7,28 +7,27 @@ describe CharactersController, type: :controller do
   let!(:character){ create(:character, user_id: user.id) }
   let(:campaign){ create(:fate_core_campaign) }
 
-  describe '#index' do
+  # describe '#index' do
 
-    it 'assigns @characters' do
-      get :index, campaign_id: campaign
+    # it 'assigns @characters' do
+    #   get :index, campaign_id: campaign
 
-      expect(assigns[:characters]).to eq [character]
-    end
+    #   expect(assigns[:characters]).to eq [character]
+    # end
 
-    it 'renders the index template' do
-      get :index, campaign_id: campaign
+    # it 'renders the index template' do
+    #   get :index, campaign_id: campaign
 
-      expect(response).to render_template(:index)
-    end
-  end
+    #   expect(response).to render_template(:index)
+    # end
+  # end
 
   describe '#new' do
-    let(:skill){ create(:skill) }
 
     it 'assings @skills' do
       get :new, campaign_id: campaign
 
-      expect(assigns[:skills]).to eq [skill]
+      expect(assigns[:skills].to_a).to eq campaign.skills.to_a
     end
 
     it 'assigns @character' do
@@ -48,7 +47,7 @@ describe CharactersController, type: :controller do
 
       it 'redirects to index page' do
         post :create, character: attributes_for(:character), campaign_id: campaign
-        expect(response).to redirect_to campaign_characters_path(campaign_id: campaign)
+        expect(response).to redirect_to campaign_path(campaign)
       end
     end
 
@@ -86,7 +85,7 @@ describe CharactersController, type: :controller do
 
       it 'redirects to index page' do
         patch :update, id: character, character: attributes_for(:character), campaign_id: campaign
-        expect(response).to redirect_to campaign_characters_path(campaign_id: campaign)
+        expect(response).to redirect_to campaign_path(campaign)
       end
     end
 
