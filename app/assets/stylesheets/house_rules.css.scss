@@ -1,14 +1,6 @@
 @import 'bootstrap';
 
 ul.house-rules {
-  .panel-heading {
-    height: 55px;
-    font-size: 18px;
-  }
-
-  a {
-    color: #000;
-  }
 
   .liked {
     color: $brand-success;
@@ -36,4 +28,9 @@ ul.house-rules {
 
 .comment .title {
   font-weight: bold;
+}
+
+#tag_cloud {
+  width: 100%;
+  height: 300px;
 }

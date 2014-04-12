@@ -38,6 +38,8 @@ en:
         refresh: Refresh
         high_concept: High Concept
         trouble: Trouble
+      house_rule:
+        type_tags: Tags
       skill:
         athletics: Athletics
         burglary: Burglary
@@ -91,6 +93,8 @@ en:
     edit_account: Edit Account
     sign_up: Sign Up
     new_campaign: New Campaign
+  buttons:
+    edit: Edit
   characters:
     index:
       new_character: New Character
@@ -103,6 +107,15 @@ en:
       stress_tracks: Stress
       consequences: Consequences
       skill_list: Skill List
+  home:
+    index:
+      welcome: Welcome to The Fate Generator
+      welcome_text: Online tools to make your Fate RPG games tooootally awesome!
+      join: Join and enjoy!
+      or: ' or '
+      no_join: Don't feel like signing up right now? No problem!
+    profile:
+      welcome: Welcome
   house_rules:
     show:
       commented: commented on

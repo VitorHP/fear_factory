@@ -11,6 +11,7 @@ Fate::Application.routes.draw do
     resources :house_rules do
       collection do
         get :tags
+        get :tag_cloud
       end
       member do
         post :like
@@ -19,6 +20,7 @@ Fate::Application.routes.draw do
       end
     end
 
+    get '/profile', to: 'home#profile', as: :profile
     root to: 'home#index'
   end
 

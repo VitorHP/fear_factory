@@ -3,6 +3,8 @@
   .house-rule.col-md-12
     %h1= @house_rule.name
 
+    = link_to t('buttons.edit'), edit_house_rule_path(@house_rule), class: 'btn btn-default pull-right' if can? :edit, @house_rule
+
     %legend= t('activerecord.attributes.house_rule.thirty_second_version')
 
     .well= @house_rule.thirty_second_version.html_safe

@@ -4,7 +4,8 @@
   = f.input :name
   .row
     .col-md-6
-      = f.input :tags
+      = f.input :type_tags
+      = f.error :tags
     .col-md-6
       = f.input :idiom, collection: LanguageList::COMMON_LANGUAGES.map(&:name).sort, selected: SelectIdiomFromLocale.new.perform
   = f.input :thirty_second_version, input_html: { class: 'tinymce', rows: 10 }

@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
+  skip_before_filter :authenticate_user!
+
   def index
-    @skill_groups = current_user.custom_skill_groups
-    @campaigns = current_user.campaigns
+  end
+
+  def profile
   end
 end

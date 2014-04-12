@@ -1,22 +1,24 @@
 class HouseRulesController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:index, :show]
 
-  respond_to :json, only: :tags
+  respond_to :json, only: [:tags, :tag_cloud]
   respond_to :js, only: :like
 
-  load_and_authorize_resource
+  authorize_resource
 
   def index
+    @house_rules = Filter.new(HouseRule.accessible_by(current_ability), params).filter.sort_by{ |a| a.likes.size }.reverse
   end
 
   def new
+    @house_rule = HouseRule.new
   end
 
   def create
     @house_rule = current_user.house_rules.build house_rule_params
 
     if @house_rule.save
-      redirect_to house_rules_path(@campaign)
+      redirect_to house_rule_path(@house_rule)
     else
       render :new
     end
@@ -34,7 +36,7 @@ class HouseRulesController < ApplicationController
     @house_rule = HouseRule.find params[:id]
 
     if @house_rule.update_attributes house_rule_params
-      redirect_to house_rules_path(@campaign)
+      redirect_to house_rule_path(@house_rule)
     else
       render :edit
     end
@@ -43,6 +45,10 @@ class HouseRulesController < ApplicationController
   def tags
     @tags = ActsAsTaggableOn::Tagging.where(:context => :tags).joins(:tag).select('DISTINCT tags.name').map{ |t| t.name.split(/ ?, ?/) }.flatten.uniq
     respond_with @tags
+  end
+
+  def tag_cloud
+    respond_with TagCloudBuilder.new(self, HouseRule).build_for(:tags)
   end
 
   def like
@@ -77,7 +83,7 @@ class HouseRulesController < ApplicationController
 
   def house_rule_params
     params.require(:house_rule).permit([
-      :name, :thirty_second_version, :description, :tags
+      :name, :thirty_second_version, :description, :type_tags, :idiom
     ])
   end
 

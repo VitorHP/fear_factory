@@ -19,4 +19,8 @@ class Character < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 255 }
 
   scope :from_campaign, ->(campaign){ where(campaign_id: campaign.id) }
+
+  def high_concept
+    aspects.first.name
+  end
 end

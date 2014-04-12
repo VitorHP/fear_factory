@@ -1,0 +1,23 @@
+
+%h1= "#{t('.welcome')}, #{current_user.name}"
+
+%h2= t '.your_campaigns'
+%ul.campaigns.list-unstyled
+  - current_user.campaigns.each do |c|
+    .panel.panel-default
+      .panel-heading
+        %span= link_to c.name, campaign_path(c)
+        = link_to t('buttons.edit'), edit_campaign_path(c), class: 'btn btn-default pull-right'
+      .panel-body
+        - if c.characters.any?
+          %ul.characters.list-unstyled
+            - c.characters.each do |ch|
+              %li.character
+                %span.name= link_to ch.name, edit_campaign_character_path(ch, campaign_id: c)
+                %span= ' - '
+                %span.high-concept= ch.high_concept
+        - else
+          %p= t '.no_characters'
+
+        %br
+        = link_to t('.create_character'), new_campaign_character_path(c)

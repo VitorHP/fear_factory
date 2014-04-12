@@ -258,6 +258,7 @@ pt-BR:
         thirty_second_version: 'Versão de 30 segundos'
         description: Descrição
         idiom: Idioma
+        type_tags: Tags
       skill:
         athletics: Atletismo
         burglary: Roubo
@@ -309,6 +310,7 @@ pt-BR:
     new_campaign: Nova Campanha
   buttons:
     go_back: Voltar
+    edit: Editar
   characters:
     index:
       new_character: Novo Personagem
@@ -321,6 +323,10 @@ pt-BR:
       stress_tracks: Estresse
       consequences: Consequências
       skill_list: Lista de Perícias
+  house_rules:
+    index:
+      clean_filters: Limpar Filtros
+      new_house_rule: Nova Regra
   controllers:
     home:
       index:
