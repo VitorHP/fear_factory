@@ -31,7 +31,7 @@
               .slots
                 = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
                   .slot{ class: r.object.skill_id.present? ? "with-skill" : nil }
-                    %span.name= "#{t("activerecord.attributes.skill.#{r.object.skill.name.parameterize.underscore}", default: r.object.skill.name) if r.object.skill.present? }"
+                    %span.name= r.object.skill.name if r.object.skill.present?
                     = r.input :id, as: :hidden
                     = r.input :skill_id, as: :hidden
                     = r.input :level, as: :hidden, input_html: { value: level }
@@ -39,7 +39,7 @@
       #skill-drawer.hidden-print
         #skill-list.collapse.skills
           - @campaign.skills.each do |skill|
-            .skill{ data: { id: skill.id } }= "#{t("activerecord.attributes.skill.#{skill.name.parameterize.underscore}", default: skill.name) if skill.present? }"
+            .skill{ data: { id: skill.id } }= skill.name if skill.present?
         #link
           %button{ type: "button", class: "btn btn-sm", 'data-toggle' => "collapse", 'data-target' => "#skill-list" }= t(".skill_list")
   .row
@@ -58,7 +58,7 @@
   .row
     %fieldset#stress-tracks-panel
       = f.fields_for :stress_tracks do |s|
-        %h2.header= "#{t("activerecord.attributes.stress_track.#{s.object.name.parameterize.underscore}")} (#{t("activerecord.attributes.skill.#{s.object.skill_name.parameterize.underscore}")})"
+        %h2.header= "#{t("activerecord.attributes.stress_track.#{s.object.name.parameterize.underscore}")} (#{s.object.skill_name})"
         = s.input :id, as: :hidden
         = s.input :name, as: :hidden
         = s.input :skill_id, as: :hidden

@@ -1,18 +1,30 @@
 en:
   activerecord:
     models:
-      stunt:
-        one: Stunt
-        other: Stunts
+      campaign:
+        one: Campaign
+        other: Campaign
       character:
         one: Character
         other: Charaters
-      stress_track:
-        one: Stress Track
-        other: Stress Tracks
+      house_rule:
+        one: House Rule
+        other: House Rules
       consequence:
         one: Consequence
         other: Consequences
+      skill:
+        one: Skill
+        other: Skill
+      skill_group:
+        one: Skill Group
+        other: Skill Group
+      stress_track:
+        one: Stress Track
+        other: Stress Tracks
+      stunt:
+        one: Stunt
+        other: Stunts
     attributes:
       extra:
         name: Name
@@ -72,26 +84,26 @@ en:
     average: Average
     poor: Poor
     terrible: Terrible
+  navbar:
+    home: Home
+    login: Login
+    logout: Logout
+    edit_account: Edit Account
+    sign_up: Sign Up
+    new_campaign: New Campaign
+  characters:
+    index:
+      new_character: New Character
+    form:
+      id: Id
+      aspects: Aspects
+      skills: Skills
+      extras: Extras
+      stunts: Stunts
+      stress_tracks: Stress
+      consequences: Consequences
+      skill_list: Skill List
   controllers:
-    application:
-      navbar:
-        home: Home
-        login: Login
-        logout: Logout
-        edit_account: Edit Account
-        sign_up: Sign Up
-    characters:
-      index:
-        new_character: New Character
-      form:
-        id: Id
-        aspects: Aspects
-        skills: Skills
-        extras: Extras
-        stunts: Stunts
-        stress_tracks: Stress
-        consequences: Consequences
-        skill_list: Skill List
     home:
       index:
         campaigns: Campaigns

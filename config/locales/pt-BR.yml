@@ -210,9 +210,6 @@ pt-BR:
     errors:
       <<: *errors
     models:
-      stunt:
-        one: Façanha
-        other: Façanhas
       campaign:
         one: Campanha
         other: Campanhas
@@ -228,6 +225,9 @@ pt-BR:
       skill_group:
         one: Grupo de Perícias
         other: Grupos de Perícias
+      stunt:
+        one: Façanha
+        other: Façanhas
     attributes:
       campaign:
         name: Nome
@@ -275,8 +275,16 @@ pt-BR:
         rapport: Comunicação
         resources: Recursos
         shoot: Atirar
+
+        flashy: Estiloso
         stealth: Furtividade
         will: Vontade
+        forcefull: Poderoso
+        careful: Cuidadoso
+        clever: Inteligente
+        sneaky: Sorrateiro
+        quick: Ágil
+
       stress_track:
         mental_stress: Estresse Físico
         physical_stress: Estresse Mental
@@ -301,19 +309,19 @@ pt-BR:
     new_campaign: Nova Campanha
   buttons:
     go_back: Voltar
+  characters:
+    index:
+      new_character: Novo Personagem
+    form:
+      id: Id
+      aspects: Aspectos
+      skills: Perícias
+      extras: Extras
+      stunts: Façanhas
+      stress_tracks: Estresse
+      consequences: Consequências
+      skill_list: Lista de Perícias
   controllers:
-    characters:
-      index:
-        new_character: Novo Personagem
-      form:
-        id: Id
-        aspects: Aspectos
-        skills: Perícias
-        extras: Extras
-        stunts: Façanhas
-        stress_tracks: Estresse
-        consequences: Consequências
-        skill_list: Lista de Perícias
     home:
       index:
         campaigns: Campanhas
