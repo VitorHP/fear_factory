@@ -9,5 +9,15 @@
     %li.house_rule.panel.panel-default
       .panel-heading
         = link_to h.name, house_rule_path(h)
-        = link_to t('button.edit'), edit_house_rule_path(h), class: 'pull-right' if can? :create, HouseRule
+        %span.fave
+          = link_to '#' do
+            %span.glyphicon.glyphicon-star-empty
+        %span.likes
+          = link_to like_house_rule_path(h), id: "like-house-rule-#{h.id}", remote: true, method: :post do
+            %span.glyphicon.glyphicon-thumbs-up{ class: current_user.liked?(h) ? 'liked' : nil }
+          %span{ id: "like-count-#{h.id}"}= h.likes.size
+        %span.comments
+          %span.glyphicon.glyphicon-comment
+          %span.comments-count= 0
+        = link_to t('button.edit'), edit_house_rule_path(h), class: 'btn btn-default pull-right' if can? :create, HouseRule
       .panel-body= h.thirty_second_version.html_safe

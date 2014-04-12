@@ -25,6 +25,7 @@ gem 'tinymce-rails-langs'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
 gem 'language_list'
+gem 'acts_as_votable'
 
 group :development do
   gem 'better_errors'

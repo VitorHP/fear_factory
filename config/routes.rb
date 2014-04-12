@@ -12,6 +12,9 @@ Fate::Application.routes.draw do
       collection do
         get :tags
       end
+      member do
+        post :like
+      end
     end
 
     root to: 'home#index'

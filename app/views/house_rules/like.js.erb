@@ -1,0 +1,7 @@
+<% if current_user.liked? @house_rule %>
+  $('#like-house-rule-<%= @house_rule.id %>').find('span').addClass('liked');
+<% else %>
+  $('#like-house-rule-<%= @house_rule.id %>').find('span').removeClass('liked');
+<% end %>
+
+$('#like-count-<%= @house_rule.id %>').html('<%= @house_rule.likes.size %>');

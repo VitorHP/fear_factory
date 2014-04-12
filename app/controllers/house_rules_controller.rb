@@ -2,6 +2,7 @@ class HouseRulesController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:index, :show]
 
   respond_to :json, only: :tags
+  respond_to :js, only: :like
 
   load_and_authorize_resource
 
@@ -42,6 +43,18 @@ class HouseRulesController < ApplicationController
   def tags
     @tags = ActsAsTaggableOn::Tagging.where(:context => :tags).joins(:tag).select('DISTINCT tags.name').map{ |t| t.name.split(/ ?, ?/) }.flatten.uniq
     respond_with @tags
+  end
+
+  def like
+    @house_rule = HouseRule.find params[:id]
+
+    if current_user.voted_for? @house_rule
+      @house_rule.unliked_by current_user
+    else
+      @house_rule.liked_by current_user
+    end
+
+    respond_with @house_rule
   end
 
   private
