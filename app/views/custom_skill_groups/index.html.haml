@@ -1,5 +1,5 @@
 
-= link_to t('.new_skill_group'), new_custom_skill_group_path, class: 'btn btn-primary'
+= link_to t('.new_skill_group'), new_custom_skill_group_path, class: 'btn btn-primary' if can? :create, SkillGroup
 
 %h2.header= t(".core_skill_groups")
 
@@ -22,8 +22,8 @@
       %li.panel.panel-default
         .panel-heading
           %span.name= sg.name
-          = link_to t("controllers.skill_groups.index.destroy_skill_group_link"), custom_skill_group_path(sg), method: :delete, class: 'btn btn-danger pull-right'
-          = link_to t("controllers.skill_groups.index.edit_skill_group"), edit_custom_skill_group_path(sg), class: 'btn btn-default pull-right'
+          = link_to t(".destroy_skill_group"), custom_skill_group_path(sg), method: :delete, class: 'btn btn-danger pull-right' if can?(:destroy, sg)
+          = link_to t(".edit_skill_group"), edit_custom_skill_group_path(sg), class: 'btn btn-default pull-right' if can?(:edit, sg)
         .panel-body
           %ul.skills
             - sg.skills.each do |s|

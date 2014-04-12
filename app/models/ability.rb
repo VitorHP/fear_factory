@@ -16,6 +16,10 @@ class Ability
       can :manage, Stunt
       can :manage, HouseRule, user_id: user.id
       can [:read, :comment, :uncomment, :fave, :like], HouseRule
+      can :read, SkillGroup
+      can :manage, SkillGroup, user_id: user.id
+      can :read, Comment
+      can :manage, Comment, user_id: user.id
     else
       can :read, HouseRule
     end

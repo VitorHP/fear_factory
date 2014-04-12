@@ -11,3 +11,15 @@
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li= link_to t('navbar.edit_account'), edit_user_registration_path, class: 'pull-right'
+        - else
+          %li= link_to t('navbar.sign_up'), new_user_registration_path, class: 'pull-right'
+
+        - if user_signed_in?
+          %li= link_to t('navbar.logout'), destroy_user_session_path, :method=>'delete', class: 'pull-right'
+        - else
+          %li= link_to t('navbar.login'), new_user_session_path, class: 'pull-right'
+
+

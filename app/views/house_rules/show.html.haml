@@ -22,7 +22,7 @@
             %span.title= c.title
             %span= " - "
             %span.author= "#{c.user.name} #{t('.commented')} #{l(c.created_at, format: :short)}"
-            = link_to t('remove_comment'), uncomment_house_rule_path(@house_rule, comment_id: c.id), method: :delete, class: 'pull-right'
+            = link_to t('remove_comment'), uncomment_house_rule_path(@house_rule, comment_id: c.id), method: :delete, class: 'pull-right' if can? :destroy, c
             %br
             %br
             .comment-text= c.comment

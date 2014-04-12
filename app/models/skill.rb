@@ -6,6 +6,6 @@ class Skill < ActiveRecord::Base
   belongs_to :skill_group
 
   def name
-    I18n.t("activerecord.attributes.skill.#{self['name'].parameterize.underscore}", default: self['name'])
+    I18n.t("activerecord.attributes.skill.#{self['name'].to_s.parameterize.underscore}", default: self['name'])
   end
 end

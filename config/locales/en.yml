@@ -3,7 +3,7 @@ en:
     models:
       campaign:
         one: Campaign
-        other: Campaign
+        other: Campaigns
       character:
         one: Character
         other: Charaters
@@ -15,10 +15,10 @@ en:
         other: Consequences
       skill:
         one: Skill
-        other: Skill
+        other: Skills
       skill_group:
         one: Skill Group
-        other: Skill Group
+        other: Skill Groups
       stress_track:
         one: Stress Track
         other: Stress Tracks
@@ -120,17 +120,13 @@ en:
     show:
       commented: commented on
       no_comments_yet: No comments yet
-  controllers:
-    home:
-      index:
-        campaigns: Campaigns
-    skill_groups:
-      index:
-        new_skill_group: New Skill Group
-        edit_skill_group_link: Edit
-        destroy_skill_group_link: Remove
-      form:
-        skill_name: Skill name
+  custom_skill_groups:
+    index:
+      new_skill_group: New Skill Group
+      edit_skill_group: Edit Skill Group
+      destroy_skill_group: Remove
+    form:
+      skill_name: Skill name
   errors: &errors
     messages:
       must_be_between: Must be between %{min} and %{max}

@@ -11,7 +11,7 @@
   %dd= @campaign.refresh_rate
 
   %br
-  = link_to t('.edit_campaign'), edit_campaign_path(@campaign), class: 'btn btn-default'
+  = link_to t('.edit_campaign'), edit_campaign_path(@campaign), class: 'btn btn-default' if can? :edit, @campaign
 
   %h2.header= t('.skills')
 

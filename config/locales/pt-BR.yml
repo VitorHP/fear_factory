@@ -327,14 +327,13 @@ pt-BR:
     index:
       clean_filters: Limpar Filtros
       new_house_rule: Nova Regra
-  controllers:
-    home:
-      index:
-        campaigns: Campanhas
-    skill_groups:
-      index:
-        new_skill_group: Novo Grupo de Perícias
-        edit_skill_group_link: Editar
-        destroy_skill_group_link: Remover
-      form:
-        skill_name: Perícia
+  home:
+    index:
+      campaigns: Campanhas
+  custom_skill_groups:
+    index:
+      new_skill_group: Novo Grupo de Perícias
+      edit_skill_group: Editar
+      destroy_skill_group: Remover
+    form:
+      skill_name: Perícia
