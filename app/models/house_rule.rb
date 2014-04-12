@@ -9,8 +9,8 @@ class HouseRule < ActiveRecord::Base
   belongs_to :user
 
   validates :type_tags, :idiom, :name, presence: true
-  validates :thirty_second_version, length: { in: 0..1000 }
-  validates :description, length: { in: 0..10000 }
+  validates :thirty_second_version, length: { in: 0..5000 }
+  validates :description, length: { in: 0..50000 }
 
   def type_tags= tags
     self.tag_list.add(tags, parse: true)
