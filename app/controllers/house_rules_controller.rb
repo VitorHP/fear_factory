@@ -25,15 +25,15 @@ class HouseRulesController < ApplicationController
   end
 
   def edit
-    @house_rule = HouseRule.find(params[:id])
+    @house_rule = HouseRule.friendly.find(params[:id])
   end
 
   def show
-    @house_rule = HouseRule.find(params[:id])
+    @house_rule = HouseRule.friendly.find(params[:id])
   end
 
   def update
-    @house_rule = HouseRule.find params[:id]
+    @house_rule = HouseRule.friendly.find params[:id]
 
     if @house_rule.update_attributes house_rule_params
       redirect_to house_rule_path(@house_rule)
@@ -52,7 +52,7 @@ class HouseRulesController < ApplicationController
   end
 
   def like
-    @house_rule = HouseRule.find params[:id]
+    @house_rule = HouseRule.friendly.find params[:id]
 
     if current_user.voted_for? @house_rule
       @house_rule.unliked_by current_user
@@ -64,7 +64,7 @@ class HouseRulesController < ApplicationController
   end
 
   def comment
-    @house_rule = HouseRule.find params[:id]
+    @house_rule = HouseRule.friendly.find params[:id]
 
     @comment = @house_rule.comments.create comment_params.merge(user: current_user)
 
@@ -72,7 +72,7 @@ class HouseRulesController < ApplicationController
   end
 
   def uncomment
-    @house_rule = HouseRule.find params[:id]
+    @house_rule = HouseRule.friendly.find params[:id]
 
     @house_rule.comments.find(params[:comment_id]).destroy
 

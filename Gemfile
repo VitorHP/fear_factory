@@ -28,6 +28,7 @@ gem 'language_list'
 gem 'acts_as_votable'
 gem 'acts_as_commentable'
 gem 'jqcloud-rails'
+gem 'friendly_id'
 
 group :development do
   gem 'better_errors'
