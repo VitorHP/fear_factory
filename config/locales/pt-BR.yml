@@ -222,10 +222,25 @@ pt-BR:
       house_rule:
         one: Regra Caseira
         other: Regras Caseiras
+      skill:
+        one: Perícia
+        other: Perícias
       skill_group:
         one: Grupo de Perícias
         other: Grupos de Perícias
     attributes:
+      campaign:
+        name: Nome
+        number_of_aspects: Quantidade de Aspectos
+        number_of_initial_stunts: Quantidade de Façanhas
+        refresh_rate: Recargas
+        number_of_phases: Quantidade de Fases
+        skill_cap: Maior Perícia
+        skill_group: Grupo de Perícias
+      consequence:
+        mild: Suave
+        moderate: Moderada
+        severe: Severa
       extra:
         name: Nome
         description: Descrição
@@ -265,10 +280,6 @@ pt-BR:
       stress_track:
         mental_stress: Estresse Físico
         physical_stress: Estresse Mental
-      consequence:
-        mild: Suave
-        moderate: Moderada
-        severe: Severa
   ladder:
     legendary: Lendário
     epic: Épico

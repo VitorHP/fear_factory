@@ -36,7 +36,7 @@
 
   .campaign-skill-list
     - if @campaign.skills.any?
-      %h2.header= t(".campaign-skill-list")
+      %h2.header= t("activerecord.models.skill.other")
       %ul.skills
         - @campaign.skills.each do |s|
           %li
