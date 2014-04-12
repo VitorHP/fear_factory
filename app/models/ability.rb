@@ -22,8 +22,9 @@ class Ability
       can :manage, Comment, user_id: user.id
       can :read, Campaign
       can :manage, Campaign, user_id: user.id
-    else
-      can :read, HouseRule
     end
+
+    can [:tags, :tag_cloud], HouseRule
+    can :read, HouseRule
   end
 end

@@ -1,5 +1,5 @@
 class HouseRulesController < ApplicationController
-  skip_before_filter :authenticate_user!, only: [:index, :show]
+  skip_before_filter :authenticate_user!, only: [:index, :show, :tags, :tag_cloud]
 
   respond_to :json, only: [:tags, :tag_cloud]
   respond_to :js, only: :like

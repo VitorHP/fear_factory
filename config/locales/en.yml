@@ -114,6 +114,9 @@ en:
       join: Join and enjoy!
       or: ' or '
       no_join: Don't feel like signing up right now? No problem!
+      browse_house_rules: House Rules!
+      browse_house_rules_text: Browser through system customizations made by the community! Search them by tags, vote for the best and write your own!
+      try_it: Try it
     profile:
       welcome: Welcome
   house_rules:
