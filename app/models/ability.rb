@@ -20,6 +20,8 @@ class Ability
       can :manage, SkillGroup, user_id: user.id
       can :read, Comment
       can :manage, Comment, user_id: user.id
+      can :read, Campaign
+      can :manage, Campaign, user_id: user.id
     else
       can :read, HouseRule
     end
