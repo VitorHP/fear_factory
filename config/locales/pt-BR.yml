@@ -213,9 +213,18 @@ pt-BR:
       stunt:
         one: Façanha
         other: Façanhas
+      campaign:
+        one: Campanha
+        other: Campanhas
       character:
-        one: Personagem
-        other: Personagens
+        one: personagem
+        other: personagens
+      house_rule:
+        one: Regra Caseira
+        other: Regras Caseiras
+      skill_group:
+        one: Grupo de Perícias
+        other: Grupos de Perícias
     attributes:
       extra:
         name: Nome
@@ -229,6 +238,11 @@ pt-BR:
         refresh: Recarga
         high_concept: Conceito
         trouble: Problema
+      house_rule:
+        name: Nome
+        thirty_second_version: 'Versão de 30 segundos'
+        description: Descrição
+        idiom: Idioma
       skill:
         athletics: Atletismo
         burglary: Roubo
@@ -267,14 +281,16 @@ pt-BR:
     medriocre: Mediano
     poor: Fraco
     terrible: Péssimo
+  navbar:
+    home: Home
+    login: Entrar
+    logout: Sair
+    edit_account: Editar Conta
+    sign_up: Cadastro
+    new_campaign: Nova Campanha
+  buttons:
+    go_back: Voltar
   controllers:
-    application:
-      navbar:
-        home: Home
-        login: Entrar
-        logout: Sair
-        edit_account: Editar Conta
-        sign_up: Cadastro
     characters:
       index:
         new_character: Novo Personagem

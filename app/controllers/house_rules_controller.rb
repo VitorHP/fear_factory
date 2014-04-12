@@ -1,4 +1,8 @@
 class HouseRulesController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:index, :show]
+
+  respond_to :json, only: :tags
+
   load_and_authorize_resource
 
   def index
@@ -21,6 +25,10 @@ class HouseRulesController < ApplicationController
     @house_rule = HouseRule.find(params[:id])
   end
 
+  def show
+    @house_rule = HouseRule.find(params[:id])
+  end
+
   def update
     @house_rule = HouseRule.find params[:id]
 
@@ -31,11 +39,16 @@ class HouseRulesController < ApplicationController
     end
   end
 
+  def tags
+    @tags = ActsAsTaggableOn::Tagging.where(:context => :tags).joins(:tag).select('DISTINCT tags.name').map{ |t| t.name.split(/ ?, ?/) }.flatten.uniq
+    respond_with @tags
+  end
+
   private
 
   def house_rule_params
     params.require(:house_rule).permit([
-      :name, :thirty_second_version, :description
+      :name, :thirty_second_version, :description, :tags
     ])
   end
 end

@@ -21,6 +21,10 @@ gem 'omniauth-facebook'
 gem 'font-awesome-rails'
 gem 'nested_form'
 gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
+gem 'acts-as-taggable-on'
+gem 'select2-rails'
+gem 'language_list'
 
 group :development do
   gem 'better_errors'

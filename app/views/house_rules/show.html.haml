@@ -1,0 +1,11 @@
+
+%h1= @house_rule.name
+
+%legend= t('activerecord.attributes.house_rule.thirty_second_version')
+
+.well= @house_rule.thirty_second_version.html_safe
+
+%legend= t('activerecord.attributes.house_rule.description')
+%p= @house_rule.description.html_safe
+
+= link_to t('buttons.go_back'), house_rules_path, class: 'btn btn-default'

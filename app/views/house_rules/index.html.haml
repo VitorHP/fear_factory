@@ -1,6 +1,6 @@
 
 %br
-= link_to t('.new_house_rule'), new_house_rule_path, class: 'btn btn-primary'
+= link_to t('.new_house_rule'), new_house_rule_path, class: 'btn btn-primary' if can? :create, HouseRule
 %br
 %br
 
@@ -9,5 +9,5 @@
     %li.house_rule.panel.panel-default
       .panel-heading
         = link_to h.name, house_rule_path(h)
-        = link_to t('button.edit'), edit_house_rule_path(h), class: 'pull-right'
+        = link_to t('button.edit'), edit_house_rule_path(h), class: 'pull-right' if can? :create, HouseRule
       .panel-body= h.thirty_second_version.html_safe

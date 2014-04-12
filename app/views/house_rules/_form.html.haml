@@ -1,9 +1,15 @@
-= tinymce
+= tinymce language: I18n.locale.to_s.gsub('-', '_')
 
 = simple_form_for @house_rule do |f|
   = f.input :name
-  = f.input :thirty_second_version, input_html: { class: 'tinymce', rows: 15 }
-  = f.input :description, input_html: { class: 'tinymce', rows: 30 }
+  .row
+    .col-md-6
+      = f.input :tags
+    .col-md-6
+      = f.input :idiom, collection: LanguageList::COMMON_LANGUAGES.map(&:name).sort, selected: SelectIdiomFromLocale.new.perform
+  = f.input :thirty_second_version, input_html: { class: 'tinymce', rows: 10 }
+  = f.input :description, input_html: { class: 'tinymce', rows: 20 }
 
   = f.button :submit
+  = link_to t('buttons.go_back'), house_rules_path, class: 'btn btn-default'
 

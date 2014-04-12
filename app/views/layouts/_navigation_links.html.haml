@@ -1,23 +1,24 @@
 - if user_signed_in?
-  %li= link_to t('application.navbar.logout'), destroy_user_session_path, :method=>'delete'
+  %li= link_to t('navbar.logout'), destroy_user_session_path, :method=>'delete'
 - else
-  %li= link_to t('application.navbar.login'), new_user_session_path
+  %li= link_to t('navbar.login'), new_user_session_path
 
 - if user_signed_in?
-  %li= link_to t('application.navbar.edit_account'), edit_user_registration_path
+  %li= link_to t('navbar.edit_account'), edit_user_registration_path
 - else
-  %li= link_to t('application.navbar.sign_up'), new_user_registration_path
+  %li= link_to t('navbar.sign_up'), new_user_registration_path
 
 - if user_signed_in?
   %li.dropdown
     %a.dropdown-toggle{ href: '#', :'data-toggle' => 'dropdown'}
-      = t('application.navbar.campaigns')
+      = t('activerecord.models.campaign.other')
       %b.caret
     %ul.campaigns.dropdown-menu
-      %li= link_to t('application.navbar.new_campaign'), new_campaign_path
+      %li= link_to t('navbar.new_campaign'), new_campaign_path
       %li.divider
       - current_user.campaigns.select(&:persisted?).each do |c|
         %li= link_to c.name, campaign_path(c)
-  %li= link_to t('application.navbar.skill_groups'), custom_skill_groups_path
-  %li= link_to t('application.navbar.house_rules'), house_rules_path
+  %li= link_to t('activerecord.models.skill_group.other'), custom_skill_groups_path
+
+%li= link_to t('activerecord.models.house_rule.other'), house_rules_path
 
