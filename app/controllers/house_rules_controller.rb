@@ -57,11 +57,33 @@ class HouseRulesController < ApplicationController
     respond_with @house_rule
   end
 
+  def comment
+    @house_rule = HouseRule.find params[:id]
+
+    @comment = @house_rule.comments.create comment_params.merge(user: current_user)
+
+    redirect_to house_rule_path(@house_rule)
+  end
+
+  def uncomment
+    @house_rule = HouseRule.find params[:id]
+
+    @house_rule.comments.find(params[:comment_id]).destroy
+
+    redirect_to house_rule_path(@house_rule)
+  end
+
   private
 
   def house_rule_params
     params.require(:house_rule).permit([
       :name, :thirty_second_version, :description, :tags
+    ])
+  end
+
+  def comment_params
+    params.require(:comment).permit([
+      :title, :comment
     ])
   end
 end

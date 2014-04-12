@@ -1,11 +1,41 @@
 
-%h1= @house_rule.name
+.row
+  .house-rule.col-md-12
+    %h1= @house_rule.name
 
-%legend= t('activerecord.attributes.house_rule.thirty_second_version')
+    %legend= t('activerecord.attributes.house_rule.thirty_second_version')
 
-.well= @house_rule.thirty_second_version.html_safe
+    .well= @house_rule.thirty_second_version.html_safe
 
-%legend= t('activerecord.attributes.house_rule.description')
-%p= @house_rule.description.html_safe
+    %legend= t('activerecord.attributes.house_rule.description')
+    %p= @house_rule.description.html_safe
 
+%legend= t('.comments')
+.row
+  - if @house_rule.comments.any?
+    .comments-area.col-md-8
+      %ul.comments
+        - @house_rule.comments.each do |c|
+          %li.comment.well
+            %span.title= c.title
+            %span= " - "
+            %span.author= "#{c.user.name} #{t('.commented')} #{l(c.created_at, format: :short)}"
+            = link_to t('remove_comment'), uncomment_house_rule_path(@house_rule, comment_id: c.id), method: :delete, class: 'pull-right'
+            %br
+            %br
+            .comment-text= c.comment
+  - else
+    .no_comments.col-md-12
+      %p= t('.no_comments_yet')
+
+- if can? :comment, HouseRule
+  .row.comment-form
+    .col-md-6
+      = simple_form_for @house_rule.comments.build, url: comment_house_rule_path(@house_rule) do |f|
+        = f.input :title
+        = f.input :comment
+
+        = f.button :submit
+
+%br
 = link_to t('buttons.go_back'), house_rules_path, class: 'btn btn-default'

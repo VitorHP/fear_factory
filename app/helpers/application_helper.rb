@@ -12,4 +12,8 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def current_user
+    super || User.new(name: 'Guest')
+  end
+
 end

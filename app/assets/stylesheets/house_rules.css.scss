@@ -19,3 +19,21 @@ ul.house-rules {
   }
 
 }
+
+.no_comments {
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.comments {
+  list-style: none;
+}
+
+.comments .author{
+  font-size: 13px;
+}
+
+.comment .title {
+  font-weight: bold;
+}

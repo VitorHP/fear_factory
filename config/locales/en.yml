@@ -103,6 +103,10 @@ en:
       stress_tracks: Stress
       consequences: Consequences
       skill_list: Skill List
+  house_rules:
+    show:
+      commented: commented on
+      no_comments_yet: No comments yet
   controllers:
     home:
       index:
