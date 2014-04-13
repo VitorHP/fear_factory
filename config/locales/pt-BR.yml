@@ -327,6 +327,8 @@ pt-BR:
     index:
       clean_filters: Limpar Filtros
       new_house_rule: Nova Regra
+      favorites: Favoritas
+      all_house_rules: Todas
   home:
     index:
       welcome: Bem vindo ao Fate Generator!

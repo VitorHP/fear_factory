@@ -8,23 +8,19 @@
     = link_to t('.new_house_rule'), new_house_rule_path, class: 'btn btn-primary' if can? :create, HouseRule
     %br
     %br
-    %ul.house-rules.list-unstyled
-      - @house_rules.each do |h|
-        %li.house_rule.panel.panel-default
-          .panel-heading
-            %span= link_to h.name, house_rule_path(h)
-            - if can? :fave, HouseRule
-              %span.fave
-                = link_to favorite_house_rule_path(h), class: 'favorite-house-rule', id: "favorite-house-rule-#{h.id}", remote: true, method: :post do
-                  %span.glyphicon{ class: "#{ current_user.favorited?(h) ? 'glyphicon-star' : 'glyphicon-star-empty' }" }
-            %span.likes
-              = link_to like_house_rule_path(h), id: "like-house-rule-#{h.id}", remote: true, method: :post do
-                %span.glyphicon.glyphicon-thumbs-up{ class: current_user.liked?(h) ? 'liked' : nil }
-              %span{ id: "like-count-#{h.id}"}= h.likes.size
-            %span.comments
-              %span.glyphicon.glyphicon-comment
-              %span.comments-count= h.comments.size
-            = link_to t('buttons.edit'), edit_house_rule_path(h), class: 'btn btn-default pull-right' if can? :edit, h
-          .panel-body= h.thirty_second_version.html_safe
-          .panel-footer
-            %span.tags= "Tags: #{h.tag_list}"
+
+    %ul.nav.nav-tabs
+      %li.active
+        %a{ href: '#all', :'data-toggle' => 'tab'}= t '.all_house_rules'
+      %li
+        %a{ href: '#favorites', :'data-toggle' => 'tab'}= t '.favorites'
+
+    .tab-content
+      .tab-pane.active#all
+
+        %br
+        = render 'list', house_rules: @house_rules
+      .tab-pane.active#favorites
+
+        %br
+        = render 'list', house_rules: current_user.favorites.map(&:favable)

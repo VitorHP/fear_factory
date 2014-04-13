@@ -1,0 +1,21 @@
+
+%ul.house-rules.list-unstyled
+  - house_rules.each do |h|
+    %li.house_rule.panel.panel-default
+      .panel-heading
+        %span= link_to h.name, house_rule_path(h)
+        - if can? :fave, HouseRule
+          %span.fave
+            = link_to favorite_house_rule_path(h), class: 'favorite-house-rule', id: "favorite-house-rule-#{h.id}", remote: true, method: :post do
+              %span.glyphicon{ class: "#{ current_user.favorited?(h) ? 'glyphicon-star' : 'glyphicon-star-empty' }" }
+        %span.likes
+          = link_to like_house_rule_path(h), id: "like-house-rule-#{h.id}", remote: true, method: :post do
+            %span.glyphicon.glyphicon-thumbs-up{ class: current_user.liked?(h) ? 'liked' : nil }
+          %span{ id: "like-count-#{h.id}"}= h.likes.size
+        %span.comments
+          %span.glyphicon.glyphicon-comment
+          %span.comments-count= h.comments.size
+        = link_to t('buttons.edit'), edit_house_rule_path(h), class: 'btn btn-default pull-right' if can? :edit, h
+      .panel-body= h.thirty_second_version.html_safe
+      .panel-footer
+        %span.tags= "Tags: #{h.tag_list}"
