@@ -16,6 +16,7 @@ Fate::Application.routes.draw do
       member do
         post :like
         post :comment
+        post :favorite
         delete :uncomment
       end
     end

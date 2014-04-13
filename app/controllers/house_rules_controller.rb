@@ -2,7 +2,7 @@ class HouseRulesController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:index, :show, :tags, :tag_cloud]
 
   respond_to :json, only: [:tags, :tag_cloud]
-  respond_to :js, only: :like
+  respond_to :js, only: [:like, :favorite]
 
   authorize_resource
 
@@ -58,6 +58,18 @@ class HouseRulesController < ApplicationController
       @house_rule.unliked_by current_user
     else
       @house_rule.liked_by current_user
+    end
+
+    respond_with @house_rule
+  end
+
+  def favorite
+    @house_rule = HouseRule.friendly.find params[:id]
+
+    if @house_rule.favorited_by? current_user
+      @house_rule.unfavorited_by current_user
+    else
+      @house_rule.favorited_by current_user
     end
 
     respond_with @house_rule

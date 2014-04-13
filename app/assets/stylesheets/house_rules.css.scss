@@ -10,6 +10,16 @@ ul.house-rules {
     margin-left: 15px;
   }
 
+  .favorite-house-rule {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .glyphicon-star-empty, .glyphicon-star {
+    color: #000;
+  }
+
 }
 
 .no_comments {

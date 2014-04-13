@@ -1,5 +1,7 @@
 class HouseRule < ActiveRecord::Base
   extend FriendlyId
+  include Favable
+
   friendly_id :slug_candidates, use: :slugged
 
   acts_as_taggable_on :tags
