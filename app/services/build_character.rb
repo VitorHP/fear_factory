@@ -8,12 +8,16 @@ class BuildCharacter
       build_stunts character
       build_extras character
 
-      (1..@campaign.skill_cap).to_a.reverse.each_with_index do |level, index|
-        rating_count = index + 1
+      # (1..@campaign.skill_cap).to_a.reverse.each_with_index do |level, index|
+      #   rating_count = index + 1
 
-        rating_count.times do
-          character.ratings.build level: level
-        end
+      #   rating_count.times do
+      #     character.ratings.build level: level
+      #   end
+      # end
+      #
+      @campaign.skills.each do |skill|
+        character.ratings.build skill: skill
       end
 
       stress_tracks = [
