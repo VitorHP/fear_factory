@@ -9,6 +9,8 @@
   %dd= @campaign.refresh_rate
   %dt= t('activerecord.attributes.campaign.skill_cap')
   %dd= @campaign.refresh_rate
+  %dt= t('activerecord.attributes.campaign.skill_type')
+  %dd= @campaign.skill_type.name
 
   %br
   = link_to t('.edit_campaign'), edit_campaign_path(@campaign), class: 'btn btn-default' if can? :edit, @campaign

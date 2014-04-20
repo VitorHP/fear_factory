@@ -16,9 +16,11 @@ class BuildCharacter
       #   end
       # end
       #
-      @campaign.skills.each do |skill|
-        character.ratings.build skill: skill
-      end
+      # @campaign.skills.each do |skill|
+      #   character.ratings.build skill: skill
+      # end
+
+      @campaign.skill_type.build_skills for: character, in: @campaign
 
       stress_tracks = [
         {name: 'mental stress', skill_id: 18},

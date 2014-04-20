@@ -1,0 +1,1 @@
+class SkillBuilderNotFoundError < NameError; end

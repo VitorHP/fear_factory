@@ -22,8 +22,7 @@
 
     #skill-panel
       %h2.header= t(".skills")
-      -# = render "skill_pyramid", f: f, campaign: @campaign, character: @character
-      = render "skill_list", f: f, campaign: @campaign, character: @character
+      = render "skill_#{@campaign.skill_type.alias}", f: f, campaign: @campaign, character: @character
   .row
     %fieldset#stunts-panel
       %h2.header= t(".stunts")

@@ -8,7 +8,7 @@
     = f.input :refresh_rate
     = f.input :number_of_phases, as: :hidden
     = f.input :skill_cap, collection: Ladder.new.to_h(to: :average), label_method: ->((k, v)){ "#{k} (+#{v})" }, value_method: ->((k, v)){ v }
-    = f.association :skill_type, as: :hidden
+    = f.association :skill_type, collection: SkillType.all
     = f.association :skill_group, collection: SkillGroup.where(user_id: [nil, current_user.id])
 
     -# %h3= t("activerecord.models.stress_track.other")

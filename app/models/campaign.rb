@@ -12,7 +12,7 @@ class Campaign < ActiveRecord::Base
 
   validates :number_of_aspects, :number_of_initial_stunts, :refresh_rate, inclusion: { in: 1..15, message: :must_be_between, min: 1, max: 15 }
   validates :skill_cap, inclusion: { in: 1..8, message: :must_be_between, min: 1, max: 8 }
-  validates :skill_group, presence: true
+  validates :skill_group, :skill_type, presence: true
   validates :name, presence: true, length: { maximum: 255 }
 
   validate :does_not_have_characters_associated
@@ -26,6 +26,8 @@ class Campaign < ActiveRecord::Base
     campaign.number_of_stress_boxes = 3
     campaign.skill_cap = 4
     campaign.skill_group_id = 1
+
+    campaign.skill_type = SkillType.find_by alias: 'pyramid'
 
     stress_tracks = [
       {name: 'mental', skill_id: 18},
