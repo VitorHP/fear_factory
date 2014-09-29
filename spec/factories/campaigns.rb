@@ -15,6 +15,7 @@ FactoryGirl.define do
     number_of_stress_boxes 3
     skill_cap 4
 
+    association :skill_type, factory: :skill_type
     association :skill_group, factory: :skill_group
 
     after(:create) do |campaign, evaluator|
