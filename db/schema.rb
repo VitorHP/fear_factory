@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.datetime "updated_at"
     t.text     "description"
     t.integer  "refresh"
-    t.integer  "campaign_id"
     t.integer  "user_id"
+    t.integer  "campaign_id"
   end
 
   create_table "comments", force: true do |t|

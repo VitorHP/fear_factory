@@ -1,7 +1,8 @@
 
-%ul.skill_list.form-horizontal
-  = f.fields_for :ratings, class: 'form-horizontal' do |r|
-    = r.input :level, label: r.object.skill.name
-    = r.input :id, as: :hidden
-    = r.input :skill_id, as: :hidden
+%fieldset#skills
+  %ul.skill-list.form-horizontal
+    = f.fields_for :ratings, class: 'form-horizontal' do |r|
+      = r.input :level, label: r.object.skill.name
+      = r.input :id, as: :hidden
+      = r.input :skill_id, as: :hidden
 

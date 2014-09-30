@@ -76,6 +76,17 @@
       font-size: 12px;
     }
 
+    #skills .skill-list label {
+      width: 40%;
+    }
+
+    #skills .skill-list input[type="number"] {
+      display: inline-block;
+      width: 30%;
+      text-align: center;
+    }
+
+
     #stress-tracks-panel {
       label {
         font-size: 16px;
