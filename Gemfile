@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.2.1'
 gem 'rails', '4.0.3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -40,6 +40,8 @@ group :development do
 end
 
 group :development, :test do
+  gem 'test-unit'
+  gem 'minitest'
   gem 'guard-rspec'
   gem 'pry'
   gem 'factory_girl_rails'
