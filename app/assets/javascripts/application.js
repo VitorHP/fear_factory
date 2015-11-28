@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require jquery.ui.all
+//= require jquery-ui
 //= require jquery_nested_form
 //= require tinymce-jquery
 //= require select2
