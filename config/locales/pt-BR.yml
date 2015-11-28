@@ -331,14 +331,9 @@ pt-BR:
       all_house_rules: Todas
   home:
     index:
-      welcome: Bem vindo ao Fate Generator!
-      welcome_text: Ferramentas online pra tornar os seus jogos de Fate sensaciofuckinais!
-      join: Cadastre-se
-      or: ' ou '
-      no_join: Não quer se cadastrar? Sem problemas! Ainda tem coisas pra você aqui!
-      browse_house_rules: Regras Caseiras!
-      browse_house_rules_text: Veja e crie customizações para Fate! Vote nas melhores, discuta nos comentários e crie as suas próprias!
-      try_it: Conferir
+      title: The Fate Generator
+      create_character: Crie um Personagem
+      create_fate_core_btn: Fate Core
     profile:
       welcome: Bem vindo
   custom_skill_groups:

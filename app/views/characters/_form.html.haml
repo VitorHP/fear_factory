@@ -1,5 +1,5 @@
 
-= simple_form_for [@campaign, @character], html: { class: 'character' } do |f|
+= simple_form_for @character, url: "", html: { class: 'character' } do |f|
   .row
     %fieldset#character-fields
       %h2.header= t(".id")
@@ -22,7 +22,7 @@
 
     #skill-panel
       %h2.header= t(".skills")
-      = render "skill_#{@campaign.skill_type.alias}", f: f, campaign: @campaign, character: @character
+      = render "skill_pyramid", f: f, campaign: @campaign, character: @character
   .row
     %fieldset#stunts-panel
       %h2.header= t(".stunts")
@@ -57,5 +57,3 @@
         %fieldset#extra-consequences
           = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.present? } do |s|
             = render 'consequence_fields', s: s
-  .row
-    = f.button :submit, class: 'hidden-print'

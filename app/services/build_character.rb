@@ -1,26 +1,23 @@
 class BuildCharacter
   def build options = {}
     @campaign = options.fetch(:campaign)
-    @user = options.fetch(:user)
 
-    @user.characters.build do |character|
+    Character.new do |character|
       build_aspects character
       build_stunts character
       build_extras character
 
-      # (1..@campaign.skill_cap).to_a.reverse.each_with_index do |level, index|
-      #   rating_count = index + 1
+      (1..@campaign.skill_cap).to_a.reverse.each_with_index do |level, index|
+        rating_count = index + 1
 
-      #   rating_count.times do
-      #     character.ratings.build level: level
-      #   end
-      # end
-      #
+        rating_count.times do
+          character.ratings.build level: level
+        end
+      end
+
       # @campaign.skills.each do |skill|
       #   character.ratings.build skill: skill
       # end
-
-      @campaign.skill_type.build_skills for: character, in: @campaign
 
       stress_tracks = [
         {name: 'mental stress', skill_id: 18},

@@ -11,6 +11,7 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
+      = yield :heading
       .container
         = render 'layouts/campaign_header'
         = render 'layouts/messages'

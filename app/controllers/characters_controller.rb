@@ -1,12 +1,12 @@
 class CharactersController < ApplicationController
-  load_and_authorize_resource
 
   # def index
   #   @characters.from_campaign(@campaign)
   # end
 
   def new
-    @character = BuildCharacter.new.build(campaign: @campaign, user: current_user)
+    @character = BuildCharacter.new.build(campaign: Campaign.vanilla_fate_core)
+    @campaign  = Campaign.vanilla_fate_core
   end
 
   def create
@@ -47,6 +47,9 @@ class CharactersController < ApplicationController
       ],
       consequences_attributes: [:id, :level, :name, :description, :skill_id, :skill_level_to_unlock]
     ])
+  end
+
+  def fae_campaign
   end
 
 end

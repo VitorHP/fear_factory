@@ -3,11 +3,13 @@ Fate::Application.routes.draw do
   scope "/(:locale)", locale: /en|pt-BR/ do
     devise_for :users, skip: :omniauth_callbacks
 
-    resources :campaigns, except: [:index] do
-      resources :characters, except: [:index]
-    end
+    resources :characters, only: [:new]
 
-    resources :custom_skill_groups
+    # resources :campaigns, except: [:index] do
+    #   resources :characters, except: [:index]
+    # end
+
+    # resources :custom_skill_groups
     resources :house_rules do
       collection do
         get :tags

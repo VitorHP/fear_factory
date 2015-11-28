@@ -1,5 +1,5 @@
 %fieldset#skills
-  - Ladder.new.to_h(from: campaign.skill_cap, to: :averag).each_pair do |name, level|
+  - Ladder.new.to_h(from: @campaign.skill_cap, to: :averag).each_pair do |name, level|
     %div{ class: name }
       .skill-row.skills
         .rating-level
@@ -12,9 +12,9 @@
               = r.input :skill_id, as: :hidden
               = r.input :level, as: :hidden, input_html: { value: level }
 
-#skill-drawer.hidden-print
-  #skill-list.collapse.skills
-    - campaign.skills.each do |skill|
-      .skill{ data: { id: skill.id } }= skill.name if skill.present?
-  #link
-    %button{ type: "button", class: "btn btn-sm", 'data-toggle' => "collapse", 'data-target' => "#skill-list" }= t(".skill_list")
+-# #skill-drawer.hidden-print
+-#   #skill-list.collapse.skills
+-#     - campaign.skills.each do |skill|
+-#       .skill{ data: { id: skill.id } }= skill.name if skill.present?
+-#   #link
+-#     %button{ type: "button", class: "btn btn-sm", 'data-toggle' => "collapse", 'data-target' => "#skill-list" }= t(".skill_list")

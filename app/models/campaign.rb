@@ -24,7 +24,7 @@ class Campaign < ActiveRecord::Base
     campaign.refresh_rate = 3
     campaign.number_of_initial_stunts = 3
     campaign.number_of_stress_boxes = 3
-    campaign.skill_cap = 4
+    campaign.skill_cap = 5
     campaign.skill_group_id = 1
 
     campaign.skill_type = SkillType.find_by alias: 'pyramid'

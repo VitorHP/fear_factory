@@ -9,9 +9,12 @@ class SkillType < ActiveRecord::Base
 
   def build_skills options
     character = options.fetch(:for)
-    campaign =  options.fetch(:in)
 
-    skills_builder.new(self).build character, campaign
+    [4,3,3,2,2,2,1,1,1,1].each do |level|
+      character.ratings.build level: level
+    end
+
+    # skills_builder(campaign).new(self).build character, campaign
   end
 
   private

@@ -1,24 +1,12 @@
 
-.jumbotron
-  %h1= t '.welcome'
-  %p= t '.welcome_text'
-  %p
-    = link_to t('.join'), new_user_registration_path, class: 'btn btn-primary btn-lg'
-    %span= t '.or'
-    = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook btn-lg' do
-      %i.fa.fa-facebook= " | #{t('devise.sessions.login_with_facebook')}"
+= content_for :heading do
+  .home__heading
+    %h1.home__title= t(".title")
 
-.row
-  .col-md-12.no_join
-    %h2= t '.no_join'
-
--# .col-md-6
--#   %h3= t '.build_character'
--#   %p= t '.build_character_text'
--#   = link_to t('.try_it'), '#', class: 'btn btn-primary'
-
-.col-md-6
-  %h3= t '.browse_house_rules'
-  %p= t '.browse_house_rules_text'
-  = link_to t('.try_it'), house_rules_path, class: 'btn btn-primary'
-
+.home__content
+  .row
+    .col-sm-12
+      %h2.home__subtitle= t(".create_character")
+  .row
+    .col-sm-12
+      = link_to t(".create_fate_core_btn"), new_character_path, class: "home__create-character-btn"
