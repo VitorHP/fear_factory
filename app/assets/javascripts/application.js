@@ -13,9 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require jquery-ui
-//= require jquery_nested_form
-//= require tinymce-jquery
-//= require select2
-//= require jqcloud
-//= require_tree .

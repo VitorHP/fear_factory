@@ -5,25 +5,6 @@ Fate::Application.routes.draw do
 
     resources :characters, only: [:new]
 
-    # resources :campaigns, except: [:index] do
-    #   resources :characters, except: [:index]
-    # end
-
-    # resources :custom_skill_groups
-    resources :house_rules do
-      collection do
-        get :tags
-        get :tag_cloud
-      end
-      member do
-        post :like
-        post :comment
-        post :favorite
-        delete :uncomment
-      end
-    end
-
-    get '/profile', to: 'home#profile', as: :profile
     root to: 'home#index'
   end
 
