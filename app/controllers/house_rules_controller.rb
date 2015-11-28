@@ -1,7 +1,6 @@
 class HouseRulesController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:index, :show, :tags, :tag_cloud]
 
-  respond_to :json, only: [:tags, :tag_cloud]
   respond_to :js, only: [:like, :favorite]
 
   authorize_resource
@@ -44,11 +43,11 @@ class HouseRulesController < ApplicationController
 
   def tags
     @tags = ActsAsTaggableOn::Tagging.where(:context => :tags).joins(:tag).select('DISTINCT tags.name').map{ |t| t.name.split(/ ?, ?/) }.flatten.uniq
-    respond_with @tags
+    render json: @tags
   end
 
   def tag_cloud
-    respond_with TagCloudBuilder.new(self, HouseRule).build_for(:tags)
+    render json: TagCloudBuilder.new(self, HouseRule).build_for(:tags)
   end
 
   def like
@@ -60,7 +59,7 @@ class HouseRulesController < ApplicationController
       @house_rule.liked_by current_user
     end
 
-    respond_with @house_rule
+    render json: @house_rule
   end
 
   def favorite
@@ -72,7 +71,7 @@ class HouseRulesController < ApplicationController
       @house_rule.favorited_by current_user
     end
 
-    respond_with @house_rule
+    render json: @house_rule
   end
 
   def comment
