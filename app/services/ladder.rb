@@ -31,7 +31,7 @@ class Ladder
       great:      4,
       good:       3,
       fair:       2,
-      average:    1,
+      averag:    1,
       mediocre:   0,
       poor:      -1,
       terrible:  -2

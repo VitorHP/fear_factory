@@ -1,11 +1,14 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe CharactersController, type: :controller do
-  login_user
 
-  let(:user){ User.first }
+  let(:user){ create(:user) }
   let!(:character){ create(:character, user_id: user.id) }
   let(:campaign){ create(:fate_core_campaign) }
+
+  before do
+    sign_in user
+  end
 
   # describe '#index' do
 

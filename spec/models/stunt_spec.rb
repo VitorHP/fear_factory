@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Stunt do
   it { should belong_to(:stuntable) }

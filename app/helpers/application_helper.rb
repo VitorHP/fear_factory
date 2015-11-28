@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include ActionView::Helpers::TagHelper
 
   def display_base_errors resource
     return '' if (resource.errors.empty?) or (resource.errors[:base].empty?)

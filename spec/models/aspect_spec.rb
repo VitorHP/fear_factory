@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Aspect do
+describe Aspect, type: :model do
   it { should belong_to(:aspectable) }
 
   describe "#default_scope" do

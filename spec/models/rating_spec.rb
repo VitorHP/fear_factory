@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Rating do
   it { should belong_to(:rateable) }
@@ -8,7 +8,7 @@ describe Rating do
     let!(:great) { create(:rating, level: 4) }
     let!(:good) { create(:rating, level: 3) }
     let!(:fair) { create(:rating, level: 2) }
-    let!(:average) { create(:rating, level: 1) }
+    let!(:averag) { create(:rating, level: 1) }
 
     describe '#great' do
       subject{ Rating.great }
@@ -28,10 +28,10 @@ describe Rating do
       it { should == [fair] }
     end
 
-    describe '#average' do
-      subject{ Rating.average }
+    describe '#averag' do
+      subject{ Rating.averag }
 
-      it { should == [average] }
+      it { should == [averag] }
     end
   end
 end

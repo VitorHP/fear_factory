@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Skill do
   it { should have_many(:ratings).dependent(:destroy) }

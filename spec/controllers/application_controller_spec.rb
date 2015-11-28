@@ -1,9 +1,10 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe ApplicationController do
+describe ApplicationController, type: :controller do
 
   controller do
     include ApplicationHelper
+
     def index
 
     end
