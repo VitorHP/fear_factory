@@ -2,6 +2,12 @@
 
 FactoryGirl.define do
   factory :character do
-    name "MyString"
+    name "James"
+  end
+
+  factory :fate_core_character, parent: :character do
+    name "James LeBlank"
+
+    aspects [ FactoryGirl.create(:aspect, name: "Tentado pelo lado negro") ]
   end
 end

@@ -210,6 +210,9 @@ pt-BR:
     errors:
       <<: *errors
     models:
+      aspect:
+        one: Aspecto
+        other: Aspectos
       campaign:
         one: Campanha
         other: Campanhas
@@ -289,6 +292,14 @@ pt-BR:
       stress_track:
         mental_stress: Estresse Físico
         physical_stress: Estresse Mental
+  home:
+    index:
+      title: The Fate Generator
+      create_character: Crie um Personagem
+      create_fate_core_btn: Fate Core
+      community_characters: Personagens Criados por Outros Jogadores
+  navigation:
+    solar: Compre Fate
   ladder:
     legendary: Lendário
     epic: Épico
@@ -329,13 +340,6 @@ pt-BR:
       new_house_rule: Nova Regra
       favorites: Favoritas
       all_house_rules: Todas
-  home:
-    index:
-      title: The Fate Generator
-      create_character: Crie um Personagem
-      create_fate_core_btn: Fate Core
-    profile:
-      welcome: Bem vindo
   custom_skill_groups:
     index:
       new_skill_group: Novo Grupo de Perícias

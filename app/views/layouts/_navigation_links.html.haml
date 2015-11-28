@@ -1,14 +1,2 @@
-- if user_signed_in?
-  %li.dropdown
-    %a.dropdown-toggle{ href: '#', :'data-toggle' => 'dropdown'}
-      = t('activerecord.models.campaign.other')
-      %b.caret
-    %ul.campaigns.dropdown-menu
-      %li= link_to t('navbar.new_campaign'), new_campaign_path
-      %li.divider
-      - current_user.campaigns.select(&:persisted?).each do |c|
-        %li= link_to c.name, campaign_path(c)
-  %li= link_to t('activerecord.models.skill_group.other'), custom_skill_groups_path
 
-%li= link_to t('activerecord.models.house_rule.other'), house_rules_path
 
