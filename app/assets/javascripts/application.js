@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+
+$(document).ready(function(){
+  var Home = require("./home")
+
+  var home = new Home();
+})
