@@ -10,7 +10,8 @@
 
   .row
     .col-sm-12
-      = link_to t(".create_fate_core_btn"), new_character_path, class: "home__create-character-btn"
+      = link_to new_character_path, class: "home__create-character-btn-outer" do
+        %span.home__create-character-btn-inner= t(".create_fate_core_btn")
 
   .row
     .col-sm-12

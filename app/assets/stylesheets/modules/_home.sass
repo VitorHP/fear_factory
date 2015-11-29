@@ -18,14 +18,13 @@
 .home__subtitle
   margin-bottom: 20px
 
-.home__create-character-btn
+.home__create-character-btn-outer
+  display: table
   font-family: MinstrelPosterRegular
   color: #fff
   height: 6rem
-  width: 200px
+  width: 230px
   background-color: $fate-blue
-  display: inline-block
-  line-height: 6rem
   font-size: 2rem
   border-radius: 4px
   text-align: center
@@ -33,24 +32,29 @@
   outline: 0
   transition: .2s ease-out
   overflow: hidden
-  white-space: nowrap
   cursor: pointer
-  vertical-align: middle
   border: none
+
+.home__create-character-btn-inner
+  display: table-cell
+  line-height: 2rem
+  vertical-align: middle
 
   &.disabled
     cursor: not-allowed
     opacity: 0.3
 
-.home__create-character-btn.w3-disabled *, 
-.home__create-character-btn:disabled *, 
+.home__create-character-btn-outer:disabled *, 
   pointer-events: none
 
-.home__create-character-btn:hover
+.home__create-character-btn-outer:hover
   text-decoration: none
   color: $white
   background-color: lighten($fate-blue, 5%)
   box-shadow: 0 8px 16px 0 $shadow, 0 6px 20px 0 $shadow
+
+.home__create-character-btn-outer:visited
+  text-decoration: none
 
 .home__community-characters__title
   margin-bottom: 1rem
