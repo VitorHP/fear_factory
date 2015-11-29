@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "aspects", force: true do |t|
+  create_table "aspects", force: :cascade do |t|
     t.string   "name"
     t.string   "aspectable_type"
     t.string   "aspectable_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.datetime "updated_at"
   end
 
-  create_table "campaigns", force: true do |t|
+  create_table "campaigns", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "number_of_aspects"
     t.integer  "number_of_phases"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.integer  "skill_group_id"
   end
 
-  create_table "characters", force: true do |t|
+  create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.integer  "user_id"
   end
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
     t.text     "comment"
     t.integer  "commentable_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "consequences", force: true do |t|
+  create_table "consequences", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.integer  "level"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.string   "consequential_type"
   end
 
-  create_table "extras", force: true do |t|
+  create_table "extras", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "character_id"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.datetime "updated_at"
   end
 
-  create_table "favorites", force: true do |t|
+  create_table "favorites", force: :cascade do |t|
     t.string   "note",         limit: 50, default: ""
     t.integer  "favable_id"
     t.string   "favable_type"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
   add_index "favorites", ["favable_type"], name: "index_favorites_on_favable_type", using: :btree
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
-  create_table "friendly_id_slugs", force: true do |t|
+  create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
     t.string   "sluggable_type", limit: 50
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
-  create_table "house_rules", force: true do |t|
+  create_table "house_rules", force: :cascade do |t|
     t.string   "name"
     t.text     "thirty_second_version"
     t.text     "description"
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
 
   add_index "house_rules", ["slug"], name: "index_house_rules_on_slug", unique: true, using: :btree
 
-  create_table "ratings", force: true do |t|
+  create_table "ratings", force: :cascade do |t|
     t.integer  "skill_id"
     t.integer  "level"
     t.datetime "created_at"
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.string   "rateable_type"
   end
 
-  create_table "skill_groups", force: true do |t|
+  create_table "skill_groups", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -141,7 +141,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.string   "type"
   end
 
-  create_table "skill_types", force: true do |t|
+  create_table "skill_types", force: :cascade do |t|
     t.string   "name"
     t.text     "pyramid"
     t.integer  "number_of_columns"
@@ -151,14 +151,14 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.string   "alias"
   end
 
-  create_table "skills", force: true do |t|
+  create_table "skills", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "skill_group_id"
   end
 
-  create_table "stress_levels", force: true do |t|
+  create_table "stress_levels", force: :cascade do |t|
     t.integer  "stress_track_id"
     t.integer  "level"
     t.boolean  "checked"
@@ -166,7 +166,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.datetime "updated_at"
   end
 
-  create_table "stress_tracks", force: true do |t|
+  create_table "stress_tracks", force: :cascade do |t|
     t.integer  "stressable_id"
     t.string   "stressable_type"
     t.string   "name"
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.datetime "updated_at"
   end
 
-  create_table "stunts", force: true do |t|
+  create_table "stunts", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "stuntable_id"
@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
     t.datetime "updated_at"
   end
 
-  create_table "taggings", force: true do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
@@ -196,14 +196,14 @@ ActiveRecord::Schema.define(version: 20140420182037) do
 
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -224,7 +224,7 @@ ActiveRecord::Schema.define(version: 20140420182037) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "votes", force: true do |t|
+  create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"
     t.string   "votable_type"
     t.integer  "voter_id"

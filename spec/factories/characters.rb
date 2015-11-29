@@ -8,6 +8,6 @@ FactoryGirl.define do
   factory :fate_core_character, parent: :character do
     name "James LeBlank"
 
-    aspects [ FactoryGirl.create(:aspect, name: "Tentado pelo lado negro") ]
+    # aspects [ FactoryGirl.create(:aspect, name: "Tentado pelo lado negro") ]
   end
 end
