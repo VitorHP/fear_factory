@@ -24,6 +24,7 @@
               %span.character__name= c.name
               %br
               %span.character__concept= c.description
+              %span.character__user= t(".created_by", user: c.user_name)
             .character__tags 
             .character__sheet
               .row.character__sheet-content
@@ -40,7 +41,7 @@
                         .row
                           .col-xs-1
                             %span= "+#{level}"
-                          .col-xm-10
+                          .col-xs-10
                             %ul.list-inline
                               - c.ratings.select{ |r| r.level == level }.each do |r|
                                 %li.character__skill= r.skill_name
@@ -51,3 +52,7 @@
                       %li.character__stunt
                         %span.character__stunt-name= s.name
                         %p.character__stunt-name= s.description
+              .row
+                .col-xs-12
+                  = link_to t(".edit_character_btn"), edit_character_path(c)
+

@@ -298,6 +298,7 @@ pt-BR:
       create_character: Crie um Personagem
       create_fate_core_btn: Fate Core
       community_characters: Personagens Criados por Outros Jogadores
+      created_by: "por: %{user}"
   navigation:
     solar: Compre Fate
   ladder:

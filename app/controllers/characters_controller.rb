@@ -1,5 +1,7 @@
 class CharactersController < ApplicationController
 
+  before_filter :authenticate_user!, only: [:create, :update]
+
   def new
     @character = BuildCharacter.new.build(campaign: Campaign.vanilla_fate_core)
     @campaign  = Campaign.vanilla_fate_core
@@ -7,6 +9,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new character_params
+    @campaign  = Campaign.vanilla_fate_core
 
     if @character.save
       redirect_to root_path
@@ -17,13 +20,14 @@ class CharactersController < ApplicationController
 
   def edit
     @character = Character.find(params[:id])
+    @campaign  = Campaign.vanilla_fate_core
   end
 
   def update
     @character = Character.find params[:id]
 
     if @character.update_attributes character_params
-      redirect_to campaign_path(@campaign)
+      redirect_to root_path
     else
       render :edit
     end
