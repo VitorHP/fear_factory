@@ -21,7 +21,7 @@
 .home__create-character-btn-outer
   display: table
   font-family: MinstrelPosterRegular
-  color: #fff
+  color: #fff !important
   height: 6rem
   width: 230px
   background-color: $fate-blue
@@ -34,6 +34,7 @@
   overflow: hidden
   cursor: pointer
   border: none
+  text-decoration: none !important
 
 .home__create-character-btn-inner
   display: table-cell
@@ -48,13 +49,9 @@
   pointer-events: none
 
 .home__create-character-btn-outer:hover
-  text-decoration: none
   color: $white
   background-color: lighten($fate-blue, 5%)
   box-shadow: 0 8px 16px 0 $shadow, 0 6px 20px 0 $shadow
-
-.home__create-character-btn-outer:visited
-  text-decoration: none
 
 .home__community-characters__title
   margin-bottom: 1rem
