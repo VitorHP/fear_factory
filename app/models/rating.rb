@@ -9,4 +9,6 @@ class Rating < ActiveRecord::Base
   scope :averag, ->{ where(level: 1) }
 
   default_scope ->{ order(:id) }
+
+  delegate :name, to: :skill, prefix: 'skill', allow_nil: true
 end

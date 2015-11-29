@@ -3,5 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @characters = Character.all.limit(10)
+    @campaign  = Campaign.vanilla_fate_core
   end
 end

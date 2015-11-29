@@ -1,19 +1,15 @@
 class CharactersController < ApplicationController
 
-  # def index
-  #   @characters.from_campaign(@campaign)
-  # end
-
   def new
     @character = BuildCharacter.new.build(campaign: Campaign.vanilla_fate_core)
     @campaign  = Campaign.vanilla_fate_core
   end
 
   def create
-    @character = current_user.characters.build character_params.merge(campaign_id: @campaign.id)
+    @character = Character.new character_params
 
     if @character.save
-      redirect_to campaign_path(@campaign)
+      redirect_to root_path
     else
       render :new
     end

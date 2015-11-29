@@ -22,32 +22,31 @@
             .character__stats
               %span.character__name= c.name
               %br
-              %span.character__concept= c.name
+              %span.character__concept= c.aspects.first.name
             .character__tags 
-              Changeling, nWod, WinterCourt
             .character__sheet
               .row.character__sheet-content
                 .col-sm-4
                   %span.character__sheet-title= t("activerecord.models.aspect", count: 2)
                   %ul.list-unstyled.character__aspects
-                    %li.character__aspect Super herói sem dinheiro para o almoço aspecto com um nome realmente muito grande
-                    %li.character__aspect Super herói sem dinheiro para o almoço aspecto com um nome realmente muito grande
+                    - c.aspects.each do |a|
+                      %li.character__aspect= a.name
                 .col-sm-4
                   %span.character__sheet-title= t("activerecord.models.skill", count: 2)
                   %ul.list-unstyled.character__skills
-                    - [5,4,3,2,1].each do |rating|
+                    - @campaign.skill_cap.downto(1) do |level|
                       %li
                         .row
                           .col-xs-1
-                            %span= "+#{rating}"
+                            %span= "+#{level}"
                           .col-xm-10
                             %ul.list-inline
-                              - (6 - rating).times do |
-                                %li.character__skill Briga
+                              - c.ratings.select{ |r| r.level == level }.each do |r|
+                                %li.character__skill= r.skill_name
                 .col-sm-4
                   %span.character__sheet-title= t("activerecord.models.stunt", count: 2)
                   %ul.list-unstyled.character__stunts
-                    - 3.times do
+                    - c.stunts.each do |s|
                       %li.character__stunt
-                        %span.character__stunt-name Spider Web
-                        %p.character__stunt-name +2 ao Criar Vantagem em Inimigos em Fuga tchubas la rubas texto grande pra cacete de asa de fogo
+                        %span.character__stunt-name= s.name
+                        %p.character__stunt-name= s.description
