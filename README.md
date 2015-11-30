@@ -1,140 +1,44 @@
+# The Fate generator
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+The Fate Generator is a character generator website for the (Fate RPG system)[http://www.evilhat.com/home/fate-core/].
 
-Diagnostics
--
+## Requirements
 
-This application was built with recipes that are known to work together.
+- Ruby 2.2.1
+- NPM (I use (browserify-rails)[https://github.com/browserify-rails/browserify-rails] for asset management)
 
-This application was built with preferences that are NOT known to work
-together.
+## Bootstrap
 
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include these diagnostics:
+- Run `bundle install`
+- Config your `config/database.yml` according to `database.yml.example`
+- Run `rake db:migrate && rake db:seed`
+- Run `npm install`
+- Start hacking
 
-We’d also like to know if you’ve found combinations of recipes or
-preferences that do work together.
+## Tests
 
-Recipes:
+Run `rspec` to run all tests or `guard` to keep tests running automatically as you change files. Code coverage is done with SimpleCov. A report is generated every time RSpec runs inside `coverage/`
 
-* apps4
-* controllers
-* core
-* email
-* extras
-* frontend
-* gems
-* git
-* init
-* models
-* prelaunch
-* railsapps
-* readme
-* routes
-* saas
-* setup
-* testing
-* views
+## Licence
 
-Preferences:
+The MIT License (MIT)
 
-* git: true
-* apps4: none
-* dev_webserver: thin
-* prod_webserver: unicorn
-* database: postgresql
-* templates: haml
-* unit_test: rspec
-* integration: rspec-capybara
-* continuous_testing: none
-* fixtures: factory_girl
-* frontend: bootstrap3
-* email: none
-* authentication: devise
-* devise_modules: default
-* authorization: none
-* form_builder: simple_form
-* starter_app: home_app
-* rvmrc: false
-* quiet_assets: true
-* local_env_file: figaro
-* better_errors: true
-* ban_spiders: true
-* jsruntime: true
+Copyright (c) 2015 Mountain House
 
-Ruby on Rails
----
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This application requires:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
--   Ruby
--   Rails
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Database
----
-
-This application uses PostgreSQL with ActiveRecord.
-
-Development
--
-
--   Template Engine: Haml
--   Testing Framework: RSpec and Factory Girl
--   Front-end Framework: Bootstrap 3.0 (Sass)
--   Form Builder: SimpleForm
--   Authentication: Devise
--   Authorization: None
--   Admin: None
-
-
-
-
-
-
- delivery is disabled in development.
-
-Getting Started
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Documentation and Support
-
-
-This is the only documentation.
-
-#### Issues
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Similar Projects
--
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Contributing
---
-
-If you make improvements to this application, please share with others.
-
--   Fork the project on GitHub.
--   Make your feature addition or bug fix.
--   Commit with Git.
--   Send the author a pull request.
-
-If you add functionality to this application, create an alternative
-implementation, or build an application that is similar, please contact
-me and I’ll add a note to the README so that others can find your work.
-
-Credits
---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-License
---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
