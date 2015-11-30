@@ -1,11 +1,11 @@
 # The Fate generator
 
-The Fate Generator is a character generator website for the (Fate RPG system)[http://www.evilhat.com/home/fate-core/].
+The Fate Generator is a character generator website for the [Fate RPG system](http://www.evilhat.com/home/fate-core/).
 
 ## Requirements
 
 - Ruby 2.2.1
-- NPM (I use (browserify-rails)[https://github.com/browserify-rails/browserify-rails] for asset management)
+- NPM (I use [browserify-rails](https://github.com/browserify-rails/browserify-rails] for asset management)
 
 ## Bootstrap
 
