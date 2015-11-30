@@ -23,6 +23,12 @@ Run `rspec` to run all tests or `guard` to keep tests running automatically as y
 
 The MIT License (MIT)
 
+## Contributing
+
+- Fork
+- Send pull requests
+- roll +4
+
 Copyright (c) 2015 Mountain House
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
