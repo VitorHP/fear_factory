@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:create, :update]
+  before_filter :authenticate_user!, only: [:new, :create, :update]
 
   def new
     @character = BuildCharacter.new.build(campaign: Campaign.vanilla_fate_core)
@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.new character_params
+    @character = current_user.characters.build character_params
     @campaign  = Campaign.vanilla_fate_core
 
     if @character.save

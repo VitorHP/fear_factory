@@ -22,9 +22,12 @@
             .character__line-icon FC
             .character__stats
               %span.character__name= c.name
+              - if !current_user.new_record? && c.user_id == current_user.id
+                = link_to edit_character_path(c), class: "character__edit-link" do
+                  %span.fa.fa-pencil.character__edit-icon
               %br
               %span.character__concept= c.description
-              %span.character__user= t(".created_by", user: c.user_name)
+              %span.character__user= t(".created_by", user: c.user_name) unless c.user.nil?
             .character__tags 
             .character__sheet
               .row.character__sheet-content
@@ -52,7 +55,4 @@
                       %li.character__stunt
                         %span.character__stunt-name= s.name
                         %p.character__stunt-name= s.description
-              .row
-                .col-xs-12
-                  = link_to t(".edit_character_btn"), edit_character_path(c)
 

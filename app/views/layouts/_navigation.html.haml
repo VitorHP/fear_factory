@@ -12,5 +12,7 @@
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'
       %ul.nav.navbar-nav.navbar-right
-
-
+        - unless current_user.new_record?
+          %li= link_to "Sair", destroy_user_session_path, method: :delete
+        - else
+          %li= link_to "Entrar com FB", user_omniauth_authorize_path(:facebook)

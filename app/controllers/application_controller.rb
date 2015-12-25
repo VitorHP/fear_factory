@@ -26,4 +26,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_in) << :name
   end
+
+  alias_method :devise_current_user, :current_user
+
+  def current_user
+    devise_current_user || User.new(name: "guest")
+  end
+
 end

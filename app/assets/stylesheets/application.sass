@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import "jquery-ui"
+@import "font-awesome"
+@import "vendor/bootstrap-social"
 
 @import "colors"
 @import "fonts"
@@ -19,3 +21,13 @@ body
   font-family: AlegreyaSansRegular
   font-size: 1rem
 
+.btn.btn-default
+  color: #1B71B8
+  border-color: #1B71B8
+
+a
+  color: $fate-blue
+  text-decoration: none !important
+
+  &:hover
+    color: darken($fate-blue, 10%)

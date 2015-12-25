@@ -1,1 +1,12 @@
-= link_to t('devise.sessions.login_with_facebook'), user_omniauth_authorize_path(:facebook)
+.row
+  .col-md-6
+    %h2= t(".logged_out_compel.#{request.referer.present? ? 'other' : 'direct'}")
+    %br
+    %h3 Tome um Ponto de Destino e faça login abaixo
+
+    %br
+    .row
+      .col-md-6
+        = link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-social btn-facebook" do
+          %span.fa.fa-facebook
+          = t('devise.sessions.login_with_facebook')

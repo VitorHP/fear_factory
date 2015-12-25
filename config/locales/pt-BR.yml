@@ -299,6 +299,7 @@ pt-BR:
       create_fate_core_btn: Fate Core
       community_characters: Personagens Criados por Outros Jogadores
       created_by: "por: %{user}"
+      edit_character_btn: Editar
   navigation:
     solar: Compre Fate
   ladder:
