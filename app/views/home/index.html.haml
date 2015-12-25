@@ -27,7 +27,7 @@
                   %span.fa.fa-pencil.character__edit-icon
               %br
               %span.character__concept= c.description
-              %span.character__user= t(".created_by", user: c.user_name) unless c.user.nil?
+            .character__user= t(".created_by", user: c.user_name) unless c.user.nil?
             .character__tags 
             .character__sheet
               .row.character__sheet-content
