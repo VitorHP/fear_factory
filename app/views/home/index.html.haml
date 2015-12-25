@@ -26,7 +26,7 @@
                 = link_to edit_character_path(c), class: "character__edit-link" do
                   %span.fa.fa-pencil.character__edit-icon
               %br
-              %span.character__concept= c.description
+              %span.character__concept= truncate c.description, :length   => 100, :separator => /\w/
             .character__user= t(".created_by", user: c.user_name) unless c.user.nil?
             .character__tags 
             .character__sheet
