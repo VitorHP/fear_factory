@@ -1,0 +1,4 @@
+%span.character__sheet-title= t("activerecord.models.aspect", count: 2)
+%ul.character__aspects
+  - aspects.each do |a|
+    %li.character__aspect= a.name

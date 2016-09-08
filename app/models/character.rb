@@ -21,8 +21,8 @@ class Character < ActiveRecord::Base
 
   scope :from_campaign, ->(campaign){ where(campaign_id: campaign.id) }
 
-  delegate :id, to: :user, prefix: 'user', allow_nil: true
-  delegate :name, to: :user, prefix: 'user', allow_nil: true
+  delegate :id, to: :user, prefix: true, allow_nil: true
+  delegate :name, to: :user, prefix: true, allow_nil: true
 
   def high_concept
     aspects.first.name

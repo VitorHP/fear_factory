@@ -216,6 +216,9 @@ pt-BR:
       campaign:
         one: Campanha
         other: Campanhas
+      consequence:
+        one: Consequência
+        other: Consequências
       character:
         one: personagem
         other: personagens
@@ -228,6 +231,9 @@ pt-BR:
       skill_group:
         one: Grupo de Perícias
         other: Grupos de Perícias
+      stress_track:
+        one: Trilha de Estresse
+        other: Trilhas de Estresse
       stunt:
         one: Façanha
         other: Façanhas
@@ -292,6 +298,8 @@ pt-BR:
       stress_track:
         mental_stress: Estresse Físico
         physical_stress: Estresse Mental
+        mental: Estresse Físico
+        physical: Estresse Mental
   home:
     index:
       title: The Fate Generator
@@ -337,6 +345,8 @@ pt-BR:
       stress_tracks: Estresse
       consequences: Consequências
       skill_list: Lista de Perícias
+    character:
+      created_by: "por: %{user}"
   house_rules:
     index:
       clean_filters: Limpar Filtros

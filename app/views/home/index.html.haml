@@ -21,41 +21,24 @@
       %h3.home__community-characters__title= t(".community_characters")
       %ul.list-unstyled.characters-list
         - @characters.each do |c|
-          %li.character
-            .character__line-icon FC
-            .character__stats
-              %span.character__name= c.name
+          %li.character-list-item
+            .character-list-item__line-icon FC
+            .character-list-item__stats
+              %span.character-list-item__name= c.name
               - if !current_user.new_record? && c.user_id == current_user.id
                 = link_to edit_character_path(c), class: "character__edit-link" do
                   %span.fa.fa-pencil.character__edit-icon
+              = link_to character_path(c), class: "character__edit-link" do
+                %span.fa.fa-print.character__edit-icon
               %br
-              %span.character__concept= truncate c.description, :length   => 100, :separator => /\w/
-            .character__user= t(".created_by", user: c.user_name) unless c.user.nil?
-            .character__tags
-            .character__sheet
-              .row.character__sheet-content
-                .col-sm-4
-                  %span.character__sheet-title= t("activerecord.models.aspect", count: 2)
-                  %ul.list-unstyled.character__aspects
-                    - c.aspects.each do |a|
-                      %li.character__aspect= a.name
-                .col-sm-4
-                  %span.character__sheet-title= t("activerecord.models.skill", count: 2)
-                  %ul.list-unstyled.character__skills
-                    - @campaign.skill_cap.downto(1) do |level|
-                      %li
-                        .row
-                          .col-xs-1
-                            %span= "+#{level}"
-                          .col-xs-10
-                            %ul.list-inline
-                              - c.ratings.select{ |r| r.level == level }.each do |r|
-                                %li.character__skill= r.skill_name
-                .col-sm-4
-                  %span.character__sheet-title= t("activerecord.models.stunt", count: 2)
-                  %ul.list-unstyled.character__stunts
-                    - c.stunts.each do |s|
-                      %li.character__stunt
-                        %span.character__stunt-name= s.name
-                        %p.character__stunt-name= s.description
-
+              %span.character-list-item__concept= truncate c.description, :length   => 100, :separator => /\w/
+            .character-list-item__user= t(".created_by", user: c.user_name) unless c.user.nil?
+            .character-list-item__tags
+            .character-list-item__sheet
+              .row
+                .col-md-4
+                  = render "characters/aspects", aspects: c.aspects
+                .col-md-4
+                  = render "characters/skills", ratings: c.ratings
+                .col-md-4
+                  = render "characters/stunts", stunts: c.stunts

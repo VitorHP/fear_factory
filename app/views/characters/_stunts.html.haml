@@ -1,0 +1,7 @@
+%span.character__sheet-title= t("activerecord.models.stunt", count: 2)
+%ul.list-unstyled.character__stunts
+  - stunts.each do |s|
+    %li.character__stunt
+      %span.character__stunt-name= s.name
+      %p.character__stunt-description= s.description
+%br

@@ -2,7 +2,7 @@
 var Character = require("./modules/character")
 
 function Home () {
-  this.characters = $(".character").map(function(index, character){
+  this.characters = $(".character-list-item").map(function(index, character){
     return new Character(character)
   })
 }
