@@ -9,7 +9,6 @@ Character.prototype.openSheet = function(e) {
 }
 
 Character.prototype.doNotPropagate = function(e) {
-  debugger
   e.stopPropagation();
 }
 
