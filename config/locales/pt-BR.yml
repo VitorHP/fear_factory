@@ -297,6 +297,7 @@ pt-BR:
       title: The Fate Generator
       create_character: Crie um Personagem
       create_fate_core_btn: Fate Core
+      create_fae_btn: FAE
       community_characters: Personagens Criados por Outros Jogadores
       created_by: "por: %{user}"
       edit_character_btn: Editar

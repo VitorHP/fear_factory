@@ -9,9 +9,12 @@
       %h2.home__subtitle= t(".create_character")
 
   .row
-    .col-sm-12
+    .col-sm-3
       = link_to new_character_path, class: "home__create-character-btn-outer" do
         %span.home__create-character-btn-inner= t(".create_fate_core_btn")
+    .col-sm-3
+      = link_to new_character_path(skill_group_id: SkillGroup::FATE_ACCELERATED), class: "home__create-character-btn-outer" do
+        %span.home__create-character-btn-inner= t(".create_fae_btn")
 
   .row
     .col-sm-12
@@ -28,7 +31,7 @@
               %br
               %span.character__concept= truncate c.description, :length   => 100, :separator => /\w/
             .character__user= t(".created_by", user: c.user_name) unless c.user.nil?
-            .character__tags 
+            .character__tags
             .character__sheet
               .row.character__sheet-content
                 .col-sm-4
