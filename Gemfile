@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'pg'
 gem 'therubyracer', :platform=>:ruby
 
-gem 'browserify-rails'
+gem 'browserify-rails', '~>3.1.0'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'

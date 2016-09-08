@@ -7,3 +7,4 @@
 - Fixed character action icons event propagation in the home
 - Removed debugger
 - Changed exhibition of stress tracks on character form
+- Updated sprockets and browserify-rails gems
