@@ -49,17 +49,21 @@
         = s.input :description, label: false, placeholder: t("activerecord.attributes.extra.description")
   .row
     %fieldset#stress-tracks-panel.col-sm-6
-      = f.fields_for :stress_tracks do |s|
-        %h2.header= "#{t("activerecord.attributes.stress_track.#{s.object.name.parameterize.underscore}")} (#{s.object.skill_name})"
-        = s.input :id, as: :hidden
-        = s.input :name, as: :hidden
-        = s.input :skill_id, as: :hidden
-        %ul.list-inline.character-form__stress-track
-          = s.fields_for :stress_levels do |l|
-            %li.character-form__stress-box
-              = l.input :id, as: :hidden
-              = l.input :level, as: :hidden
-              = l.input :checked, label: l.object.level
+      %h2.header= "#{t("activerecord.models.stress_track", count: 2)}"
+      .row
+        = f.fields_for :stress_tracks do |s|
+          = s.input :id, as: :hidden
+          = s.input :name, as: :hidden
+          = s.input :skill_id, as: :hidden
+          .col-md-2
+            %span= s.object.name
+          .col-md-10
+            %ul.list-inline.character-form__stress-track
+              = s.fields_for :stress_levels do |l|
+                %li.character-form__stress-box
+                  = l.input :id, as: :hidden
+                  = l.input :level, as: :hidden
+                  = l.input :checked, label: l.object.level
 
     %fieldset#consequences-panel.col-sm-6
       %h2.header= t(".consequences")

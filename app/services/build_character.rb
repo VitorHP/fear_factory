@@ -20,8 +20,8 @@ class BuildCharacter
       # end
 
       stress_tracks = [
-        {name: 'physical', skill_id: 12},
-        {name: 'mental', skill_id: 18}
+        {name: 'Físico', skill_id: 12},
+        {name: 'Mental', skill_id: 18}
       ]
 
       stress_tracks.reverse.each do |skill|

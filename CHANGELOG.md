@@ -5,3 +5,5 @@
 - Added print screen
 - Added task to normalize stress track names
 - Fixed character action icons event propagation in the home
+- Removed debugger
+- Changed exhibition of stress tracks on character form

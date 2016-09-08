@@ -22,10 +22,10 @@ namespace :data do
   desc "updates all stress tracks"
   task :update_stress_tracks => :environment do
     StressTrack.where(skill_id: 12).find_each do |st|
-      st.update_attributes(name: 'physical')
+      st.update_attributes(name: 'Físico')
     end
     StressTrack.where(skill_id: 18).find_each do |st|
-      st.update_attributes(name: 'mental')
+      st.update_attributes(name: 'Mental')
     end
   end
 end
