@@ -9,15 +9,15 @@
       %h2.home__subtitle= t(".create_character")
 
   .row
-    .col-sm-3
+    .col-md-3
       = link_to new_character_path, class: "home__create-character-btn-outer" do
         %span.home__create-character-btn-inner= t(".create_fate_core_btn")
-    .col-sm-3
+    .col-md-3
       = link_to new_character_path(skill_group_id: SkillGroup::FATE_ACCELERATED), class: "home__create-character-btn-outer" do
         %span.home__create-character-btn-inner= t(".create_fae_btn")
 
   .row
-    .col-sm-12
+    .col-md-12
       %h3.home__community-characters__title= t(".community_characters")
       %ul.list-unstyled.characters-list
         - @characters.each do |c|

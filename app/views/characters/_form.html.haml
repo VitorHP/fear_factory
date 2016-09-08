@@ -69,13 +69,11 @@
       %h2.header= t(".consequences")
       .row
         %fieldset#fixed-consequences.col-sm-6.form-horizontal
-          .row
-            = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.nil? } do |s|
-              = render 'consequence_fields', s: s
+          = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.nil? } do |s|
+            = render 'consequence_fields', s: s
         %fieldset#extra-consequences.col-sm-6
-          .row
-            = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.present? } do |s|
-              = render 'consequence_fields', s: s
+          = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.present? } do |s|
+            = render 'consequence_fields', s: s
   .row
     .col-sm-12
       = f.button :submit
