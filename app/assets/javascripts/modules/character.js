@@ -1,7 +1,7 @@
 
 function Character (el) {
   $(el).on('click', this.openSheet)
-  $(el).on('click', '.character-list-item__edit-icon', this.doNotPropagate)
+  $(el).on('click', '.character-list-item__action-icon', this.doNotPropagate)
 }
 
 Character.prototype.openSheet = function(e) {
@@ -9,6 +9,7 @@ Character.prototype.openSheet = function(e) {
 }
 
 Character.prototype.doNotPropagate = function(e) {
+  debugger
   e.stopPropagation();
 }
 

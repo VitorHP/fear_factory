@@ -27,9 +27,9 @@
               %span.character-list-item__name= c.name
               - if !current_user.new_record? && c.user_id == current_user.id
                 = link_to edit_character_path(c), class: "character__edit-link" do
-                  %span.fa.fa-pencil.character__edit-icon
+                  %span.fa.fa-pencil.character-list-item__action-icon
               = link_to character_path(c), class: "character__edit-link" do
-                %span.fa.fa-print.character__edit-icon
+                %span.fa.fa-print.character-list-item__action-icon
               %br
               %span.character-list-item__concept= truncate c.description, :length   => 100, :separator => /\w/
             .character-list-item__user= t(".created_by", user: c.user_name) unless c.user.nil?
