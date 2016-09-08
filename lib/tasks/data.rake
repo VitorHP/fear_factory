@@ -18,4 +18,14 @@ namespace :data do
     end
 
   end
+
+  desc "updates all stress tracks"
+  task :update_stress_tracks => :environment do
+    StressTrack.where(skill_id: 12).find_each do |st|
+      st.update_attributes(name: 'physical')
+    end
+    StressTrack.where(skill_id: 18).find_each do |st|
+      st.update_attributes(name: 'mental')
+    end
+  end
 end
