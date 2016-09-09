@@ -15,8 +15,10 @@
 //= require bootstrap
 //= require cocoon
 
-$(document).ready(function(){
-  var Home = require("./home")
+var CharacterListItem = require("./modules/character_list_item")
 
-  var home = new Home();
+$(document).ready(function(){
+  const characterListItems = $(".character-list-item").map(function(index, characterListItem){
+    return new CharacterListItem(characterListItem)
+  })
 })
