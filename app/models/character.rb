@@ -9,11 +9,11 @@ class Character < ActiveRecord::Base
   belongs_to :campaign
   belongs_to :user
 
-  accepts_nested_attributes_for :aspects, allow_destroy: true
+  accepts_nested_attributes_for :aspects, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :ratings
-  accepts_nested_attributes_for :stunts, allow_destroy: true
-  accepts_nested_attributes_for :extras, allow_destroy: true
-  accepts_nested_attributes_for :stress_tracks, allow_destroy: true
+  accepts_nested_attributes_for :stunts, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :extras, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :stress_tracks, allow_destroy: true, reject_if: proc { |at| at['name'].blank? }
   accepts_nested_attributes_for :consequences, allow_destroy: true
 
   validates :name, presence: true, length: { maximum: 255 }
