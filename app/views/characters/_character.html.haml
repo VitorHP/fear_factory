@@ -11,16 +11,7 @@
       = render "skills", ratings: character.ratings
   .row
     .col-xs-6
-      %span.character__sheet-title= t("activerecord.models.stress_track", count: 2)
-      %ul.list-unstyled.character__skills
-        - character.stress_tracks.each do |st|
-          %li
-            .row
-              .col-md-3.col-xs-6
-                %span.character__consequence-label= "#{st.name} (#{st.skill_name})"
-              .col-md-9.col-xs-6
-                - st.stress_levels.each do |sl|
-                  .fa{ class: "#{sl.checked ? "fa-check-square-o" : "fa-square-o"}" }
+      = render "stress_tracks", stress_tracks: character.stress_tracks
     .col-xs-6
       %span.character__sheet-title= t("activerecord.models.consequence", count: 2)
       %ul.list-unstyled.character__skills
