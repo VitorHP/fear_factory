@@ -1,3 +1,6 @@
 .row.character-show
   .col-md-12
     = render "character", character: @character
+.row
+  .col-md-12
+    = link_to I18n.t("characters.show.print"), "#", class: "btn btn-primary hidden-print", onClick: "window.print();"

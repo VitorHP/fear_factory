@@ -10,3 +10,5 @@
 - Updated sprockets and browserify-rails gems
 - Added option to add and remove aspects, stunts and extras in the character
   form
+- Added option to add and remove stress tracks
+- Added print button to character show

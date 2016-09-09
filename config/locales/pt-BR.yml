@@ -347,6 +347,8 @@ pt-BR:
       skill_list: Lista de Perícias
     character:
       created_by: "por: %{user}"
+    show:
+      print: "Imprimir"
   house_rules:
     index:
       clean_filters: Limpar Filtros
