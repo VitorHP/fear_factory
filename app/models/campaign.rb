@@ -1,5 +1,6 @@
 class Campaign < ActiveRecord::Base
   has_many :characters
+  has_many :aspects, as: :aspectable, dependent: :destroy
   has_many :stress_tracks, as: :stressable, dependent: :destroy
   has_many :consequences, as: :consequential, dependent: :destroy
   has_many :skills, through: :skill_group
@@ -7,6 +8,7 @@ class Campaign < ActiveRecord::Base
   belongs_to :skill_group
   belongs_to :user
 
+  accepts_nested_attributes_for :aspects, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :stress_tracks, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :consequences, allow_destroy: true, reject_if: :all_blank
 

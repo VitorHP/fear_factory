@@ -1,7 +1,6 @@
 class CampaignsController < ApplicationController
-
   def new
-    @campaign = Campaign.vanilla_fate_core
+    @campaign = Campaign.new
   end
 
   def edit

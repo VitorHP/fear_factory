@@ -13,5 +13,5 @@
     %main{:role => "main"}
       = yield :heading
       = render 'layouts/messages'
-      .container
+      %div{ class: params[:fluid] ? "container-fluid" : "container" }
         = yield

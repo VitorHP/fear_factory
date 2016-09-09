@@ -1,0 +1,7 @@
+%fieldset#aspects-panel
+  %h2.header
+    = t(".aspects")
+  = link_to_add_association f, :aspects, partial: "shared/aspect_fields", data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
+    .fa.fa-plus
+  = f.fields_for :aspects do |a|
+    = render "shared/aspect_fields", f: a

@@ -6,9 +6,9 @@
     .col-md-3
       = f.input :skill_id, collection: Skill.from_skill_group(params[:skill_group_id] || SkillGroup::FATE_CORE).sort_by{ |s| s.name }, label: false
     .col-md-6
-      %ul.list-inline.character-form__stress-track
+      %ul.list-inline.form__stress-track
         = f.fields_for :stress_levels, f.object.stress_levels.any? ? f.object.stress_levels : levels.map{ |l| StressLevel.new(l) } do |l|
-          %li.character-form__stress-box
+          %li.form__stress-box
             = l.input :id, as: :hidden
             = l.input :level, as: :hidden
             = l.input :checked, label: l.object.level
