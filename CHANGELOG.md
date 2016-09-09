@@ -8,3 +8,5 @@
 - Removed debugger
 - Changed exhibition of stress tracks on character form
 - Updated sprockets and browserify-rails gems
+- Added option to add and remove aspects, stunts and extras in the character
+  form

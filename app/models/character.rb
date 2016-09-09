@@ -9,12 +9,12 @@ class Character < ActiveRecord::Base
   belongs_to :campaign
   belongs_to :user
 
-  accepts_nested_attributes_for :aspects
+  accepts_nested_attributes_for :aspects, allow_destroy: true
   accepts_nested_attributes_for :ratings
-  accepts_nested_attributes_for :stunts
-  accepts_nested_attributes_for :extras
-  accepts_nested_attributes_for :stress_tracks
-  accepts_nested_attributes_for :consequences
+  accepts_nested_attributes_for :stunts, allow_destroy: true
+  accepts_nested_attributes_for :extras, allow_destroy: true
+  accepts_nested_attributes_for :stress_tracks, allow_destroy: true
+  accepts_nested_attributes_for :consequences, allow_destroy: true
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :description, presence: true

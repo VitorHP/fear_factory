@@ -2,7 +2,6 @@
   .character__stats
     %span.character__name= character.name
     .character__user= t(".created_by", user: character.user_name) unless character.user.nil?
-    %br
     %span.character__concept= character.description
   .character__tags
   .row

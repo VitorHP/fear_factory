@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require cocoon
 
 $(document).ready(function(){
   var Home = require("./home")

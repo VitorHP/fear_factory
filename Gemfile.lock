@@ -58,6 +58,7 @@ GEM
       sprockets (>= 3.5.2)
     builder (3.2.2)
     cancancan (1.13.1)
+    cocoon (1.2.9)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -317,6 +318,7 @@ DEPENDENCIES
   bootstrap-sass
   browserify-rails (~> 3.1.0)
   cancancan
+  cocoon
   coffee-rails (~> 4.1.0)
   devise
   email_spec

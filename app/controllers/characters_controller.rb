@@ -43,13 +43,13 @@ class CharactersController < ApplicationController
     params.require(:character).permit([
       :name, :description, :refresh, :user_id, :campaign_id,
       ratings_attributes: [:id, :skill_id, :level],
-      aspects_attributes: [:id, :name, :aspectable_id, :aspectable_type],
-      stunts_attributes: [:id, :name, :description],
-      extras_attributes: [:id, :name, :description],
+      aspects_attributes: [:id, :name, :aspectable_id, :aspectable_type, :_destroy],
+      stunts_attributes: [:id, :name, :description, :_destroy],
+      extras_attributes: [:id, :name, :description, :_destroy],
       stress_tracks_attributes: [:id, :name, :skill_id,
         stress_levels_attributes: [:id, :level, :checked]
       ],
-      consequences_attributes: [:id, :level, :name, :description, :skill_id, :skill_level_to_unlock]
+      consequences_attributes: [:id, :level, :name, :description, :skill_id, :skill_level_to_unlock, :_destroy]
     ])
   end
 

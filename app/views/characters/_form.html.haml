@@ -10,14 +10,12 @@
         = f.input :refresh, label: false, placeholder: t("activerecord.attributes.character.refresh")
 
     %fieldset#aspects-panel.col-sm-6
-      %h2.header= t(".aspects")
+      %h2.header
+        = t(".aspects")
+      = link_to_add_association f, :aspects, data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
+        .fa.fa-plus
       = f.fields_for :aspects do |a|
-        - # Boa noite, Vitor do futuro. Essa foi a linha mais desnecessariamente complexa que você escreveu até o dia 19 de Março de 2014.
-        - # Se você encontrou um problema com ela, eu deixo aqui minhas sinceras desculpas.
-        - # Boa noite. são 28 de Novembro de 2015 e essa linha ainda funciona. Na verdade nem é tão complexa assim. Você é que era mais burro.
-        - # Boa tarde. São 8 de Setembro de 2016. Não seja tão mau com o HP de 2014. A linha dele ainda funciona ao contrário de umas coisas que vc fez.
-        = a.input :id, as: :hidden
-        = a.input :name, label: false, placeholder: "#{ Array.new(f.object.aspects.size) { |index| if index == 0; t("activerecord.attributes.character.high_concept"); elsif index == 1; t("activerecord.attributes.character.trouble"); else "" end }[a.index] }"
+        = render "aspect_fields", f: a
   .row
     #skill-panel.col-sm-12
       %h2.header= t(".skills")
@@ -37,33 +35,23 @@
   .row
     %fieldset#stunts-panel.col-sm-6
       %h2.header= t(".stunts")
+      = link_to_add_association f, :stunts, data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
+        .fa.fa-plus
       = f.fields_for :stunts do |s|
-        = s.input :id, as: :hidden
-        = s.input :name, label: false, placeholder: t("activerecord.attributes.stunt.name")
-        = s.input :description, label: false, placeholder: t("activerecord.attributes.stunt.description")
+        = render "stunt_fields", f: s
     %fieldset#extras-panel.col-sm-6
       %h2.header= t(".extras")
+      = link_to_add_association f, :extras, data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
+        .fa.fa-plus
       = f.fields_for :extras do |s|
-        = s.input :id, as: :hidden
-        = s.input :name, label: false, placeholder: t("activerecord.attributes.extra.name")
-        = s.input :description, label: false, placeholder: t("activerecord.attributes.extra.description")
+        = render "extra_fields", f: s
   .row
     %fieldset#stress-tracks-panel.col-sm-6
       %h2.header= "#{t("activerecord.models.stress_track", count: 2)}"
-      .row
-        = f.fields_for :stress_tracks do |s|
-          = s.input :id, as: :hidden
-          = s.input :name, as: :hidden
-          = s.input :skill_id, as: :hidden
-          .col-md-2
-            %span= s.object.name
-          .col-md-10
-            %ul.list-inline.character-form__stress-track
-              = s.fields_for :stress_levels do |l|
-                %li.character-form__stress-box
-                  = l.input :id, as: :hidden
-                  = l.input :level, as: :hidden
-                  = l.input :checked, label: l.object.level
+      = link_to_add_association f, :stress_tracks, data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append }, render_options: { locals: { levels: [{ level: 1, checked: false }, { level: 2, checked: false }, { level: 3, checked: false }, { level: 4, checked: false } ] }} do
+        .fa.fa-plus
+      = f.fields_for :stress_tracks do |s|
+        = render "stress_track_fields", f: s
 
     %fieldset#consequences-panel.col-sm-6
       %h2.header= t(".consequences")
@@ -71,7 +59,7 @@
         %fieldset#fixed-consequences.col-sm-6.form-horizontal
           = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.nil? } do |s|
             = render 'consequence_fields', s: s
-        %fieldset#extra-consequences.col-sm-6
+        %fieldset#extra-consequences.col-sm-6.form-horizontal
           = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.present? } do |s|
             = render 'consequence_fields', s: s
   .row

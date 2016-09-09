@@ -1,0 +1,5 @@
+= f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
+  %li
+    = r.input :id, as: :hidden
+    = r.input :skill_id, collection: Skill.from_skill_group(params[:skill_group_id] || SkillGroup::FATE_CORE).sort_by{ |s| s.name }, label: false
+    = r.input :level, as: :hidden, input_html: { value: level }
