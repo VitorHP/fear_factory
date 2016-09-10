@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
-  devise :database_authenticatable, :trackable, 
+  devise :database_authenticatable, :trackable,
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :characters
@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
   has_many :custom_skill_groups
   has_many :house_rules
 
-  def self.find_for_facebook_oauth(auth)
+  validates :email, presence: true
+
+  def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider   = auth.provider
       user.uid        = auth.uid
