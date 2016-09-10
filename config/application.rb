@@ -31,5 +31,8 @@ module Fate
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'pt-BR'
     config.i18n.enforce_available_locales = true
+
+    # config browserify to use babelify with react presets es2015
+    config.browserify_rails.commandline_options = "-t [ babelify --presets [ es2015  ] ]"
   end
 end
