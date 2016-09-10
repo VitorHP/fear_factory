@@ -3,8 +3,9 @@
 - # Boa noite. são 28 de Novembro de 2015 e essa linha ainda funciona. Na verdade nem é tão complexa assim. Você é que era mais burro.
 - # Boa tarde. São 8 de Setembro de 2016. Não seja tão mau com o HP de 2014. A linha dele ainda funciona ao contrário de umas coisas que vc fez.
 - # Correção. Quebrou sim quando fui usar com a gem cocoon. :(
+- # Dois dias depois e está funcionando novamente, só que agora de um jeito mais simples. Sono do carai.
 .nested-fields
   = f.input :id, as: :hidden
-  = f.input :name, label: false
+  = f.input :name, label: false, placeholder: if f.index == 0; t("activerecord.attributes.character.high_concept"); elsif f.index == 1; t("activerecord.attributes.character.trouble"); else "" end
   = link_to_remove_association f do
     .fa.fa-times
