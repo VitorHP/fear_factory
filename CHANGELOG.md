@@ -12,4 +12,6 @@
   form
 - Added option to add and remove stress tracks
 - Added print button to character show
+2016-09-09
 - Fixed Ladder translations
+- Updated omniauth-facebook gem
