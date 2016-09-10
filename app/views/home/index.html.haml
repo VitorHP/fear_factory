@@ -22,7 +22,7 @@
       %ul.list-unstyled.characters-list
         - @characters.each do |c|
           %li.character-list-item
-            .character-list-item__line-icon FC
+            .character-list-item__line-icon.hidden-xs FC
             .character-list-item__stats
               %span.character-list-item__name= c.name
               - if !current_user.new_record? && c.user_id == current_user.id
