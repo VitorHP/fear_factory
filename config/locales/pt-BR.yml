@@ -316,13 +316,13 @@ pt-BR:
     epic: Épico
     fantastic: Fantástico
     suberb: Excepcional
-    great: Espetacular
-    good: Ótimo
-    fair: Bom
-    averag: Razoável
-    medriocre: Mediano
-    poor: Fraco
-    terrible: Péssimo
+    great: Ótimo
+    good: Bom
+    fair: Razoável
+    averag: Regular
+    medriocre: Medíocre
+    poor: Ruim
+    terrible: Terrível
   navbar:
     home: Home
     login: Entrar

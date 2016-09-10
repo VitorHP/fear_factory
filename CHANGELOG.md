@@ -12,3 +12,4 @@
   form
 - Added option to add and remove stress tracks
 - Added print button to character show
+- Fixed Ladder translations
