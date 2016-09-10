@@ -222,6 +222,9 @@ pt-BR:
       character:
         one: personagem
         other: personagens
+      extra:
+        one: Extra
+        other: Extras
       house_rule:
         one: Regra Caseira
         other: Regras Caseiras
