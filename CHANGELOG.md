@@ -15,3 +15,5 @@
 2016-09-09
 - Fixed Ladder translations
 - Updated omniauth-facebook gem
+2016-09-10
+- Added max number of skill ratings for every level in character form

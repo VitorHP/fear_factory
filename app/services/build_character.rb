@@ -8,9 +8,7 @@ class BuildCharacter
       build_extras character
 
       (1..@campaign.skill_cap).to_a.reverse.each_with_index do |level, index|
-        rating_count = index + 1
-
-        rating_count.times do
+        @campaign.skill_cap.times do
           character.ratings.build level: level
         end
       end

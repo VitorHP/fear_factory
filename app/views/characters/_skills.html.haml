@@ -7,5 +7,5 @@
           %span.character__skill-label= "+#{level}"
         .col-xs-10
           %ul.list-inline
-            - ratings.select{ |r| r.level == level }.each do |r|
+            - ratings.select{ |r| r.level == level && r.skill_id.present? }.each do |r|
               %li.character__skill= r.skill_name

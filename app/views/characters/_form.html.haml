@@ -14,14 +14,14 @@
     #skill-panel.col-sm-12
       %h2.header= t(".skills")
       %fieldset#skills
-        - Ladder.new.to_h(from: Campaign.vanilla_fate_core.skill_cap, to: :averag).each_pair do |name, level|
+        - Ladder.new.to_h(from: Campaign.vanilla_fate_core.skill_cap, to: :averag).each_with_index do |(name, level), i|
           %div{ class: name }
             .skill-row.skills.row
               .rating-level.col-sm-2
                 %span.rating= "#{t("ladder.#{name.to_s}")} (+#{level})"
               %ul.slots.list-inline.col-sm-10
                 = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
-                  %li
+                  %li{ class: (r.index % Campaign.vanilla_fate_core.skill_cap) > i - 1 ? 'skill--advanced' : 'skill' }
                     = r.input :id, as: :hidden
                     = r.input :skill_id, collection: Skill.from_skill_group(params[:skill_group_id] || SkillGroup::FATE_CORE).sort_by{ |s| s.name }, label: false
                     = r.input :level, as: :hidden, input_html: { value: level }

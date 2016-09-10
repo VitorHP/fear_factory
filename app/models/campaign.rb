@@ -32,8 +32,8 @@ class Campaign < ActiveRecord::Base
     campaign.skill_type = SkillType.find_by alias: 'pyramid'
 
     stress_tracks = [
-      {name: 'mental', skill_id: 18},
-      { name: 'physical', skill_id: 12}
+      { name: 'mental', skill_id: 18 },
+      { name: 'physical', skill_id: 12 }
     ]
 
     stress_tracks.reverse.each do |skill|
