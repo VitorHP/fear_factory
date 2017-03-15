@@ -79,4 +79,4 @@ Fate::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 end
 
-GA.tracket = 'UA-77836015-2'
+GA.tracker = 'UA-77836015-2'
