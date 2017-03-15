@@ -101,6 +101,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    google-analytics-rails (1.1.0)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -326,6 +327,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   friendly_id
+  google-analytics-rails (~> 1.0)
   guard-rspec
   haml-rails
   jbuilder (~> 1.2)

@@ -29,6 +29,7 @@ gem 'acts_as_commentable'
 gem 'jqcloud-rails'
 gem 'friendly_id'
 gem 'cocoon'
+gem 'google-analytics-rails', '~> 1.0'
 
 group :development do
   gem 'better_errors'
