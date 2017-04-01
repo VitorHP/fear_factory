@@ -5,6 +5,9 @@ class SkillGroup < ActiveRecord::Base
   MENTAL_SKILLS = 4
   PHYSICAL_SKILLS = 5
   SOCIAL_SKILLS = 6
+  MENTAL_MERITS = 7
+  PHYSICAL_MERITS = 8
+  SOCIAL_MERITS = 9
 
   has_many :skills
 
@@ -12,5 +15,5 @@ class SkillGroup < ActiveRecord::Base
 
   accepts_nested_attributes_for :skills, allow_destroy: true, reject_if: :all_blank
 
-  scope :core, ->{ where(user_id: nil) }
+  scope :merits, ->{ where(id: [ MENTAL_MERITS, PHYSICAL_MERITS, SOCIAL_MERITS ]) }
 end

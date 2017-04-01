@@ -1,0 +1,4 @@
+= f.fields_for :ratings, skill_group do |r|
+  = r.input :id, as: :hidden
+  = r.input :skill_id, as: :hidden
+  = r.input :level, label: r.object.skill_name

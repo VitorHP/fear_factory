@@ -1,0 +1,5 @@
+.nested-fields
+  = f.input :skill_id, label: false, collection: SkillGroup.merits.all, as: :grouped_select, group_method: :skills
+  = f.input :level, label: false
+  = link_to_remove_association f do
+    .fa.fa-times

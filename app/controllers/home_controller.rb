@@ -3,6 +3,5 @@ class HomeController < ApplicationController
 
   def index
     @characters = Character.all.order('created_at DESC')
-    @campaign  = Campaign.vanilla_fate_core
   end
 end

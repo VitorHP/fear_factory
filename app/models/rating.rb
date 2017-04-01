@@ -5,5 +5,5 @@ class Rating < ActiveRecord::Base
 
   default_scope ->{ order(:id) }
 
-  delegate :name, to: :skill, prefix: 'skill', allow_nil: true
+  delegate :name, to: :skill, prefix: true, allow_nil: true
 end

@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   include CanFavorite
-  acts_as_voter
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable

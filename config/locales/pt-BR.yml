@@ -341,13 +341,15 @@ pt-BR:
       new_character: Novo Personagem
     form:
       id: Id
-      aspects: Aspectos
-      skills: Perícias
-      extras: Extras
-      stunts: Façanhas
-      stress_tracks: Estresse
-      consequences: Consequências
-      skill_list: Lista de Perícias
+      physical: Físicas
+      mental: Mentais
+      social: Sociais
+      merits: Vantagens
+      flaws: Desvantagens
+      health: Vitalidade
+      willpower: Força de Vontade
+      morality:
+        human: Moralidade
     character:
       created_by: "por: %{user}"
     show:
