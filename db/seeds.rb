@@ -10,17 +10,17 @@
 #
 
 skill_groups = [
-  { name: "Physical Attributes", id: 1 },
-  { name: "Mental Attributes", id: 2 },
-  { name: "Social Attributes", id: 3 },
+  { name: "Attributes Physical", id: 1 },
+  { name: "Attributes Mental", id: 2 },
+  { name: "Attributes Social", id: 3 },
 
-  { name: "Physical Skills", id: 4 },
-  { name: "Mental Skills", id: 5 },
-  { name: "Social Skills", id: 6 },
+  { name: "Skills Physical", id: 4 },
+  { name: "Skills Mental", id: 5 },
+  { name: "Skills Social", id: 6 },
 
-  { name: "Physical Merits", id: 7 },
-  { name: "Mental Merits", id: 8 },
-  { name: "Social Merits", id: 9 },
+  { name: "Merits Physical", id: 7 },
+  { name: "Merits Mental", id: 8 },
+  { name: "Merits Social", id: 9 },
 
   { name: "Vitalidade", id: 10 },
   { name: "Força de Vontade", id: 11 },
