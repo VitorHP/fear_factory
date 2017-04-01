@@ -6,52 +6,6 @@
       .character-name
         = f.input :name, label: false, placeholder: t("activerecord.attributes.character.name")
         = f.input :description, label: false, placeholder: t("activerecord.attributes.character.description"), input_html: { rows: 6 }
-      .character-refresh
-        = f.input :refresh, label: false, placeholder: t("activerecord.attributes.character.refresh")
-    .col-sm-6
-      = render "shared/aspects_form", f: f
-  .row
-    #skill-panel.col-sm-12
-      %h2.header= t(".skills")
-      %fieldset#skills
-        - Ladder.new.to_h(from: Campaign.vanilla_fate_core.skill_cap, to: :averag).each_with_index do |(name, level), i|
-          %div{ class: name }
-            .skill-row.skills.row
-              .rating-level.col-sm-2
-                %span.rating= "#{t("ladder.#{name.to_s}")} (+#{level})"
-              %ul.slots.list-inline.col-sm-10
-                = f.fields_for :ratings, @character.ratings.select{ |r| r.level == level } do |r|
-                  %li{ class: (r.index % Campaign.vanilla_fate_core.skill_cap) > i - 1 ? 'skill--advanced' : 'skill' }
-                    = r.input :id, as: :hidden
-                    = r.input :skill_id, collection: Skill.from_skill_group(params[:skill_group_id] || SkillGroup::FATE_CORE).sort_by{ |s| s.name }, label: false
-                    = r.input :level, as: :hidden, input_html: { value: level }
-
-  .row
-    %fieldset#stunts-panel.col-sm-6
-      %h2.header= t(".stunts")
-      = link_to_add_association f, :stunts, data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
-        .fa.fa-plus
-      = f.fields_for :stunts do |s|
-        = render "stunt_fields", f: s
-    %fieldset#extras-panel.col-sm-6
-      %h2.header= t(".extras")
-      = link_to_add_association f, :extras, data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
-        .fa.fa-plus
-      = f.fields_for :extras do |s|
-        = render "extra_fields", f: s
-  .row
-    .col-sm-6
-      = render "shared/stress_tracks_form", f: f
-
-    %fieldset#consequences-panel.col-sm-6
-      %h2.header= t(".consequences")
-      .row
-        %fieldset#fixed-consequences.col-sm-6.form-horizontal
-          = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.nil? } do |s|
-            = render 'consequence_fields', s: s
-        %fieldset#extra-consequences.col-sm-6.form-horizontal
-          = f.fields_for :consequences, @character.consequences.select{ |c| c.skill_id.present? } do |s|
-            = render 'consequence_fields', s: s
   .row
     .col-sm-12
       = f.button :submit

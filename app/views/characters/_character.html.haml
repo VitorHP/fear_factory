@@ -4,20 +4,3 @@
     .character__user= t(".created_by", user: character.user_name) unless character.user.nil?
     %span.character__concept= character.description
   .character__tags
-  .row
-    .col-xs-6
-      = render "aspects", aspects: character.aspects
-    .col-xs-6
-      = render "skills", ratings: character.ratings
-  .row
-    .col-xs-6
-      = render "stress_tracks", stress_tracks: character.stress_tracks
-    .col-xs-6
-      = render "consequences", consequences: character.consequences
-
-  .row
-    .col-xs-6
-      = render "stunts", stunts: character.stunts
-    .col-xs-6
-      = render "extras", extras: character.extras
-
