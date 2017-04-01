@@ -1,6 +1,0 @@
-.row.tabletop
-  .col-md-3
-    = simple_form_for Character.new do |f|
-      = f.input :id, collection: Character.all, label: false, input_html: { class: "input-lg" }
-  .col-md-9
-    %iframe{ class: "table__frame", src: "" }

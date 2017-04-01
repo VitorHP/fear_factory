@@ -1,7 +1,0 @@
-<% if current_user.favorited? @house_rule %>
-  $('#favorite-house-rule-<%= @house_rule.id %>').find('span').removeClass('glyphicon-star-empty');
-  $('#favorite-house-rule-<%= @house_rule.id %>').find('span').addClass('glyphicon-star');
-<% else %>
-  $('#favorite-house-rule-<%= @house_rule.id %>').find('span').removeClass('glyphicon-star');
-  $('#favorite-house-rule-<%= @house_rule.id %>').find('span').addClass('glyphicon-star-empty');
-<% end %>
