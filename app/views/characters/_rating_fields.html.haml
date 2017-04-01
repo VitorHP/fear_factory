@@ -1,5 +1,14 @@
 .nested-fields
-  = f.input :skill_id, label: false, collection: SkillGroup.merits.all, as: :grouped_select, group_method: :skills
-  = f.input :level, label: false
-  = link_to_remove_association f do
-    .fa.fa-times
+  .row
+    .col-md-6
+      = f.input :skill_id, label: false, collection: SkillGroup.merits.all, as: :grouped_select, group_method: :skills
+      = link_to_remove_association f do
+        .fa.fa-times
+    .col-md-6
+      .skill
+        = f.input :id, as: :hidden
+        = f.input :skill_id, as: :hidden
+        = f.input :level, as: :hidden, input_html: { class: "skill__level-input" }
+        %label= f.object.skill_name
+        - (1..5).to_a.reverse.each do |a|
+          .skill__check{ data: { value: a }, class: f.object.level >= a ? "skill__check--checked" : nil }

@@ -18,10 +18,15 @@
 //= require bootstrap
 //= require cocoon
 
-import Skill from './modules/skill';
+import Skill from 'modules/skill';
+import CharacterForm from 'modules/character_form';
 
 $(document).ready(() => {
   $('.skill').map((index, skill) =>
     new Skill(skill)
+  );
+
+  $('.character-form').map((index, form) =>
+    new CharacterForm(form)
   );
 });
