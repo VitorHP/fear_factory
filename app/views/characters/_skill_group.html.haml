@@ -1,4 +1,8 @@
 = f.fields_for :ratings, skill_group do |r|
-  = r.input :id, as: :hidden
-  = r.input :skill_id, as: :hidden
-  = r.input :level, label: r.object.skill_name
+  .skill
+    = r.input :id, as: :hidden
+    = r.input :skill_id, as: :hidden
+    = r.input :level, as: :hidden, input_html: { class: "skill__level-input" }
+    %label= r.object.skill_name
+    - (1..5).to_a.reverse.each do |a|
+      .skill__check{ data: { value: a }, class: r.object.level >= a ? "skill__check--checked" : nil }

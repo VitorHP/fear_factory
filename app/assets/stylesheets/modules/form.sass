@@ -13,3 +13,24 @@
     line-height: $input-height-base
     right: 10px
     top: 0
+
+.skill
+  &__check
+    float: right
+    position: relative
+    display: inline-block
+    width: 20px
+    height: 20px
+    border: 2px solid rgba(0,0,0, .54)
+    border-radius: 2px
+    overflow: hidden
+    z-index: 1
+    border-radius: 50%
+    margin: 0 1px
+
+    &:hover
+      cursor: pointer
+      background-color: grey
+
+    &--checked
+      background-color: black

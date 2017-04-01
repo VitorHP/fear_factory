@@ -3,7 +3,7 @@ class CreateRatings < ActiveRecord::Migration
     create_table :ratings do |t|
       t.integer :skill_id
       t.integer :character_id
-      t.integer :level
+      t.integer :level, default: 0
 
       t.timestamps
     end

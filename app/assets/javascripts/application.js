@@ -18,10 +18,10 @@
 //= require bootstrap
 //= require cocoon
 
-import CharacterListItem from './modules/character_list_item';
+import Skill from './modules/skill';
 
 $(document).ready(() => {
-  $('.character-list-item').map((index, characterListItem) =>
-    new CharacterListItem(characterListItem)
+  $('.skill').map((index, skill) =>
+    new Skill(skill)
   );
 });
