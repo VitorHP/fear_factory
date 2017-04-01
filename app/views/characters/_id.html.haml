@@ -2,5 +2,6 @@
   %fieldset#character-fields.col-sm-12
     %h2.header= t(".id")
     .character-name
+      = f.input :kind, as: :hidden
       = f.input :name, label: false, placeholder: t("activerecord.attributes.character.name")
       = f.input :description, label: false, placeholder: t("activerecord.attributes.character.description"), input_html: { rows: 6 }

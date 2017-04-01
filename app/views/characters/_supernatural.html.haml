@@ -1,6 +1,6 @@
 %fieldset#supernatural-fuel
   %h2.header= t(".supernatural_fuel")
-  = f.fields_for :ratings, @character.health do |r|
+  = f.fields_for :ratings, @character.supernatural_fuel do |r|
     .skill.skill--no-label
       = r.input :id, as: :hidden
       = r.input :skill_id, as: :hidden

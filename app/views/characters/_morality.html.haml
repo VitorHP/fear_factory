@@ -1,6 +1,6 @@
 %fieldset#morality
-  %h2.header= t(".#{@character.type}")
-  = f.fields_for :ratings, @character.health do |r|
+  %h2.header= t(".#{@character.kind}")
+  = f.fields_for :ratings, @character.morality do |r|
     .skill.skill--block
       = r.input :id, as: :hidden
       = r.input :skill_id, as: :hidden

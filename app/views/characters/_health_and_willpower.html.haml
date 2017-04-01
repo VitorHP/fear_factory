@@ -12,7 +12,7 @@
         .skill__square
 %fieldset#willpower
   %h2.header= t(".willpower")
-  = f.fields_for :ratings, @character.health do |r|
+  = f.fields_for :ratings, @character.willpower do |r|
     .skill.skill--no-label
       = r.input :id, as: :hidden
       = r.input :skill_id, as: :hidden

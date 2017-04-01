@@ -1,13 +1,15 @@
 class CharactersController < ApplicationController
 
-  # before_filter :authenticate_user!, only: [:new, :create, :update]
+  before_filter :authenticate_user!, only: [:new, :create, :update]
 
   def new
-    @character = Presenters::Character.new(BuildCharacter.new.build(params[:character_type]))
+    @character =
+      Presenters::Character.new(BuildCharacter.new.build(params[:character_kind]))
   end
 
   def create
-    @character = current_user.characters.build character_params
+    @character =
+      Presenters::Character.new(current_user.characters.build(character_params))
 
     if @character.save
       redirect_to root_path
@@ -17,11 +19,12 @@ class CharactersController < ApplicationController
   end
 
   def edit
-    @character = Character.find(params[:id])
+    @character = Presenters::Character.new Character.find(params[:id])
   end
 
   def update
-    @character = Character.find params[:id]
+    @character =
+      Presenters::Character.new Character.find(params[:id])
 
     if @character.update_attributes character_params
       redirect_to root_path
@@ -38,7 +41,7 @@ class CharactersController < ApplicationController
 
   def character_params
     params.require(:character).permit([
-      :name, :description, :user_id,
+      :name, :description, :user_id, :kind,
       ratings_attributes: [:id, :skill_id, :level],
     ])
   end

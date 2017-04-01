@@ -1,6 +1,6 @@
 class BuildCharacter
-  def build(character_type)
-    case character_type
+  def build(character_kind)
+    case character_kind
       when "changeling"
         build_changeling
       else
@@ -12,7 +12,7 @@ class BuildCharacter
 
   def build_human
     Character.new do |character|
-      character.type = "human"
+      character.kind = "human"
 
       Skill.find_each do |s|
         character.ratings.build skill_id: s.id
@@ -22,13 +22,20 @@ class BuildCharacter
 
   def build_changeling
     build_human.tap do |character|
-      character.type = "changeling"
+      character.kind = "changeling"
 
       character
         .ratings
         .select { |r| SkillGroup::ATTRIBUTES.include?(r.skill.skill_group_id) }.each do |r|
           r.level = 1
         end
+
+      character
+        .ratings
+        .select { |r| r.skill.skill_group_id == SkillGroup::SUPERNATURAL_POWER }.each do |r|
+          r.level = 1
+        end
+
     end
   end
 end

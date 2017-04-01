@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def character_medal(character)
-    case character.type
+    case character.kind
       when "changeling"
         "CtL"
       else
