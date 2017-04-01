@@ -21,6 +21,10 @@ Presenters::Character.class_eval do
     'physical_merits',
     'mental_merits',
     'social_merits',
+
+    'health',
+    'morality',
+    'willpower',
   ].each do |w|
     define_method w.to_sym do
       self.ratings

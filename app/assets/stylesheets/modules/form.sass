@@ -15,6 +15,19 @@
     top: 0
 
 .skill
+  &--no-label,
+    .skill__check,
+    .skill__square
+      float: none
+
+  &--no-label
+    text-align: center
+
+  &--block
+    .skill__level
+      margin: .5em 0
+
+  &__square,
   &__check
     float: right
     position: relative
@@ -22,11 +35,15 @@
     width: 20px
     height: 20px
     border: 2px solid rgba(0,0,0, .54)
-    border-radius: 2px
     overflow: hidden
     z-index: 1
-    border-radius: 50%
     margin: 0 1px
+
+  &__square
+    border-radius: 2px
+
+  &__check
+    border-radius: 50%
 
     &:hover
       cursor: pointer

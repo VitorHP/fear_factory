@@ -8,6 +8,9 @@ class SkillGroup < ActiveRecord::Base
   MENTAL_MERITS = 7
   PHYSICAL_MERITS = 8
   SOCIAL_MERITS = 9
+  HEALTH = 10
+  MORALITY = 11
+  WILLPOWER = 12
 
   has_many :skills
 

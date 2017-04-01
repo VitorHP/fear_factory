@@ -21,6 +21,10 @@ skill_groups = [
   { name: "Physical Merits", id: 7 },
   { name: "Mental Merits", id: 8 },
   { name: "Social Merits", id: 9 },
+
+  { name: "Vitalidade", id: 10 },
+  { name: "Força de Vontade", id: 11 },
+  { name: "Moralidade", id: 12 },
 ]
 
 skill_groups.each do |s|
@@ -107,6 +111,10 @@ skills = [
   { name: "Recursos", skill_group_id: 9 },
   { name: "Servidor", skill_group_id: 9 },
   { name: "Status", skill_group_id: 9 },
+
+  { name: "Vitalidade", skill_group_id: 10 },
+  { name: "Força de Vontade", skill_group_id: 11 },
+  { name: "Moralidade", skill_group_id: 12 },
 ]
 
 skills.each do |skill|
