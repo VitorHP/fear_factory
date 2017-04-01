@@ -1,4 +1,4 @@
-Fate::Application.routes.draw do
+Wod::Application.routes.draw do
 
   scope "/(:locale)", locale: /en|pt-BR/ do
     devise_for :users, skip: :omniauth_callbacks

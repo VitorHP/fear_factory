@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Fate::Application.load_tasks
+Wod::Application.load_tasks

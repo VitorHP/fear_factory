@@ -1,15 +1,15 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: fate_development
+  database: wod_development
   pool: 5
   username: postgres
-  password: 
+  password:
 
 test:
   adapter: postgresql
   encoding: utf8
-  database: fate_test
+  database: wod_test
   pool: 5
   username: postgres
   password:
