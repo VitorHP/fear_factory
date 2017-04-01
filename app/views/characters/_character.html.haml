@@ -3,4 +3,56 @@
     %span.character__name= character.name
     .character__user= t(".created_by", user: character.user_name) unless character.user.nil?
     %span.character__concept= character.description
-  .character__tags
+  .character__id
+
+  %br
+  .row
+    .col-xs-4
+      .character__name= t(".name")
+      .character__player= t(".player")
+      .character__cronicle= t(".chronicle")
+    .col-xs-4
+      .character__virtue= t(".virtue")
+      .character__vice= t(".vice")
+      .character__concept= t(".concept")
+    .col-xs-4
+      .character__seeming= t(".seeming")
+      .character__kith= t(".kith")
+      .character__court= t(".court")
+
+  %h2= t(".attributes")
+  .row
+    .col-xs-4
+      - character.mental_attributes.each do |r|
+        .character__skill
+          = r.skill_name
+          = r.level
+    .col-xs-4
+      - character.physical_attributes.each do |r|
+        .character__skill
+          = r.skill_name
+          = r.level
+    .col-xs-4
+      - character.social_attributes.each do |r|
+        .character__skill
+          = r.skill_name
+          = r.level
+
+  %h2= t(".skills")
+  .row
+    .col-xs-4
+      %h3= t("characters.skills.mental")
+      - character.mental_skills.each do |r|
+        .character__skill
+          = r.skill_name
+          = r.level
+      %h3= t("characters.skills.physical")
+      - character.physical_skills.each do |r|
+        .character__skill
+          = r.skill_name
+          = r.level
+      %h3= t("characters.skills.social")
+      - character.social_skills.each do |r|
+        .character__skill
+          = r.skill_name
+          = r.level

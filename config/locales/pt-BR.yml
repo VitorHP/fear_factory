@@ -216,87 +216,17 @@ pt-BR:
       character:
         one: personagem
         other: personagens
-      extra:
-        one: Extra
-        other: Extras
-      house_rule:
-        one: Regra Caseira
-        other: Regras Caseiras
       skill:
         one: Perícia
         other: Perícias
       skill_group:
         one: Grupo de Perícias
         other: Grupos de Perícias
-      stress_track:
-        one: Trilha de Estresse
-        other: Trilhas de Estresse
-      stunt:
-        one: Façanha
-        other: Façanhas
     attributes:
-      campaign:
-        name: Nome
-        number_of_aspects: Quantidade de Aspectos
-        number_of_initial_stunts: Quantidade de Façanhas
-        refresh_rate: Recargas
-        number_of_phases: Quantidade de Fases
-        skill_cap: Maior Perícia
-        skill_group: Grupo de Perícias
-      consequence:
-        mild: Suave
-        moderate: Moderada
-        severe: Severa
-      extra:
-        name: Nome
-        description: Descrição
-      stunt:
-        name: Nome
-        description: Descrição
       character:
         name: Nome
         description: Descrição
-        refresh: Recarga
-        high_concept: Conceito
-        trouble: Problema
-      house_rule:
-        name: Nome
-        thirty_second_version: 'Versão de 30 segundos'
-        description: Descrição
-        idiom: Idioma
-        type_tags: Tags
-      skill:
-        athletics: Atletismo
-        burglary: Roubo
-        contacts: Contatos
-        crafts: Ofícios
-        deceive: Enganar
-        drive: Condução
-        empathy: Empatia
-        fight: Lutar
-        investigate: Investigar
-        lore: Conhecimentos
-        notice: Percepção
-        physique: Vigor
-        provoke: Provocar
-        rapport: Comunicação
-        resources: Recursos
-        shoot: Atirar
-        stealth: Furtividade
-        will: Vontade
 
-        flashy: Estiloso
-        forcefull: Poderoso
-        careful: Cuidadoso
-        clever: Inteligente
-        sneaky: Sorrateiro
-        quick: Ágil
-
-      stress_track:
-        mental_stress: Estresse Físico
-        physical_stress: Estresse Mental
-        mental: Estresse Físico
-        physical: Estresse Mental
   home:
     index:
       title: Fear Factory
@@ -308,18 +238,6 @@ pt-BR:
       edit_character_btn: Editar
   navigation:
     solar: Compre Fate
-  ladder:
-    legendary: Lendário
-    epic: Épico
-    fantastic: Fantástico
-    suberb: Excepcional
-    great: Ótimo
-    good: Bom
-    fair: Razoável
-    averag: Regular
-    medriocre: Medíocre
-    poor: Ruim
-    terrible: Terrível
   navbar:
     home: Home
     login: Entrar
@@ -354,6 +272,16 @@ pt-BR:
     character:
       created_by: "por: %{user}"
     show:
+      name: Nome
+      player: Jogador
+      chronicle: Crônica
+      virtue: Virtude
+      vice: Vício
+      concept: Conceito
+      seeming: Feição
+      kith: Frátria
+      court: Corte
+      attributes: Atributos
       print: "Imprimir"
   house_rules:
     index:

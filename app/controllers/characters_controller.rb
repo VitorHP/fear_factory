@@ -34,7 +34,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find params[:id]
+    @character = Presenters::Character.new(Character.find params[:id])
   end
 
   private
