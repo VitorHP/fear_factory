@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
   # before_filter :authenticate_user!, only: [:new, :create, :update]
 
   def new
-    @character = Presenters::Character.new(BuildCharacter.new.build_human)
+    @character = Presenters::Character.new(BuildCharacter.new.build(params[:character_type]))
   end
 
   def create

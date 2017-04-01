@@ -11,7 +11,10 @@
   .row
     .col-md-3
       = link_to new_character_path, class: "home__create-character-btn-outer" do
-        %span.home__create-character-btn-inner= t(".create_fate_core_btn")
+        %span.home__create-character-btn-inner= t("character_type.human")
+    .col-md-3
+      = link_to new_character_path(character_type: "changeling"), class: "home__create-character-btn-outer" do
+        %span.home__create-character-btn-inner= t("character_type.changeling")
 
   .row
     .col-md-12
@@ -19,7 +22,7 @@
       %ul.list-unstyled.characters-list
         - @characters.each do |c|
           %li.character-list-item
-            .character-list-item__line-icon.hidden-xs FC
+            .character-list-item__line-icon.hidden-xs character_medal(c)
             .character-list-item__stats
               %span.character-list-item__name= c.name
               - if !current_user.new_record? && c.user_id == current_user.id

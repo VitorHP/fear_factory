@@ -25,6 +25,9 @@ Presenters::Character.class_eval do
     'health',
     'morality',
     'willpower',
+
+    'supernatural_power',
+    'supernatural_fuel',
   ].each do |w|
     define_method w.to_sym do
       self.ratings

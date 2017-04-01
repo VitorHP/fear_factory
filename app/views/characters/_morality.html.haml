@@ -1,0 +1,11 @@
+%fieldset#morality
+  %h2.header= t(".#{@character.type}")
+  = f.fields_for :ratings, @character.health do |r|
+    .skill.skill--block
+      = r.input :id, as: :hidden
+      = r.input :skill_id, as: :hidden
+      = r.input :level, as: :hidden, input_html: { class: "skill__level-input" }
+      - (1..10).to_a.reverse.each do |a|
+        .skill_level
+          = f.label a.to_s
+          .skill__check{ data: { value: a }, class: r.object.level >= a ? "skill__check--checked" : nil }

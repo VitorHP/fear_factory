@@ -25,6 +25,9 @@ skill_groups = [
   { name: "Vitalidade", id: 10 },
   { name: "Força de Vontade", id: 11 },
   { name: "Moralidade", id: 12 },
+
+  { name: "Supernatural Power", id: 13 },
+  { name: "Supernatural Fuel", id: 14 }
 ]
 
 skill_groups.each do |s|
@@ -115,6 +118,9 @@ skills = [
   { name: "Vitalidade", skill_group_id: 10 },
   { name: "Força de Vontade", skill_group_id: 11 },
   { name: "Moralidade", skill_group_id: 12 },
+
+  { name: "Poder Sobrenatural", skill_group_id: 13 },
+  { name: "Combustível Sobrenatural", skill_group_id: 14 }
 ]
 
 skills.each do |skill|

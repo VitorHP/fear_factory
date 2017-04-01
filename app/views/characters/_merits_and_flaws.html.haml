@@ -1,0 +1,6 @@
+%fieldset#merits
+  %h2.header= t(".merits")
+  = link_to_add_association f, :ratings, data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
+    .fa.fa-plus
+%fieldset#flaws
+  %h2.header= t(".flaws")

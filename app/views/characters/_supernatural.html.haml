@@ -1,0 +1,21 @@
+%fieldset#supernatural-fuel
+  %h2.header= t(".supernatural_fuel")
+  = f.fields_for :ratings, @character.health do |r|
+    .skill.skill--no-label
+      = r.input :id, as: :hidden
+      = r.input :skill_id, as: :hidden
+      = r.input :level, as: :hidden, input_html: { class: "skill__level-input" }
+      - (1..10).to_a.each do |a|
+        .skill__check{ data: { value: a }, class: r.object.level >= a ? "skill__check--checked" : nil }
+      %br
+      - (1..10).to_a.reverse.each do |a|
+        .skill__square
+%fieldset#supernatural-power
+  %h2.header= t(".supernatural_power")
+  = f.fields_for :ratings, @character.supernatural_power do |r|
+    .skill.skill--no-label
+      = r.input :id, as: :hidden
+      = r.input :skill_id, as: :hidden
+      = r.input :level, as: :hidden, input_html: { class: "skill__level-input" }
+      - (1..10).to_a.each do |a|
+        .skill__check{ data: { value: a }, class: r.object.level >= a ? "skill__check--checked" : nil }

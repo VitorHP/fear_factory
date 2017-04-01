@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413151937) do
+ActiveRecord::Schema.define(version: 20170401211311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140413151937) do
     t.text     "description"
     t.integer  "refresh"
     t.integer  "user_id"
+    t.string   "type"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140413151937) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "skill_id"
-    t.integer  "level"
+    t.integer  "level",         default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rateable_id"

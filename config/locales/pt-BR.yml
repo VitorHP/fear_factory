@@ -203,6 +203,9 @@ pt-BR:
       short: ! '%d de %B, %H:%M'
     pm: ''
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  character_type:
+    human: Humano
+    changeling: Changeling
   activemodel:
     errors:
       <<: *errors
@@ -210,15 +213,6 @@ pt-BR:
     errors:
       <<: *errors
     models:
-      aspect:
-        one: Aspecto
-        other: Aspectos
-      campaign:
-        one: Campanha
-        other: Campanhas
-      consequence:
-        one: Consequência
-        other: Consequências
       character:
         one: personagem
         other: personagens
@@ -339,17 +333,24 @@ pt-BR:
   characters:
     index:
       new_character: Novo Personagem
-    form:
+    id:
       id: Id
+    skills:
       physical: Físicas
       mental: Mentais
       social: Sociais
+    merits_and_flaws:
       merits: Vantagens
       flaws: Desvantagens
+    health_and_willpower:
       health: Vitalidade
       willpower: Força de Vontade
-      morality:
-        human: Moralidade
+    morality:
+      human: Moralidade
+      changeling: Lucidez
+    supernatural:
+      supernatural_fuel: Glamour
+      supernatural_power: Fado
     character:
       created_by: "por: %{user}"
     show:

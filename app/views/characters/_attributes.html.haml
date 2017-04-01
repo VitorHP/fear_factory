@@ -1,0 +1,7 @@
+.row
+  %fieldset#mental-attributes.col-sm-4
+    = render "skill_group", f: f, skill_group: @character.mental_attributes
+  %fieldset#physical-attributes.col-sm-4
+    = render "skill_group", f: f, skill_group: @character.physical_attributes
+  %fieldset#social-attributes.col-sm-4
+    = render "skill_group", f: f, skill_group: @character.social_attributes

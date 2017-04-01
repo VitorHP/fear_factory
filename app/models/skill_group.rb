@@ -18,6 +18,9 @@ class SkillGroup < ActiveRecord::Base
   MORALITY = 11
   WILLPOWER = 12
 
+  SUPERNATURAL_POWER = 13
+  SUPERNATURAL_FUEL = 14
+
   has_many :skills
 
   validates :name, presence: true

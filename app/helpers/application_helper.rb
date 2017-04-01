@@ -17,4 +17,13 @@ module ApplicationHelper
     super || User.new(name: 'Guest')
   end
 
+  def character_medal(character)
+    case character.type
+      when "changeling"
+        "CtL"
+      else
+        "WoD"
+    end
+  end
+
 end

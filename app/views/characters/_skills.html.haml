@@ -1,0 +1,9 @@
+%fieldset#mental-skills
+  %h2.header= t(".mental")
+  = render "skill_group", f: f, skill_group: @character.mental_skills
+%fieldset#physical-skills
+  %h2.header= t(".physical")
+  = render "skill_group", f: f, skill_group: @character.physical_skills
+%fieldset#social-skills
+  %h2.header= t(".social")
+  = render "skill_group", f: f, skill_group: @character.social_skills
