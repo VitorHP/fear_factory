@@ -4,7 +4,8 @@ class Skill < ActiveRecord::Base
   belongs_to :skill_group
 
   scope :from_skill_group, ->(skill_group_id){ where(skill_group_id: skill_group_id) }
-  scope :merits, ->{ where(skill_group_id: [SkillGroup::MENTAL_MERITS, SkillGroup::PHYSICAL_MERITS, SkillGroup::SOCIAL_MERITS]) }
+  scope :merits, ->{ where(skill_group_id: SkillGroup::MERITS) }
+  scope :attributes, ->{ where(skill_group_id: SkillGroup::ATTRIBUTES) }
 
   delegate :name, to: :skill_group, prefix: true
 end
