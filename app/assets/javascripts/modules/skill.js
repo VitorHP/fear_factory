@@ -9,9 +9,12 @@ class Skill {
   }
 
   clickSkill(e) {
-    const targetValue = $(e.target).hasClass('skill__check--checked') ?
-      $(e.target).data('value') - 1 :
-      $(e.target).data('value');
+    const $target = $(e.target);
+    const targetValue =
+      $target.hasClass('skill__check--checked') &&
+      parseInt(this.$levelInput.val(), 10) === 1 ?
+      0 :
+      $target.data('value');
 
     this.$checks.removeClass('skill__check--checked');
 
